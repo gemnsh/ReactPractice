@@ -3,39 +3,45 @@ import './ExpenseForm.css';
 
 function ExpenseForm(){ 
 
-    //const [enteredTitle, setEnteredTitle]=useState('');
-    //const [enteredAmount, setEnteredAmount]=useState('');
-    //const [enteredDate, setEnteredDate]=useState('');
+    const [enteredTitle, setEnteredTitle]=useState('');
+    const [enteredAmount, setEnteredAmount]=useState('');
+    const [enteredDate, setEnteredDate]=useState('');
 
-    const [ userInput, setUserInput ]=useState({
-        enteredTitle:'',
-        enteredAmount:'',
-        enteredDate:''
-    }
-    );
+    //const [ userInput, setUserInput ]=useState({
+    //    enteredTitle:'',
+    //    enteredAmount:'',
+    //    enteredDate:''
+    //}
+    //);
 
     const titleChangeHandler = (event) =>{
 
-        //setEnteredTitle(event.target.value);
+        setEnteredTitle(event.target.value);
 
-        setUserInput(
-            {
-                ...userInput,
-                enteredTitle: event.target.value,
-            }
-        )
+        //setUserInput(
+        //    {
+        //        ...userInput,
+        //        enteredTitle: event.target.value,
+        //    }
+        //)
+
+        //setUserInput((prevState) => {     //동시에 여러 입력을 받으면 잘못되거나 오래된 데이터를 복사해 올 수 있어서 이 방법이 바로 위의 방법보다는 안전함
+        //  return {...prevState, enteredTitle: event.target.value};
+        //  }
+        //
+        //  );
     };
 
     const amountChangeHandler = (event) =>{
 
-        //setEnteredAmount(event.target.value);
+        setEnteredAmount(event.target.value);
         //console.log(event.target.value);
-        setUserInput(
-            {
-                ...userInput,
-                enteredAmount: event.target.value,
-            }
-        )
+        //setUserInput(
+        //    {
+        //        ...userInput,
+        //        enteredAmount: event.target.value,
+        //    }
+        //)
     };
 
 //    const dateChangeHandler =  (event) =>{
@@ -44,14 +50,14 @@ function ExpenseForm(){
 //        console.log(event.target.value);
 //    };
     function dateChangeHandler (event){
-        //setEnteredDate(event.target.value);
+        setEnteredDate(event.target.value);
         //console.log(event.target.value);
-        setUserInput(
-            {
-                ...userInput,
-                enteredDate: event.target.value,
-            }
-        )
+        //setUserInput(
+        //    {
+        //        ...userInput,
+        //        enteredDate: event.target.value,
+        //    }
+        //)
     ;}
 
     return(

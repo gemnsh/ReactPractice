@@ -14,7 +14,8 @@ const ExpenseItem = (props) => {
     };
 
     return(
-        <Card className="expense-item">
+        <li>
+            <Card className="expense-item">
             <div>
                 {/*{props.date.toISOString()} 주석*/}
             </div>
@@ -27,6 +28,8 @@ const ExpenseItem = (props) => {
                 Change Title
             </button>
         </Card>
+        </li>
+        
     );
 };
 

@@ -15,7 +15,6 @@ function ExpenseForm(props){
     //);
 
     const titleChangeHandler = (event) =>{
-
         setEnteredTitle(event.target.value);
 
         //setUserInput(
@@ -62,7 +61,9 @@ function ExpenseForm(props){
 
     const submitHandler = (event) =>{
         event.preventDefault();     //기본 요청이 보내지는 것을 막을 수 있음
-
+        if (enteredTitle.trim().length===0 || enteredAmount.trim().length===0){
+            return;
+        }
         const expenseData ={
             title : enteredTitle,
             amount: +enteredAmount,

@@ -1,0 +1,9 @@
+.new-data{
+
+    position: absolute;
+    left :20px;
+    top :375px;
+    width: 520px;
+    height: 440px;
+    background-color: bisque;
+}

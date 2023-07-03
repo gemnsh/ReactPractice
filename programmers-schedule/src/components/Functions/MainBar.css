@@ -1,0 +1,39 @@
+/* Rectangle 4 */
+
+.main-bar {position: absolute;
+position: absolute;
+width: 1860px;
+height: 45px;
+
+display: flex;
+justify-content: space-between;
+flex-direction: row;
+border-radius: 10px;
+
+}
+
+.right-bar{
+    width: 215px;
+    height: 45px;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.left-bar{
+    width: 1200px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-button{
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+}
+
+.title{
+    font-size: 25px;
+    margin: 0 ;
+}

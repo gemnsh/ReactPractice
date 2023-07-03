@@ -59,9 +59,14 @@ function ExpenseForm(props){
         //)
     };
 
+    const [isValid,setIsValid]=useState(true);
+
     const submitHandler = (event) =>{
+        
+        
         event.preventDefault();     //기본 요청이 보내지는 것을 막을 수 있음
         if (enteredTitle.trim().length===0 || enteredAmount.trim().length===0){
+            setIsValid(false);
             return;
         }
         const expenseData ={

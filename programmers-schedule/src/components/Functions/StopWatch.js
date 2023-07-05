@@ -21,6 +21,7 @@ const StopWatch =(props) =>{
 
     const startTimer =()=>{
         startTime=getTime();
+        props.onGetButtonState([false,0]);
         setStartLocation((270+(startTime[1]/24000))%360);
         increment.current = setInterval(() => {
             setTimer((timer) => timer + 1);
@@ -39,14 +40,12 @@ const StopWatch =(props) =>{
         endTime=getTime()[0];
         clearInterval(increment.current);
         setIsButtonClicked(true);
+
+        props.onGetButtonState([true,timer]);
         setTimer(0);
     };
 
     const formatTime = () => {
-        const getSeconds = `0${(timer % 60)}`.slice(-2)
-        const minutes = `${Math.floor(timer / 60)}`
-        const getMinutes = `0${minutes % 60}`.slice(-2)
-        const getHours = `0${Math.floor(timer / 3600)}`.slice(-2)
         let timeValue = timer/864;
         while (timeValue>100){
             timeValue-=100
@@ -59,7 +58,7 @@ const StopWatch =(props) =>{
         const colorResult= [Math.round(newColor[0]).toString(16).padStart(2,'0'),Math.round(newColor[1]).toString(16).padStart(2,'0'),Math.round(newColor[2]).toString(16).padStart(2,'0'),]
         const colorOutput='#'+colorResult[0]+colorResult[1]+colorResult[2]
         
-        props.onGetFormatTime([`${getHours}:${getMinutes}:${getSeconds}`,timer]);
+        props.onGetFormatTime(timer);
 
         return [timeValue,colorOutput]
     }

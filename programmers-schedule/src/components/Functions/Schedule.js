@@ -9,13 +9,17 @@ import NewData from "../Input/NewData";
 
 const Schedule =(props) =>{
     const getFormatTimeHandler = (enteredFormatTime) =>{
-        props.onStopWatchData([...enteredFormatTime]);
+        props.onStopWatchData(enteredFormatTime);
+    };
+
+    const getButtonStateHandler = (buttonState) =>{
+        props.onGetButtonStateData([...buttonState]);
     };
 
     return(
         <Card className='schedule'>
             <div>
-                <StopWatch onGetFormatTime={getFormatTimeHandler}/>
+                <StopWatch onGetFormatTime={getFormatTimeHandler} onGetButtonState={getButtonStateHandler}/>
             </div>
             <NewData />
         </Card>

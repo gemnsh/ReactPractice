@@ -11,19 +11,25 @@ import Article from "./components/Functions/Article";
 
 const App =() =>{
   const [stopWatchTimeData,setStopWatchTimeData]=useState('00:00:00');
-  const [stopWatchTimeData2,setStopWatchTimeData2]=useState(0);
-  
+  const [accumulateTime,setAccumulateTime]=useState(0);
+
   const getStopWatchHandler =(stopWatchData) => { 
-    setStopWatchTimeData(stopWatchData[0]);
-    setStopWatchTimeData2(stopWatchData[1]);
+    setStopWatchTimeData(stopWatchData);
   } ;
+
+  const getStopWatchButtonStateHandler =(stopWatchButtonState)=>{
+    if (stopWatchButtonState[0]){
+        setAccumulateTime(prev => prev+stopWatchButtonState[1]);
+    }
+
+  };
 
   return (
     <div className="App">
       <MainBar />
       <Graph />
-      <TimeDisplay item={[stopWatchTimeData,stopWatchTimeData2]}/>
-      <Schedule onStopWatchData ={getStopWatchHandler}/>
+      <TimeDisplay item={[stopWatchTimeData,accumulateTime]}/>
+      <Schedule onStopWatchData ={getStopWatchHandler} onGetButtonStateData={getStopWatchButtonStateHandler}/>
       <Article />
 
     </div>

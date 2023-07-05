@@ -6,7 +6,7 @@ const MainBar =() =>{
     return (
         <Card className="main-bar">
            <div className="left-bar">
-            <div className="title"> Navigation Bar </div>
+            <div className="title">Navigation Bar </div>
            </div>
            <div className="right-bar"> 
                 <button className="nav-button">1</button>

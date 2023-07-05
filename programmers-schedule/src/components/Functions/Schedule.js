@@ -7,11 +7,15 @@ import StopWatch from "./StopWatch";
 import NewData from "../Input/NewData";
 
 
-const Schedule =() =>{
+const Schedule =(props) =>{
+    const getFormatTimeHandler = (enteredFormatTime) =>{
+        props.onStopWatchData([...enteredFormatTime]);
+    };
+
     return(
         <Card className='schedule'>
             <div>
-                <StopWatch />
+                <StopWatch onGetFormatTime={getFormatTimeHandler}/>
             </div>
             <NewData />
         </Card>

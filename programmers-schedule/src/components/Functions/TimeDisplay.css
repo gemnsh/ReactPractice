@@ -5,3 +5,27 @@
     width: 460px;
     height: 250px;
 }
+
+.time-display__upper{
+    position: absolute;
+    top:20px;
+    left:20px;
+    width: 420px;
+    height:95px;
+    font-size: 50px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+
+.time-display__lower{
+    position: absolute;
+    top:135px;
+    width: 420px;
+    height:95px;
+    font-size: 50px;
+    left:20px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}

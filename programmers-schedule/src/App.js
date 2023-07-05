@@ -8,13 +8,22 @@ import Graph from "./components/Functions/Graph";
 import TimeDisplay from "./components/Functions/TimeDisplay";
 import Article from "./components/Functions/Article";
 
-function App() {
+
+const App =() =>{
+  const [stopWatchTimeData,setStopWatchTimeData]=useState('00:00:00');
+  const [stopWatchTimeData2,setStopWatchTimeData2]=useState(0);
+  
+  const getStopWatchHandler =(stopWatchData) => { 
+    setStopWatchTimeData(stopWatchData[0]);
+    setStopWatchTimeData2(stopWatchData[1]);
+  } ;
+
   return (
     <div className="App">
       <MainBar />
       <Graph />
-      <TimeDisplay />
-      <Schedule />
+      <TimeDisplay item={[stopWatchTimeData,stopWatchTimeData2]}/>
+      <Schedule onStopWatchData ={getStopWatchHandler}/>
       <Article />
 
     </div>

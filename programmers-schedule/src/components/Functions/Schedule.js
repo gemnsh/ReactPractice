@@ -16,10 +16,14 @@ const Schedule =(props) =>{
         props.onGetButtonStateData([...buttonState]);
     };
 
+    const getStartTimeHandler =(startTime)=>{
+        props.onGetStartTimeData(startTime);
+    };
+
     return(
         <Card className='schedule'>
             <div>
-                <StopWatch onGetFormatTime={getFormatTimeHandler} onGetButtonState={getButtonStateHandler}/>
+                <StopWatch onGetFormatTime={getFormatTimeHandler} onGetButtonState={getButtonStateHandler} onGetStartTime={getStartTimeHandler}/>
             </div>
             <NewData />
         </Card>

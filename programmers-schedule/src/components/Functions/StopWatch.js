@@ -1,4 +1,4 @@
-import React,{useState,useRef} from "react";
+import React,{useState,useRef,useEffect} from "react";
 
 import './StopWatch.css';
 
@@ -10,34 +10,29 @@ const StopWatch =(props) =>{
     const [timer, setTimer] = useState(0);
     const[startLocation,setStartLocation]=useState(270);
     const increment = useRef(null);
-    let endTime='';
-    let startTime='';
+    const [startTime,setStartTime]=useState(0);
+    
     const buttonHandler = () =>{
         setIsButtonClicked(!isButtonClicked);
-        {
-            isButtonClicked ?startTimer() : resetHandler()
-          }
+        isButtonClicked ?startTimer() : resetHandler()
+    
     };
 
     const startTimer =()=>{
-        startTime=getTime();
-        props.onGetButtonState([false,0]);
-        setStartLocation((270+(startTime[1]/24000))%360);
-        increment.current = setInterval(() => {
-            setTimer((timer) => timer + 1);
-          }, 1)
-    };
-
-    const getTime =()=>{
         const date = new Date();
         const nowHours =String(date.getHours()).padStart(2,"0");
         const nowMinutes =String(date.getMinutes()).padStart(2,"0");
         const nowSeconds =String(date.getSeconds()).padStart(2,"0");
-        return [`${nowHours}:${nowMinutes}:${nowSeconds}`,nowHours*3600+nowMinutes*60+nowSeconds]
+        props.onGetStartTime(nowHours*3600+nowMinutes*60+nowSeconds);
+        props.onGetButtonState([false,0]);
+        setStartLocation((270+((nowHours*3600+nowMinutes*60+nowSeconds)/24000))%360);
+        increment.current = setInterval(() => {
+            setTimer((timer) => timer + 1);
+          }, 1000)
     };
 
+
     const resetHandler = () => {
-        endTime=getTime()[0];
         clearInterval(increment.current);
         setIsButtonClicked(true);
 
@@ -59,7 +54,7 @@ const StopWatch =(props) =>{
         const colorOutput='#'+colorResult[0]+colorResult[1]+colorResult[2]
         
         props.onGetFormatTime(timer);
-
+        console.log(timeValue,colorOutput)
         return [timeValue,colorOutput]
     }
 

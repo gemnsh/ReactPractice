@@ -8,8 +8,7 @@ const TimeDisplay = (props) =>{
         const getSeconds = `0${(tmp % 60)}`.slice(-2);
         const minutes = `${Math.floor(tmp / 60)}`;
         const getMinutes = `0${minutes % 60}`.slice(-2);
-        const getHours = `0${Math.floor(tmp / 3600)}`.slice(-2);
-
+        const getHours = `0${Math.floor(tmp / 3600)}`;
         return(`${getHours}:${getMinutes}:${getSeconds}`);
     }
 

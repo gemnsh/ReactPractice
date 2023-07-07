@@ -25,7 +25,7 @@ const Schedule =(props) =>{
             <div>
                 <StopWatch onGetFormatTime={getFormatTimeHandler} onGetButtonState={getButtonStateHandler} onGetStartTime={getStartTimeHandler}/>
             </div>
-            <NewData />
+            <NewData stopTime={props.stopWatchTime} buttonStateDatas={props.buttonStateData}/>
         </Card>
     );
 };

@@ -23,7 +23,7 @@ const StopWatch =(props) =>{
         const nowHours =String(date.getHours()).padStart(2,"0");
         const nowMinutes =String(date.getMinutes()).padStart(2,"0");
         const nowSeconds =String(date.getSeconds()).padStart(2,"0");
-        props.onGetStartTime(nowHours*3600+nowMinutes*60+nowSeconds);
+        props.onGetStartTime(parseInt(nowHours)*3600+parseInt(nowMinutes)*60+parseInt(nowSeconds));
         props.onGetButtonState([false,0]);
         setStartLocation((270+((nowHours*3600+nowMinutes*60+nowSeconds)/24000))%360);
         increment.current = setInterval(() => {
@@ -54,7 +54,6 @@ const StopWatch =(props) =>{
         const colorOutput='#'+colorResult[0]+colorResult[1]+colorResult[2]
         
         props.onGetFormatTime(timer);
-        console.log(timeValue,colorOutput)
         return [timeValue,colorOutput]
     }
 

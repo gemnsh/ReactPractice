@@ -13,19 +13,21 @@ const App =() =>{
   const [stopWatchTimeData,setStopWatchTimeData]=useState('00:00:00');
   const [startTimeData,setStartTimeData]=useState(0);
   const [accumulateTime,setAccumulateTime]=useState(0);
+  const [buttonState,setButtonState]=useState(true);
 
   const getStopWatchHandler =(stopWatchData) => { 
-    setStopWatchTimeData(stopWatchData);
+        setStopWatchTimeData(stopWatchData);
   } ;
 
   const getMomentBooleanHandler =(momentData)=>{
     if (momentData=='00:00:00'){
-        const tmp=parseInt(momentData.substr(0,2))*3600+parseInt(momentData.substr(3,5))*60+parseInt(momentData.substr(6))
+        const tmp=24*3600+parseInt(momentData.substr(3,5))*60+parseInt(momentData.substr(6))
         const getSeconds = `0${(parseInt(startTimeData) % 60)}`.slice(-2);
         const minutes = `${Math.floor((parseInt(startTimeData) % 60) / 60)}`;
         const getMinutes = `0${minutes % 60}`.slice(-2);
         const getHours = `0${Math.floor(parseInt(parseInt(startTimeData)/100) / 3600)}`;
-        setAccumulateTime(prev => (prev=-(tmp-parseInt(parseInt(startTimeData)/100))));
+        console.log('A',tmp,momentData,startTimeData);
+        setAccumulateTime(prev => (prev=-(tmp-parseInt(startTimeData))));
     }
   };
 
@@ -33,8 +35,11 @@ const App =() =>{
     
     if (stopWatchButtonState[0]){
         setAccumulateTime(prev => prev+stopWatchButtonState[1]);
+        setButtonState(true);
     }
-
+    else{
+        setButtonState(false);
+    }
   };
   
   const getStartTimeDataHandler =(startTimeDatas) =>{
@@ -46,7 +51,7 @@ const App =() =>{
       <MainBar onMomentData={getMomentBooleanHandler} />
       <Graph />
       <TimeDisplay item={[stopWatchTimeData,accumulateTime]}/>
-      <Schedule onStopWatchData ={getStopWatchHandler} onGetButtonStateData={getStopWatchButtonStateHandler} onGetStartTimeData={getStartTimeDataHandler}/>
+      <Schedule onStopWatchData ={getStopWatchHandler} onGetButtonStateData={getStopWatchButtonStateHandler} onGetStartTimeData={getStartTimeDataHandler} stopWatchTime={stopWatchTimeData} buttonStateData={buttonState}/>
       <Article />
 
     </div>

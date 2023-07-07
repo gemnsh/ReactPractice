@@ -1,6 +1,8 @@
 import React,{useState,useEffect} from "react";
 import './NewData.css';
+
 import Card from "../UI/Card";
+import MultiButton from "./MultiButton";
 
 const NewData =(props) =>{
     const[a,setA]=useState(`00:00:00`);
@@ -36,7 +38,7 @@ const NewData =(props) =>{
                     <label>
                         언어
                     </label>
-                    <input />
+                    <MultiButton buttonArr={['C','C++','Python','Java']}/>
                 </div>
                 <div className='new-data__control'>
                     <label>

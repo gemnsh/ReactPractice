@@ -1,0 +1,12 @@
+.multi-button{
+    color: white;
+    font-size: 20px;
+    height: 29px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.multi-button button{
+    color: white;
+    margin-left: 10px;
+}

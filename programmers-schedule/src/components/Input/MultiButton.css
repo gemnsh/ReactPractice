@@ -1,6 +1,5 @@
 .multi-button{
-    color: white;
-    font-size: 20px;
+    width:350px;
     height: 29px;
     display: flex;
     justify-content: space-between;
@@ -8,5 +7,9 @@
 
 .multi-button button{
     color: white;
-    margin-left: 10px;
+    font-size: 20px;
+    text-align: center;
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
 }

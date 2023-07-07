@@ -32,13 +32,13 @@ const NewData =(props) =>{
                     <label>
                         레벨
                     </label>
-                    <input />
+                    <MultiButton buttonArr={['1','2','3','4','5']} widthButton={62}/>
                 </div>
                 <div className='new-data__control'>
                     <label>
                         언어
                     </label>
-                    <MultiButton buttonArr={['C','C++','Python','Java']}/>
+                    <MultiButton buttonArr={['C','C++','Python','Java']} widthButton={80}/>
                 </div>
                 <div className='new-data__control'>
                     <label>

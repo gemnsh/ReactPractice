@@ -2,28 +2,30 @@ import React,{useState} from "react";
 
 import './MultiButton.css';
 const MultiButton =(props) =>{
-
-    const[isButtonSelected,setIsButtonSelected]=useState(false);
-
+    
     const buttonArray=[...props.buttonArr];
+    let bArray=Array(buttonArray.length).fill(false);
+    bArray[0]=true;
+    const[isButtonSelected,setIsButtonSelected]=useState([...bArray]);
 
     const multiButtonHandler =(index) =>{
-        console.log(buttonArray);
-        const tmpArray= Array(buttonArray.length).fill(false);
+        let tmpArray= Array(buttonArray.length).fill(false);
         tmpArray[index]=true;
-        setIsButtonSelected(tmpArray);
+        setIsButtonSelected([...tmpArray]);
+        console.log(buttonArray[tmpArray.indexOf(true)]);
     };
     return(
         <div className="multi-button">
             {
-                buttonArray.map((index)=>{
+                buttonArray.map((element,index)=>{
                     return(
                         <button
                         type="button"
                         key={index}
-                        onClick={multiButtonHandler}
+                        onClick={() => multiButtonHandler(index)}
+                        style={{width: props.widthButton ,color:isButtonSelected[index]?'#F0c122':'#DDDDDD', fontWeight : isButtonSelected[index]?750:500}}
                         >
-                        {buttonArray[index]}
+                        {element}
                         </button>
                     )
                 })

@@ -21,8 +21,9 @@ const App =() =>{
 
   const getMomentBooleanHandler =(momentData)=>{
     if (momentData=='00:00:00'){
-        const tmp=24*3600+parseInt(momentData.substr(3,5))*60+parseInt(momentData.substr(6))
-        const getSeconds = `0${(parseInt(startTimeData) % 60)}`.slice(-2);
+        //const tmp=parseInt(momentData.substr(0,2))*3600+parseInt(momentData.substr(3,5))*60+parseInt(momentData.substr(6))
+        const tmp=3600*24;
+        const getSeconds = `0${(parseInt() % 60)}`.slice(-2);
         const minutes = `${Math.floor((parseInt(startTimeData) % 60) / 60)}`;
         const getMinutes = `0${minutes % 60}`.slice(-2);
         const getHours = `0${Math.floor(parseInt(parseInt(startTimeData)/100) / 3600)}`;

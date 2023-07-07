@@ -9,6 +9,7 @@ const TimeDisplay = (props) =>{
         const minutes = `${Math.floor(tmp / 60)}`;
         const getMinutes = `0${minutes % 60}`.slice(-2);
         const getHours = `0${Math.floor(tmp / 3600)}`;
+        console.log(`${getHours}:${getMinutes}:${getSeconds}`,props.item)
         return(`${getHours}:${getMinutes}:${getSeconds}`);
     }
 

@@ -34,6 +34,7 @@
     width: 80px;
     max-width: 100%;
     background-color: rgb(110, 139, 243);
+    line-height: 0px;
   }
 
   .new-data__control button:disabled {
@@ -45,6 +46,7 @@
     border: 3px solid rgb(110, 139, 243);
     width: 80px;
     max-width: 100%;
+    line-height: 0px;
     background-color: rgb(110, 139, 243);
   }
   .new-data__control{
@@ -58,7 +60,7 @@
     font: inherit;
     border-radius: 6px;
     border: 3px solid rgb(110, 139, 243);
-    height: 145px;
+    height: 150px;
     width: 470px;
     max-width: 100%;
     display: flex;

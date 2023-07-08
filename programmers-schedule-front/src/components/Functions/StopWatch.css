@@ -1,0 +1,23 @@
+.stop-watch__button{
+    border-radius: 10px;
+    width:200px;
+    height: 80px;
+    left: 340px;
+    top: 130px;
+    position: absolute;
+    font-size: 50px;
+    color: white;
+    font-weight: bold;
+    background-color: rgb(110, 139, 243);
+    border: 0px ;
+}
+
+.stop-watch__circle{
+    border-radius: 300px;
+    width:300px;
+    height: 300px;
+    left: 20px;
+    top: 20px;
+    position: absolute;
+
+}

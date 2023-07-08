@@ -1,0 +1,28 @@
+.multi-button{
+    width:350px;
+    height: 29px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.multi-button__Selected{
+    font-size: 20px ;
+    text-align: center ;
+    color: #F0c122  !important;
+    font-weight: 750  !important;
+    padding: 0px;
+    margin: 0px;
+    border: solid white 3px  !important;
+}
+
+.multi-button__notSelected{
+    color: #DDDDDD  !important;
+    font-weight: 500  !important;
+    font-size: 20px;
+    text-align: center;
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
+}

@@ -16,9 +16,10 @@ const NewData =(props) =>{
     }
 
     const submitHandler =(event)=>{
+        console.log(event.target)
         event.preventDefault();
         event.target.reset()
-        console.log(event)
+        setA(`00:00:00`);
     };
 
     useEffect(() =>{
@@ -32,7 +33,7 @@ const NewData =(props) =>{
                     <label>
                         문제번호
                     </label>
-                    <input />
+                    <input name="problemNumber"/>
                 </div>
                 <div className='new-data__control'>
                     <label>
@@ -50,7 +51,7 @@ const NewData =(props) =>{
                     <label>
                         시도횟수
                     </label>
-                    <input />
+                    <input name="trial"/>
                 </div>
                 <div className='new-data__control'>
                     <label>
@@ -64,7 +65,7 @@ const NewData =(props) =>{
 
                 <div className='new-data__control2'>
 
-                    <input />
+                    <input name="problemDescription" placeholder="비고"/>
                 </div>
             </form>
         </Card>

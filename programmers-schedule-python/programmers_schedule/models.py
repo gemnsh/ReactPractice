@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class Articles(models.Model):
+class Article(models.Model):
     articleProblemNumber=models.IntegerField()
     articleProblemLevel=models.IntegerField()
     articleProblemLanguage=models.CharField(max_length=8)
@@ -11,4 +11,4 @@ class Articles(models.Model):
     articleNote=models.CharField(max_length=500)
 
     def __str__(self):
-        return self.articleProblemNumber
+        return str(self.articleProblemNumber)+'번 / '+self.articleNote

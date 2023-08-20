@@ -5,5 +5,6 @@ from django.http import HttpResponse
 
 def index(request):
     latestArticleList=Article.objects.order_by('-articleTime')[:5]
-    output=', '.join([str(tmp.articleProblemNumber)+' / '+ tmp.articleNote for tmp in latestArticleList])
+    output='\n'.join([str(tmp.articleProblemNumber)+' / '+ tmp.articleNote for tmp in latestArticleList])
+    output = "<pre>{}</pre>".format(output) # new line 작동되게 함
     return HttpResponse(output)

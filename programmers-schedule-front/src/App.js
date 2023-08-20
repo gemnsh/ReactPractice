@@ -1,4 +1,5 @@
 import React,{useState} from "react";
+import axios from "axios";
 
 import './App.css';
 
@@ -14,6 +15,10 @@ const App =() =>{
   const [startTimeData,setStartTimeData]=useState(0);
   const [accumulateTime,setAccumulateTime]=useState(0);
   const [buttonState,setButtonState]=useState(true);
+
+  axios.get("/api/list")
+  .then((response) => {console.log(response.data)}) 
+  .catch((Error) => {console.log(Error)})
 
   const getStopWatchHandler =(stopWatchData) => { 
         setStopWatchTimeData(stopWatchData);

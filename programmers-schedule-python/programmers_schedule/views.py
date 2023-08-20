@@ -1,10 +1,28 @@
-from django.shortcuts import render
-from .models import Article
-from django.http import HttpResponse
-# Create your views here.
 
-def index(request):
-    latestArticleList=Article.objects.order_by('-articleTime')[:5]
-    output='\n'.join([str(tmp.articleProblemNumber)+' / '+ tmp.articleNote for tmp in latestArticleList])
-    output = "<pre>{}</pre>".format(output) # new line 작동되게 함
-    return HttpResponse(output)
+
+from rest_framework import generics,serializers
+from rest_framework.response import Response
+
+from programmers_schedule.models import Article
+
+class ArticleListSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model=Article
+        fields=('id','articleProblemNumber','articleProblemLevel', 'articleProblemLanguage', 'articleTime', 'articleSolvingTime')
+
+class ArticleListView(generics.ListAPIView):
+    queryset = Article.objects.all()
+    serializer_class = ArticleListSerializer
+
+    def list(self,request):
+        queryset= self.get_queryset()
+        serializer_class = self.get_serializer_class()
+        serializer = serializer_class(queryset,many=True)
+
+        page= self.paginate_queryset(queryset)
+        if page is not None:
+            serializer = self.get_serializer(page,many=True)
+            return self.get_paginated_response(serializer.data)
+        
+        return Response(serializer.data)

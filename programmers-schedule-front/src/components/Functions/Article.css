@@ -12,7 +12,7 @@
     left : 20px;
     top : 20px;
     height: 45px;
-    width: 740px;
+    width: 500px;
     background-color: rgb(208, 208, 208);
 }
 
@@ -29,7 +29,7 @@
 .chartControl{
     position: absolute;
     display: flex ;
-    left : 320px;
+    left : 220px;
     top : 505px;
     height : 40px;
     width: 100px;

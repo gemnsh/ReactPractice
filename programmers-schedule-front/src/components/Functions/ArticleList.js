@@ -16,28 +16,25 @@ const ArticleList = (props) =>{
     
     return(
         <Card className='chartBody'>
-            <div className='tableTitle'> 
-                게시글번호 문제번호 문제레벨 언어 입력시간
-            </div>
             {
                 articleData.map((element,index)=>{
                     return (
                         <div key={index} className='eachArticle' onClick={articleClicked}>
-                            <p>
-                            {element.id}
-                            </p>
-                            <p>
+                            <div className="articleProblemNumber">
                             {element.articleProblemNumber}
-                            </p>
-                            <p>
+                            </div>
+                            <div className="articleProblemLevel">
                             {element.articleProblemLevel}
-                            </p>
-                            <p>
+                            </div>
+                            <div className="articleProblemLanguage">
                             {element.articleProblemLanguage}
-                            </p>
-                            <p>
+                            </div>
+                            <div className="articleProblemTrial">
+                            {element.articleProblemTrial}
+                            </div>
+                            <div className="articleTime">
                             {moment(element.articleTime).format('YYYY-MM-DD')}
-                            </p>
+                            </div>
                         </div>
                     )
                 })

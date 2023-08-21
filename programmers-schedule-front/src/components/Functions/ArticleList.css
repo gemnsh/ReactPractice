@@ -3,20 +3,43 @@
     left : 20px;
     top : 85px;
     height: 400px;
-    width: 740px;
+    width: 500px;
     background-color: rgb(255, 255, 255);
-}
-
-.tableTitle{
-    height : 35px;
 }
 
 .eachArticle{
     display: flex ;
-    justify-content: space-between;
     left:20px;
-    width: 700px;
+    width: 500px;
     height : 35px;
     font-size: 18px;
     align-items : center;
+   
+}
+
+.articleProblemNumber{
+    position: absolute;
+    width: 100px;
+}
+.articleProblemLevel{
+    position: absolute;
+    left :115px;
+    width: 50px;
+}
+.articleProblemLanguage{
+    position: absolute;
+    left :180px;
+    width : 100px;
+
+}
+.articleProblemTrial{
+    position: absolute;
+    left :295px;
+    width : 50px;
+
+}
+.articleTime{
+    position: absolute;
+    left :360px;
+    width : 120px;
 }

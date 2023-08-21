@@ -10,7 +10,7 @@ class ArticleListSerializer(serializers.ModelSerializer):
 
     class Meta:
         model=Article
-        fields=('id','articleProblemNumber','articleProblemLevel', 'articleProblemLanguage', 'articleTime', 'articleSolvingTime')
+        fields=('id','articleProblemNumber','articleProblemLevel', 'articleProblemLanguage', 'articleProblemTrial', 'articleTime', 'articleSolvingTime')
 
 
 class ArticlePagination(PageNumberPagination):

@@ -4,13 +4,12 @@ import Card from "../UI/Card";
 import ArticleList from "./ArticleList";
 
 const Article = (props) =>{
-    console.log(props.item)
     return(
         <Card className='article' >
             <Card className='chartTitle'>
 
             </Card>
-            <ArticleList item={props.item}/>
+            <ArticleList item={props.item.results}/>
             <Card className='chartSpecific'>
 
             </Card>

@@ -17,9 +17,12 @@ const App =() =>{
   const [buttonState,setButtonState]=useState(true);
   const [articleData,setArticleData]=useState([]);
   const startApp =()=>{
-    axios.get("/api/list")
-    .then((response) => {setArticleData(response.data)}) 
-    .catch((Error) => {console.log(Error)})
+    axios.get("/api/list/?page=1")
+    .then((response) => {console.log(response.data)
+        setArticleData(response.data)}) 
+    .catch((Error) => {console.log(Error)
+        setArticleData([])
+        })
   
   };
   useEffect(startApp,[])

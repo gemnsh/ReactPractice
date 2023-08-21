@@ -5,7 +5,11 @@ import './ArticleList.css';
 import Card from "../UI/Card";
 
 const ArticleList = (props) =>{
-    const articleData=[...props.item];
+    let articleData=[]
+    if (props.item!=undefined)
+    {
+        articleData=[...props.item]
+    }
     const articleClicked = (a) =>{
         console.log(a)
     };

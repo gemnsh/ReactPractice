@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React,{useState,useEffect} from "react";
 import axios from "axios";
 
 import './App.css';
@@ -13,12 +13,16 @@ import Article from "./components/Functions/Article";
 const App =() =>{
   const [stopWatchTimeData,setStopWatchTimeData]=useState('00:00:00');
   const [startTimeData,setStartTimeData]=useState(0);
-  const [accumulateTime,setAccumulateTime]=useState(0);
+  const [accumulateTime,setAccumulateTime]=useState(1000);
   const [buttonState,setButtonState]=useState(true);
-
-  axios.get("/api/list")
-  .then((response) => {console.log(response.data)}) 
-  .catch((Error) => {console.log(Error)})
+  const [articleData,setArticleData]=useState([]);
+  const startApp =()=>{
+    axios.get("/api/list")
+    .then((response) => {setArticleData(response.data)}) 
+    .catch((Error) => {console.log(Error)})
+  
+  };
+  useEffect(startApp,[])
 
   const getStopWatchHandler =(stopWatchData) => { 
         setStopWatchTimeData(stopWatchData);
@@ -26,14 +30,13 @@ const App =() =>{
 
   const getMomentBooleanHandler =(momentData)=>{
     if (momentData=='00:00:00'){
-        //const tmp=parseInt(momentData.substr(0,2))*3600+parseInt(momentData.substr(3,5))*60+parseInt(momentData.substr(6))
-        //const tmp=3600*24;
-        //const getSeconds = `0${(parseInt() % 60)}`.slice(-2);
-        //const minutes = `${Math.floor((parseInt(startTimeData) % 60) / 60)}`;
-        //const getMinutes = `0${minutes % 60}`.slice(-2);
-        //const getHours = `0${Math.floor(parseInt(parseInt(startTimeData)/100) / 3600)}`;
-        //console.log('A',tmp,momentData,startTimeData);
-        setAccumulateTime(prev => (prev=0));
+        let tmp= 24*3600-startTimeData;
+        setAccumulateTime(prev => {
+            prev=-tmp;
+            return prev;
+            });
+        console.log('worked')
+        
     }
   };
 
@@ -58,7 +61,7 @@ const App =() =>{
       <Graph />
       <TimeDisplay item={[stopWatchTimeData,accumulateTime]}/>
       <Schedule onStopWatchData ={getStopWatchHandler} onGetButtonStateData={getStopWatchButtonStateHandler} onGetStartTimeData={getStartTimeDataHandler} stopWatchTime={stopWatchTimeData} buttonStateData={buttonState}/>
-      <Article />
+      <Article item={articleData}/>
 
     </div>
   );

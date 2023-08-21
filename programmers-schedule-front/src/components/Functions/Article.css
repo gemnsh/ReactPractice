@@ -4,5 +4,23 @@
     top: 335px;
     width: 1280px;
     height: 565px;
-    background-color: rgb(47, 76, 101);
+    background-color: rgb(110, 139, 243);
+}
+
+.chartTitle{
+    position: absolute;
+    left : 20px;
+    top : 20px;
+    height: 45px;
+    width: 1240px;
+    background-color: rgb(255, 255, 255);
+}
+
+.chartBody{
+    position: absolute;
+    left : 20px;
+    top : 85px;
+    height: 460px;
+    width: 1240px;
+    background-color: rgb(255, 255, 255);
 }

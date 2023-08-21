@@ -42,3 +42,21 @@
     height : 40px;
     width : 40px;
 }
+
+.buttonContainer{
+    position: absolute;
+    left:540px;
+    top:20px;
+    width: 220px;
+    height: 525px;
+}
+.hexButton{
+    position: absolute;
+    top : 0px;
+    left: 0px;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

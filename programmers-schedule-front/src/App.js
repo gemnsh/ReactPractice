@@ -36,7 +36,6 @@ const App =() =>{
         let tmp= 24*3600-startTimeData;
         setAccumulateTime(prev => {
             prev=-tmp;
-            return prev;
             });
         console.log('worked')
         

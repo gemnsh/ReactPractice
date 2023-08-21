@@ -16,6 +16,9 @@ const ArticleList = (props) =>{
     
     return(
         <Card className='chartBody'>
+            <div className='tableTitle'> 
+                게시글번호 문제번호 문제레벨 언어 입력시간
+            </div>
             {
                 articleData.map((element,index)=>{
                     return (
@@ -36,7 +39,6 @@ const ArticleList = (props) =>{
                             {moment(element.articleTime).format('YYYY-MM-DD')}
                             </p>
                         </div>
-
                     )
                 })
             }

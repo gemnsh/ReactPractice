@@ -2,13 +2,21 @@
     position: absolute;
     left : 20px;
     top : 85px;
-    height: 460px;
+    height: 400px;
     width: 740px;
     background-color: rgb(255, 255, 255);
 }
 
+.tableTitle{
+    height : 35px;
+}
+
 .eachArticle{
-    
     display: flex ;
     justify-content: space-between;
+    left:20px;
+    width: 700px;
+    height : 35px;
+    font-size: 18px;
+    align-items : center;
 }

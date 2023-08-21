@@ -3,7 +3,6 @@ import './TimeDisplay.css';
 import Card from "../UI/Card";
 
 const TimeDisplay = (props) =>{
-    console.log(props)
     const formatTime = (tmp) => {
         const getSeconds = `0${(tmp % 60)}`.slice(-2);
         const minutes = `${Math.floor(tmp / 60)}`;

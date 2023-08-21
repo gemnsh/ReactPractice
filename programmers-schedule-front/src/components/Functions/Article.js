@@ -1,6 +1,7 @@
 import React from "react";
 import './Article.css';
 import Card from "../UI/Card";
+import ArticleList from "./ArticleList";
 
 const Article = (props) =>{
     console.log(props.item)
@@ -9,7 +10,8 @@ const Article = (props) =>{
             <Card className='chartTitle'>
 
             </Card>
-            <Card className='chartBody'>
+            <ArticleList item={props.item}/>
+            <Card className='chartSpecific'>
 
             </Card>
         </Card>

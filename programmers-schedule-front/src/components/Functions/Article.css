@@ -12,15 +12,16 @@
     left : 20px;
     top : 20px;
     height: 45px;
-    width: 1240px;
-    background-color: rgb(255, 255, 255);
+    width: 740px;
+    background-color: rgb(208, 208, 208);
 }
 
-.chartBody{
+
+.chartSpecific{
     position: absolute;
-    left : 20px;
-    top : 85px;
-    height: 460px;
-    width: 1240px;
-    background-color: rgb(255, 255, 255);
+    left : 780px;
+    top : 20px;
+    height: 525px;
+    width: 480px;
+    background-color: rgb(229, 229, 229);
 }

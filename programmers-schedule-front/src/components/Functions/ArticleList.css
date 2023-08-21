@@ -1,0 +1,14 @@
+.chartBody{
+    position: absolute;
+    left : 20px;
+    top : 85px;
+    height: 460px;
+    width: 740px;
+    background-color: rgb(255, 255, 255);
+}
+
+.eachArticle{
+    
+    display: flex ;
+    justify-content: space-between;
+}

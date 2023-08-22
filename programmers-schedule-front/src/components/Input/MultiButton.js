@@ -12,7 +12,6 @@ const MultiButton =(props) =>{
         let tmpArray= Array(buttonArray.length).fill(false);
         tmpArray[index]=true;
         setIsButtonSelected([...tmpArray]);
-        console.log(buttonArray[tmpArray.indexOf(true)]);
     };
     return(
         <div className="multi-button">

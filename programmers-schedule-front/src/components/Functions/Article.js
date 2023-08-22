@@ -1,10 +1,21 @@
-import React from "react";
+import React,{useState} from "react";
 import './Article.css';
 import Card from "../UI/Card";
 import ArticleList from "./ArticleList";
 import HexaButton from "./HexaButton";
 
 const Article = (props) =>{
+
+    let hArray=Array(9).fill(false);
+    const[isHexButtonSelected,setIsHexButtonSelected]=useState([...hArray]);
+
+    const hexaButtonStateHandler= (index) =>{
+        let tmpHexArray=[...hArray];
+        tmpHexArray[index] = !tmpHexArray[index];
+        setIsHexButtonSelected(tmpHexArray);
+        console.log(index)
+    };
+
     return(
         <Card className='article' >
             <Card className='chartTitle'>
@@ -24,16 +35,16 @@ const Article = (props) =>{
                     <div className="hexButton1">
                     <HexaButton color={['#FDFFB4','#E0814B']} stroke='#FFFFFF' gradientName='hex_button_1'/>
                     </div>
-                    <div className="hexButton2">
+                    <div className="hexButton2" >
                     <HexaButton color={['#FDFFB4','#E0814B']} stroke='#FFFFFF' gradientName='hex_button_2'/>
                     </div>
                     <div className="hexButton3">
                     <HexaButton color={['#FDFFB4','#E0814B']} stroke='#FFFFFF' gradientName='hex_button_3'/>
                     </div>
-                    <div className="hexButton4">
+                    <div className="hexButton4" >
                     <HexaButton color={['#FDFFB4','#E0814B']} stroke='#FFFFFF' gradientName='hex_button_4'/>
                     </div>
-                    <div className="hexButton5">
+                    <div className="hexButton5" >
                     <HexaButton color={['#C3B4FF','#4BBCE0']} stroke='#FFFFFF' gradientName='hex_button_5'/>
                     </div>
                     <div className="hexButton6">

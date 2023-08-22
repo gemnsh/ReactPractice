@@ -14,11 +14,11 @@
     height : 35px;
     font-size: 18px;
     align-items : center;
-   
 }
 
 .articleProblemNumber{
     position: absolute;
+    left : 20px;
     width: 100px;
 }
 .articleProblemLevel{

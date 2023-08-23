@@ -11,9 +11,9 @@ import Article from "./components/Functions/Article";
 
 
 const App =() =>{
-  const [stopWatchTimeData,setStopWatchTimeData]=useState('00:00:00');
+  const [stopWatchTimeData,setStopWatchTimeData]=useState(0);
   const [startTimeData,setStartTimeData]=useState(0);
-  const [accumulateTime,setAccumulateTime]=useState(1000);
+  const [accumulateTime,setAccumulateTime]=useState(0);
   const [buttonState,setButtonState]=useState(true);
   const [articleData,setArticleData]=useState([]);
   const startApp =()=>{
@@ -28,7 +28,10 @@ const App =() =>{
   useEffect(startApp,[])
 
   const getStopWatchHandler =(stopWatchData) => { 
+    if (stopWatchData!=undefined)
+    {
         setStopWatchTimeData(stopWatchData);
+    }
   } ;
 
   const getMomentBooleanHandler =(momentData)=>{
@@ -44,7 +47,7 @@ const App =() =>{
 
   const getStopWatchButtonStateHandler =(stopWatchButtonState)=>{
     
-    if (stopWatchButtonState[0]){
+    if (stopWatchButtonState[0] && stopWatchButtonState!=undefined){
         setAccumulateTime(prev => prev+stopWatchButtonState[1]);
         setButtonState(true);
     }

@@ -30,34 +30,34 @@ const Article = (props) =>{
             <ArticleList item={props.item.results}/>
             <div className='buttonContainer'>
                     <div className="hexButton0">
-                    <HexaButton color={['#940404','#FF8888']} stroke='#FFFFFF' gradientName='hex_button_0' name='ALL' fontSize='26'/>
+                    <HexaButton color={['#889ACE','#889ACE']} stroke='#CFDAF4' gradientName='hex_button_0' name='ALL' fontSize='26'/>
                     </div>
                     <div className="hexButton1">
-                    <HexaButton color={['#FDFFB4','#E0814B']} stroke='#FFFFFF' gradientName='hex_button_1' name='Python' fontSize='20'/>
+                    <HexaButton color={['#A6CEFA','#A6CEFA']} stroke='#CFDAF4' gradientName='hex_button_1' name='Python' fontSize='20'/>
                     </div>
                     <div className="hexButton2" >
-                    <HexaButton color={['#FDFFB4','#E0814B']} stroke='#FFFFFF' gradientName='hex_button_2' name='C++' fontSize='26'/>
+                    <HexaButton color={['#A6CEFA','#A6CEFA']} stroke='#CFDAF4' gradientName='hex_button_2' name='C++' fontSize='26'/>
                     </div>
                     <div className="hexButton3">
-                    <HexaButton color={['#FDFFB4','#E0814B']} stroke='#FFFFFF' gradientName='hex_button_3' name='C' fontSize='26'/>
+                    <HexaButton color={['#A6CEFA','#A6CEFA']} stroke='#CFDAF4' gradientName='hex_button_3' name='C' fontSize='26'/>
                     </div>
                     <div className="hexButton4" >
-                    <HexaButton color={['#FDFFB4','#E0814B']} stroke='#FFFFFF' gradientName='hex_button_4' name='Java' fontSize='26'/>
+                    <HexaButton color={['#A6CEFA','#A6CEFA']} stroke='#CFDAF4' gradientName='hex_button_4' name='Java' fontSize='26'/>
                     </div>
                     <div className="hexButton5" >
-                    <HexaButton color={['#C3B4FF','#4BBCE0']} stroke='#FFFFFF' gradientName='hex_button_5' name='1' fontSize='46'/>
+                    <HexaButton color={['#B3C6F0','#B3C6F0']} stroke='#CFDAF4' gradientName='hex_button_5' name='1' fontSize='46'/>
                     </div>
                     <div className="hexButton6">
-                    <HexaButton color={['#C3B4FF','#4BBCE0']} stroke='#FFFFFF' gradientName='hex_button_6' name='2' fontSize='46'/>
+                    <HexaButton color={['#B3C6F0','#B3C6F0']} stroke='#C8E2FE' gradientName='hex_button_6' name='2' fontSize='46'/>
                     </div>
                     <div className="hexButton7">
-                    <HexaButton color={['#C3B4FF','#4BBCE0']} stroke='#FFFFFF' gradientName='hex_button_7' name='3' fontSize='46'/>
+                    <HexaButton color={['#B3C6F0','#B3C6F0']} stroke='#C8E2FE' gradientName='hex_button_7' name='3' fontSize='46'/>
                     </div>
                     <div className="hexButton8">
-                    <HexaButton color={['#C3B4FF','#4BBCE0']} stroke='#FFFFFF' gradientName='hex_button_8' name='4' fontSize='46'/>
+                    <HexaButton color={['#B3C6F0','#B3C6F0']} stroke='#C8E2FE' gradientName='hex_button_8' name='4' fontSize='46'/>
                     </div>
                     <div className="hexButton9">
-                    <HexaButton color={['#C3B4FF','#4BBCE0']} stroke='#FFFFFF' gradientName='hex_button_9' name='5' fontSize='46'/>
+                    <HexaButton color={['#B3C6F0','#B3C6F0']} stroke='#C8E2FE' gradientName='hex_button_9' name='5' fontSize='46'/>
                     </div>
                     
             </div>

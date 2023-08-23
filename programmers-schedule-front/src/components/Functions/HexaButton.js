@@ -30,10 +30,10 @@ const HexaButton = (props) =>{
                     </filter>
                     <linearGradient id={props.gradientName+'_fill'} x1="46" y1="-1" x2="46" y2="99" gradientUnits="userSpaceOnUse">
                     <stop stopColor={props.color[0]}/>
-                    <stop offset="1" stopColor={props.color[1]} stopOpacity="100%"/>
+                    <stop offset="1" stopColor={props.color[1]} stopOpacity="90%"/>
                     </linearGradient>
                 </defs>
-                <text id="text1" x="45" y="50" dominantBaseline="middle" textAnchor="middle" fill="#FFFFFF"  fontWeight="bold" fontSize={props.fontSize}>
+                <text id="text1" x="45" y="50" dominantBaseline="middle" textAnchor="middle" fill="#5f6b8e"  fontWeight="bold" fontSize={props.fontSize}>
                     {props.name}
                 </text>
             </svg>

@@ -60,7 +60,7 @@ const NewData =(props) =>{
                     <div className='new-data__time'>
                         {a}
                     </div>
-                    <button type='submit' disabled={!props.buttonStateDatas}>입력</button>
+                    <button id='submit_button' type='submit' disabled={!props.buttonStateDatas}>입력</button>
                 </div>
 
                 <div className='new-data__control2'>

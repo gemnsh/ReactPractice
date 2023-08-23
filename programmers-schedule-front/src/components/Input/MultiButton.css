@@ -8,19 +8,19 @@
 
 
 .multi-button__Selected{
-    font-size: 20px ;
+    font-size: 17px !important;
     text-align: center ;
-    color: #F0c122  !important;
+    color: #FFFFFF  !important;
     font-weight: 750  !important;
     padding: 0px;
     margin: 0px;
-    border: solid white 3px  !important;
+    border: solid #436EEA 3px  !important;
 }
 
 .multi-button__notSelected{
-    color: #DDDDDD  !important;
+    color: #D9D9D9  !important;
     font-weight: 500  !important;
-    font-size: 20px;
+    font-size: 14px  !important;
     text-align: center;
     border: 0px;
     padding: 0px;

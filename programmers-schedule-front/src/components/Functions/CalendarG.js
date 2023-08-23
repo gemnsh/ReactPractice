@@ -16,13 +16,13 @@ const CalendarG = (props) => {
             data={[...props.data]}
             from="2023-01-01"
             to="2023-12-31"
-            emptyColor="#eeeeee"
-            colors={[ '#61cdbb', '#97e3d5', '#e8c1a0', '#f47560' ]}
+            emptyColor="#C2D4F2"
+            colors={['#F5F9BF', '#ECF67B', '#F7A549','#F9b544','#f6993b', '#E5694F','#Ec8463', '#ec5155', '#d1444e', '#D8555E', '#922e4b']}
             margin={{ top: 90, right: 0, bottom: 10, left: 30}}
             yearSpacing={40}
-            monthBorderColor="#65a5cc"
+            monthBorderColor="#889ACE"
             dayBorderWidth={2}
-            dayBorderColor="#65a5cc"
+            dayBorderColor="#C2D4F2"
             legends={[
                 {
                     anchor: 'bottom-right',

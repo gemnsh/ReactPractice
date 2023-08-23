@@ -4,7 +4,7 @@
     top: 335px;
     width: 1280px;
     height: 565px;
-    background-color: rgb(110, 139, 243);
+    background-color: #889ACE;
 }
 
 .chartTitle{
@@ -13,7 +13,7 @@
     top : 20px;
     height: 45px;
     width: 500px;
-    background-color: rgb(208, 208, 208);
+    background-color: #CFDAF4;
 }
 
 
@@ -23,7 +23,7 @@
     top : 20px;
     height: 525px;
     width: 420px;
-    background-color: rgb(229, 229, 229);
+    background-color: #CFDAF4;
 }
 
 .chartControl{

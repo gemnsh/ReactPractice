@@ -6,7 +6,7 @@ import Card from "../UI/Card";
 
 const ArticleList = (props) =>{
     let articleData=[]
-    if (props.item!=undefined)
+    if (props.item!==undefined)
     {
         articleData=[...props.item]
     }

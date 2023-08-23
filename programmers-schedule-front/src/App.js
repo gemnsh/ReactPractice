@@ -28,14 +28,14 @@ const App =() =>{
   useEffect(startApp,[])
 
   const getStopWatchHandler =(stopWatchData) => { 
-    if (stopWatchData!=undefined)
+    if (stopWatchData!==undefined)
     {
         setStopWatchTimeData(stopWatchData);
     }
   } ;
 
   const getMomentBooleanHandler =(momentData)=>{
-    if (momentData=='00:00:00'){
+    if (momentData==='00:00:00'){
         let tmp= 24*3600-startTimeData;
         setAccumulateTime(prev => {
             prev=-tmp;
@@ -47,7 +47,7 @@ const App =() =>{
 
   const getStopWatchButtonStateHandler =(stopWatchButtonState)=>{
     
-    if (stopWatchButtonState[0] && stopWatchButtonState!=undefined){
+    if (stopWatchButtonState[0] && stopWatchButtonState!==undefined){
         setAccumulateTime(prev => prev+stopWatchButtonState[1]);
         setButtonState(true);
     }

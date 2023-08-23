@@ -4,6 +4,7 @@ import axios from "axios";
 import './App.css';
 
 import MainBar from "./components/Functions/MainBar";
+import MusicPlayer from "./components/Functions/MusicPlayer";
 import Schedule from "./components/Functions/Schedule";
 import Graph from "./components/Functions/Graph";
 import TimeDisplay from "./components/Functions/TimeDisplay";
@@ -76,7 +77,7 @@ const App =() =>{
       <TimeDisplay item={[stopWatchTimeData,accumulateTime]}/>
       <Schedule onStopWatchData ={getStopWatchHandler} onGetButtonStateData={getStopWatchButtonStateHandler} onGetStartTimeData={getStartTimeDataHandler} stopWatchTime={stopWatchTimeData} buttonStateData={buttonState}/>
       <Article item={articleData}/>
-
+      <MusicPlayer/>
     </div>
   );
 }

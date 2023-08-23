@@ -2,7 +2,7 @@
 
 .main-bar {position: absolute;
 position: absolute;
-width: 1860px;
+width: 1560px;
 height: 45px;
 
 display: flex;
@@ -21,7 +21,7 @@ border-radius: 10px;
 }
 
 .left-bar{
-    width: 1500px;
+    width: 1200px;
     height: 45px;
     display: flex;
     align-items: center;
@@ -42,7 +42,7 @@ border-radius: 10px;
 
 .main-bar__time{
     position: absolute;
-    left : 1500px;
+    left : 1200px;
     font-size: 25px;
     margin: 0 ;
     color : white;

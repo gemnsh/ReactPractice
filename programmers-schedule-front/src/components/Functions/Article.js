@@ -18,16 +18,6 @@ const Article = (props) =>{
 
     return(
         <Card className='article' >
-            <Card className='chartTitle'>
-            </Card>
-            <div className='chartControl'>
-                <button className="chartButton"> prev </button>
-                <div>
-                    1
-                </div>
-                <button className="chartButton"> next </button>
-            </div>
-            <ArticleList item={props.item.results}/>
             <div className='buttonContainer'>
                     <div className="hexButton0">
                     <HexaButton color={['#889ACE','#889ACE']} stroke='#CFDAF4' gradientName='hex_button_0' name='ALL' fontSize='26'/>
@@ -61,6 +51,16 @@ const Article = (props) =>{
                     </div>
                     
             </div>
+            <Card className='chartTitle'>
+            </Card>
+            <div className='chartControl'>
+                <button className="chartButton"> prev </button>
+                <div>
+                    1
+                </div>
+                <button className="chartButton"> next </button>
+            </div>
+            <ArticleList item={props.item.results}/>
             <Card className='chartSpecific'>
 
             </Card>

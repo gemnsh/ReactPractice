@@ -9,27 +9,27 @@
 
 .chartTitle{
     position: absolute;
-    left : 20px;
+    left : 290px;
     top : 20px;
     height: 45px;
-    width: 500px;
+    width: 470px;
     background-color: #CFDAF4;
 }
 
 
 .chartSpecific{
     position: absolute;
-    left : 840px;
+    left : 780px;
     top : 20px;
     height: 525px;
-    width: 420px;
+    width: 480px;
     background-color: #CFDAF4;
 }
 
 .chartControl{
     position: absolute;
     display: flex ;
-    left : 220px;
+    left : 460px;
     top : 505px;
     height : 40px;
     width: 100px;
@@ -45,9 +45,9 @@
 
 .buttonContainer{
     position: absolute;
-    left:558px;
+    left:20px;
     top:20px;
-    width: 244px;
+    width: 250px;
     height: 525px;
 }
 .hexButton0{

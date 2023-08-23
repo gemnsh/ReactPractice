@@ -1,8 +1,8 @@
 .time-display{
     position: absolute;
-    left: 820px;
+    left: 920px;
     top: 65px;
-    width: 460px;
+    width: 360px;
     height: 250px;
 }
 
@@ -10,7 +10,7 @@
     position: absolute;
     top:20px;
     left:20px;
-    width: 420px;
+    width: 320px;
     height:95px;
     font-size: 50px;
     color: white;
@@ -21,7 +21,7 @@
 .time-display__lower{
     position: absolute;
     top:135px;
-    width: 420px;
+    width: 320px;
     height:95px;
     font-size: 50px;
     left:20px;

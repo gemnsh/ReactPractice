@@ -2,6 +2,17 @@
     position: absolute;
     left: 0px;
     top: 65px;
-    width: 800px;
+    width: 900px;
     height: 250px;
+}
+
+.graphTitle{
+    position: absolute;
+    top : 10px;
+    left: 20px;
+    width: 900px;
+    height: 50px;
+    font-size: 40px;
+    color: white;
+    font-weight: bold;
 }

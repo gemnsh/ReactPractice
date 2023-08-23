@@ -6,6 +6,11 @@ import { ResponsiveCalendar } from '@nivo/calendar'
 // website examples showcase many properties,
 // you'll often use just a few of them.
 const CalendarG = (props) => {
+
+    const theme = {
+        labels: { text: { fontSize: 15, fill: "#ffffff" } }
+        }
+
     return (
             <ResponsiveCalendar
             data={[...props.data]}
@@ -13,7 +18,7 @@ const CalendarG = (props) => {
             to="2023-12-31"
             emptyColor="#eeeeee"
             colors={[ '#61cdbb', '#97e3d5', '#e8c1a0', '#f47560' ]}
-            margin={{ top: 0, right: 0, bottom: 10, left: 10}}
+            margin={{ top: 90, right: 0, bottom: 10, left: 30}}
             yearSpacing={40}
             monthBorderColor="#65a5cc"
             dayBorderWidth={2}
@@ -27,9 +32,11 @@ const CalendarG = (props) => {
                     itemWidth: 42,
                     itemHeight: 36,
                     itemsSpacing: 14,
-                    itemDirection: 'right-to-left'
+                    itemDirection: 'right-to-left',
                 }
             ]}
+
+            theme={theme}
         />
     )
 }

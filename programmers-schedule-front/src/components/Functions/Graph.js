@@ -1,7 +1,7 @@
 import React from "react";
 import './Graph.css';
 import Card from "../UI/Card";
-import CalendarG from "./CalenderG";
+import CalendarG from "./CalendarG";
 
 const Graph =() =>{
     const d=[
@@ -1820,6 +1820,9 @@ const Graph =() =>{
       ];
     return(
         <Card className='graph'>
+            <div className="graphTitle">
+                Today's Record
+            </div>
             <CalendarG data={d}>
 
             </CalendarG>

@@ -36,10 +36,17 @@ const App =() =>{
 
   const getMomentBooleanHandler =(momentData)=>{
     if (momentData==='00:00:00'){
-        let tmp= 24*3600-startTimeData;
-        setAccumulateTime(prev => {
-            prev=-tmp;
-            });
+        if(buttonState===false){
+            let tmp= 24*3600-startTimeData;
+            setAccumulateTime(prev => {
+                prev=-tmp;
+                return prev
+                });
+            console.log(accumulateTime,startTimeData);
+        }
+        else{
+            setAccumulateTime(0);
+            }
         console.log('worked')
         
     }
@@ -50,9 +57,11 @@ const App =() =>{
     if (stopWatchButtonState[0] && stopWatchButtonState!==undefined){
         setAccumulateTime(prev => prev+stopWatchButtonState[1]);
         setButtonState(true);
+        console.log(true)
     }
     else{
         setButtonState(false);
+        console.log(false)
     }
   };
   

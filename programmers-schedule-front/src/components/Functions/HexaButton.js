@@ -33,8 +33,8 @@ const HexaButton = (props) =>{
                     <stop offset="1" stopColor={props.color[1]} stopOpacity="100%"/>
                     </linearGradient>
                 </defs>
-                <text id="text1" x="12" y="53" fill="#FFFFFF" fontSize="10" fontFamily="'Leckerli One', cursive" >
-                    {props.gradientName}
+                <text id="text1" x="45" y="50" dominantBaseline="middle" textAnchor="middle" fill="#FFFFFF"  fontWeight="bold" fontSize={props.fontSize}>
+                    {props.name}
                 </text>
             </svg>
             

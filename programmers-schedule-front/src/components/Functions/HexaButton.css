@@ -1,4 +1,5 @@
 
  #text1 {
     pointer-events: none;
+    user-select: none;
  }

@@ -17,13 +17,17 @@ const MusicPlayer = () =>{
         setMusicState(!musicState);
         }
         
-        
+    const musicStopClicked =() =>{
+        audioRef.current.pause();
+        audioRef.current.currentTime=0;
+        setMusicState(false);
+    }
         
         
     return (
         <Card className="music_player">
-            <button onClick={musicClicked} >{musicState?'stop':'play'}</button>
-        
+            <button onClick={musicClicked} >{musicState?'Pause':'Play'}</button>
+            <button onClick={musicStopClicked}>Stop</button>
         </Card>
         )
 };

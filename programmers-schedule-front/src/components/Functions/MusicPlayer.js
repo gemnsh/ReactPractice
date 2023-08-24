@@ -18,7 +18,6 @@ class MusicPlayer extends React.Component {
     audioRef = React.createRef()
   
     componentDidMount() {
-        console.log('Mount',this.props)
         this.setState({ tracks: this.props.tracks });
     }
   
@@ -59,7 +58,6 @@ class MusicPlayer extends React.Component {
     prevTrackHandler = () => {
       if (this.state.currentTrack > 0) {
         this.setState(prevState => ({ currentTrack: prevState.currentTrack - 1}));
-        this.audioRef.current.play()
       }
     }
   

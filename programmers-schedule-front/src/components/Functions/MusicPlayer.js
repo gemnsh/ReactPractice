@@ -52,12 +52,17 @@ class MusicPlayer extends React.Component {
         this.setState(prevState => ({ currentTrack: prevState.currentTrack + 1 }));
         //this.audioRef.current.play() //The play() request was interrupted by a new load request.에러 발생
       }
-
+      else{
+        this.setState({ currentTrack: 0 });
+      }
     }
   
     prevTrackHandler = () => {
       if (this.state.currentTrack > 0) {
         this.setState(prevState => ({ currentTrack: prevState.currentTrack - 1}));
+      }
+      else{
+        this.setState({ currentTrack: this.state.tracks.length - 1 });
       }
     }
   
@@ -96,7 +101,7 @@ class MusicPlayer extends React.Component {
               className="music_time"
               type="range"
               min={0}
-              max={duration ? duration : `${duration}`}
+              max={duration ? duration*0.99 : `${duration}`}
               step={0.01}
               value={currentTime}
               onChange={this.seekHandler}

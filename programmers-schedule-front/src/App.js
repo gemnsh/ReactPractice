@@ -85,6 +85,10 @@ const App =() =>{
             src: `${process.env.PUBLIC_URL}/0002.mp3`,
             name: 'Track 2'
         },
+        {
+            src: `${process.env.PUBLIC_URL}/0003.mp3`,
+            name: 'Track 3'
+        },
       ]}/>
     </div>
   );

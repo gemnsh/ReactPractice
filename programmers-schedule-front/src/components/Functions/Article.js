@@ -49,7 +49,7 @@ const Article = (props) =>{
                     <div className="hexButton9">
                     <HexaButton color={'#B3C6F0'} stroke='#C8E2FE' gradientName='hex_button_9' name='5' fontSize='46'/>
                     </div>
-                    
+                    <img id="nousagi_3" draggable={false} src={process.env.PUBLIC_URL+"/nousagi_02.png"}/>
             </div>
             <Card className='chartTitle'>
             </Card>

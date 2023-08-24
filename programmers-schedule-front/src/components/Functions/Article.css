@@ -154,3 +154,11 @@
     align-items: center;
     justify-content: center;
 }
+
+#nousagi_3{
+    position: absolute;
+    left :160px;
+    top: 240px;
+    width: 100px;
+    user-select: none;
+}

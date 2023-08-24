@@ -1823,6 +1823,8 @@ const Graph =() =>{
             <div className="graphTitle">
                 Today's Record
             </div>
+            <img id="pekora_1" draggable={false} src={process.env.PUBLIC_URL+"/pekora_01.png"}/>
+            <img id="nousagi_4" draggable={false} src={process.env.PUBLIC_URL+"/nousagi_01.png"}/>
             <CalendarG data={d}>
 
             </CalendarG>

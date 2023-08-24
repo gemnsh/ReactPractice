@@ -5,3 +5,19 @@
     width: 560px;
     height: 835px;
 }
+
+#nousagi_1{
+    position: absolute;
+    left :400px;
+    top: 220px;
+    width: 150px;
+    user-select: none;
+}
+
+#nousagi_2{
+    position: absolute;
+    left :330px;
+    top: 280px;
+    width: 80px;
+    user-select: none;
+}

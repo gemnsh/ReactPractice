@@ -4,3 +4,26 @@
     width : 280px;
     height: 45px;
 }
+
+.music_volume{
+    position: absolute;
+    left :160px;
+    top :2px;
+    width: 100px;
+    accent-color: #C8E2FE;
+
+}
+
+.music_time{
+    position: absolute;
+    left :20px;
+    top :22.5px;
+    width: 240px;
+    accent-color: #F7A549;
+}
+
+.volume{
+    position: absolute;
+    left : 140px;
+    top: 0px;
+}

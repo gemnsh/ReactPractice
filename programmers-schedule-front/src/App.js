@@ -10,7 +10,6 @@ import Graph from "./components/Functions/Graph";
 import TimeDisplay from "./components/Functions/TimeDisplay";
 import Article from "./components/Functions/Article";
 
-
 const App =() =>{
   const [stopWatchTimeData,setStopWatchTimeData]=useState(0);
   const [startTimeData,setStartTimeData]=useState(0);
@@ -77,7 +76,16 @@ const App =() =>{
       <TimeDisplay item={[stopWatchTimeData,accumulateTime]}/>
       <Schedule onStopWatchData ={getStopWatchHandler} onGetButtonStateData={getStopWatchButtonStateHandler} onGetStartTimeData={getStartTimeDataHandler} stopWatchTime={stopWatchTimeData} buttonStateData={buttonState}/>
       <Article item={articleData}/>
-      <MusicPlayer/>
+      <MusicPlayer tracks={[
+        {
+            src: `${process.env.PUBLIC_URL}/0001.mp3`,
+            name: 'Track 1'
+        },
+        {
+            src: `${process.env.PUBLIC_URL}/0002.mp3`,
+            name: 'Track 2'
+        },
+      ]}/>
     </div>
   );
 }

@@ -52,6 +52,21 @@ const Article = (props) =>{
                     <img id="nousagi_3" draggable={false} src={process.env.PUBLIC_URL+"/nousagi_02.png"}/>
             </div>
             <Card className='chartTitle'>
+                <div className="articleProblemNumber">
+                문제번호
+                </div>
+                <div className="articleProblemLevel">
+                레벨
+                </div>
+                <div className="articleProblemLanguage">
+                언어
+                </div>
+                <div className="articleProblemTrial">
+                시도
+                </div>
+                <div className="articleTime">
+                시간
+                </div>
             </Card>
             <div className='chartControl'>
                 <button className="chartButton"> prev </button>

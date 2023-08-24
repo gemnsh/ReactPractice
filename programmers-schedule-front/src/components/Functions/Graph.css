@@ -21,6 +21,7 @@
     position: absolute;
     left: 310px;
     width:70px;
+    user-select: none;
 }
 
 #pekora_1{
@@ -28,4 +29,5 @@
     left: 825px;
     top: 0px;
     width: 75px;
+    user-select: none;
 }

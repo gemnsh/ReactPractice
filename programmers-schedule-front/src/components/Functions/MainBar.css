@@ -4,7 +4,7 @@
 position: absolute;
 width: 1560px;
 height: 45px;
-
+background-color: #C3CFF1;
 display: flex;
 justify-content: space-between;
 flex-direction: row;
@@ -36,7 +36,7 @@ border-radius: 10px;
 .title{
     font-size: 25px;
     margin: 0 ;
-    color : white;
+    color : #5f6b8e;
     font-weight: bold;
 }
 
@@ -45,6 +45,6 @@ border-radius: 10px;
     left : 1200px;
     font-size: 25px;
     margin: 0 ;
-    color : white;
+    color : #5f6b8e;
     font-weight: bold;
 }

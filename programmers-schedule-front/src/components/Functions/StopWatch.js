@@ -45,8 +45,8 @@ const StopWatch =(props) =>{
         while (timeValue>100){
             timeValue-=100
         }
-        const colorB='ff9966'
-        const colorA='ff5e62'
+        const colorB='F7A549'
+        const colorA='E5694F'
         const cA=[parseInt(colorA.slice(0,2),16),parseInt(colorA.slice(2,4),16),parseInt(colorA.slice(4),16)];
         const cB=[parseInt(colorB.slice(0,2),16),parseInt(colorB.slice(2,4),16),parseInt(colorB.slice(4),16)];
         const newColor=[(cA[0]*timeValue+cB[0]*(100-timeValue))/100,(cA[1]*timeValue+cB[1]*(100-timeValue))/100,(cA[2]*timeValue+cB[2]*(100-timeValue))/100]

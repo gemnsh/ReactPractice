@@ -110,3 +110,12 @@
 .span{
     color:#436BE4;
 }
+
+
+#kanata_1{
+    position: absolute;
+    left: 400px;
+    top: 55px;
+    width: 80px;
+    user-select: none;
+}

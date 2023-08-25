@@ -15,7 +15,6 @@ const ArticleSpecific =(props) =>{
     if(props.specificData.id){
         return(
             <Card className='article_specific'>
-                <div>
                                 <div className="publishedDate">
                                 {dateParsed[0]}.{dateParsed[1]}.{dateParsed[2]} &nbsp; {dateParsed[3]}:{dateParsed[4]}:{dateParsed[5]}
                                 </div>
@@ -42,7 +41,7 @@ const ArticleSpecific =(props) =>{
                                 {props.specificData.articleNote}
                                 </div>
                                 </Card>
-                </div>
+                                <img id="kanata_1" draggable={false} src={process.env.PUBLIC_URL+"/image/kanata_01.png"}/>
             </Card>
         )
     }

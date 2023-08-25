@@ -17,9 +17,10 @@ const App =() =>{
   const [buttonState,setButtonState]=useState(true);
   const [articleData,setArticleData]=useState([]);
   const [specificArticleData,setSpecificArticleData]=useState([]);
+  const [page,setPage]=useState(1);
 
   const startApp =()=>{
-    axios.get("/api/list/?page=2")
+    axios.get("/api/list/?page=1")
     .then((response) => {console.log(response.data);
         setArticleData(response.data);
     }) 
@@ -28,7 +29,18 @@ const App =() =>{
         })
   
   };
+
   useEffect(startApp,[])
+  
+  useEffect(()=>{
+    axios.get("/api/list/?page="+page)
+    .then((response) => {console.log(response.data);
+        setArticleData(response.data);
+    }) 
+    .catch((Error) => {console.log(Error)
+        setArticleData([])
+        })
+  },[page])
 
   const getStopWatchHandler =(stopWatchData) => { 
     if (stopWatchData!==undefined)
@@ -72,6 +84,19 @@ const App =() =>{
     setStartTimeData(startTimeDatas);
   };
 
+  const prevPageHandler= ()=>{
+    if(page>1){
+        setPage(page-1);
+    }
+  };
+
+  const nextPageHandler= ()=>{
+    if( Math.ceil( articleData.count / 10 )>page)
+    {
+        setPage(page+1);
+    }
+  }
+
   const getArticleClickHandler =(index)=>{
     console.log(index,articleData.results[index].id,'clicked');
     axios.get("/api/article/"+articleData.results[index].id)
@@ -89,7 +114,14 @@ const App =() =>{
       <Graph />
       <TimeDisplay item={[stopWatchTimeData,accumulateTime]}/>
       <Schedule onStopWatchData ={getStopWatchHandler} onGetButtonStateData={getStopWatchButtonStateHandler} onGetStartTimeData={getStartTimeDataHandler} stopWatchTime={stopWatchTimeData} buttonStateData={buttonState}/>
-      <Article item={articleData} onArticleClick={getArticleClickHandler} specificData={specificArticleData}/>
+      <Article 
+      item={articleData}
+      onArticleClick={getArticleClickHandler}
+      specificData={specificArticleData}
+      onNextPageHandler={nextPageHandler}
+      onPrevPageHandler={prevPageHandler}
+      nowPage={page}
+      />
       <MusicPlayer tracks={[
         {
             src: `${process.env.PUBLIC_URL}/music/0001.mp3`,

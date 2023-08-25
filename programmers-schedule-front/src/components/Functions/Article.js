@@ -76,11 +76,11 @@ const Article = (props) =>{
                 </div>
             </Card>
             <div className='chartControl'>
-                <button className="chartButton"> prev </button>
+                <button className="chartButton" onClick={props.onPrevPageHandler}> prev </button>
                 <div>
-                    1
+                    {props.nowPage}
                 </div>
-                <button className="chartButton"> next </button>
+                <button className="chartButton" onClick={props.onNextPageHandler}> next </button>
             </div>
             <ArticleList item={props.item.results} onArticleClicked={getArticleClickedHandler}/>
             <ArticleSpecific  specificData={props?props.specificData:0}/>

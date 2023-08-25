@@ -9,11 +9,35 @@ import "./Dice.css";
 
 const Dice =(props)=>{
     
-    
+    switch (props.index) {
+        case 1:
+            return (
+                <Dice1 className="dice"/>
+            )
+            
+        case 2:
+            return (
+                <Dice2 className="dice"/>
+            )
+        case 3:
+            return (
+                <Dice3 className="dice"/>
+            )
+            
+        case 4:
+            return (
+                <Dice4 className="dice"/>
+            )  
+        case 5:
+            return (
+                <Dice5 className="dice"/>
+            )    
+            
+        default:
+        // do nothing
+    }
 
-    return (
-        <Dice1 className="dice"/>
-    )
+
 };
 
 export default Dice;

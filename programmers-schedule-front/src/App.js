@@ -18,6 +18,7 @@ const App =() =>{
   const [articleData,setArticleData]=useState([]);
   const [specificArticleData,setSpecificArticleData]=useState([]);
   const [page,setPage]=useState(1);
+  const [articleListClicked,setArticleListClicked]=useState(false);
 
   const startApp =()=>{
     axios.get("/api/list/?page=1")
@@ -101,6 +102,7 @@ const App =() =>{
     axios.get("/api/article/"+articleData.results[index].id)
     .then((response) => {
         setSpecificArticleData(response.data);
+        setArticleListClicked(!articleListClicked);
     }) 
     .catch((Error) => {console.log(Error)
         setSpecificArticleData([])
@@ -120,6 +122,7 @@ const App =() =>{
       onNextPageHandler={nextPageHandler}
       onPrevPageHandler={prevPageHandler}
       nowPage={page}
+      articleClickState={articleListClicked}
       />
       <MusicPlayer tracks={[
         {

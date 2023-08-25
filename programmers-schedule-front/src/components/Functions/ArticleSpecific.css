@@ -111,11 +111,21 @@
     color:#436BE4;
 }
 
+.back_button{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 425px;
+    top:85px;
+    border-radius: 10px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: #9BB6F6;
+}
 
 #kanata_1{
     position: absolute;
-    left: 400px;
-    top: 55px;
+    left: 350px;
+    top: 155px;
     width: 80px;
     user-select: none;
 }

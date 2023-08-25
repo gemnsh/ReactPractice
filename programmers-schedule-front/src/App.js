@@ -19,7 +19,7 @@ const App =() =>{
   const [specificArticleData,setSpecificArticleData]=useState([]);
 
   const startApp =()=>{
-    axios.get("/api/list/?page=1")
+    axios.get("/api/list/?page=2")
     .then((response) => {console.log(response.data);
         setArticleData(response.data);
     }) 
@@ -92,19 +92,19 @@ const App =() =>{
       <Article item={articleData} onArticleClick={getArticleClickHandler} specificData={specificArticleData}/>
       <MusicPlayer tracks={[
         {
-            src: `${process.env.PUBLIC_URL}/0001.mp3`,
+            src: `${process.env.PUBLIC_URL}/music/0001.mp3`,
             name: 'Track 1'
         },
         {
-            src: `${process.env.PUBLIC_URL}/0002.mp3`,
+            src: `${process.env.PUBLIC_URL}/music/0002.mp3`,
             name: 'Track 2'
         },
         {
-            src: `${process.env.PUBLIC_URL}/0003.mp3`,
+            src: `${process.env.PUBLIC_URL}/music/0003.mp3`,
             name: 'Track 3'
         },
         {
-            src: `${process.env.PUBLIC_URL}/0004.mp3`,
+            src: `${process.env.PUBLIC_URL}/music/0004.mp3`,
             name: 'Track 4'
         },
       ]}/>

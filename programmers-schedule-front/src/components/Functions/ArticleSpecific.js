@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "../UI/Card";
+import Dice from "./Dice";
 
 import "./ArticleSpecific.css";
 
@@ -8,30 +9,33 @@ const ArticleSpecific =(props) =>{
     return(
         <Card className='article_specific'>
             <div>
-                            <div>
-                            {props.specificData.id}
-                            </div>
-                            <div>
+                            <div className="publishedDate">
                             {props.specificData.articleTime}
                             </div>
-                            <div>
+                            <div className="card_language">
                             {props.specificData.articleProblemLanguage}
                             </div>
-                            <div>
-                            {props.specificData.articleProblemLevel}
-                            </div>
-                            <div>
+                            <Dice index={props.specificData.articleProblemLevel}/>
+                            <div className="card_problem">
                             {props.specificData.articleProblemNumber}
                             </div>
+                            <Card className="card_specific">
                             <div>
-                            {props.specificData.articleProblemTrial}
+                            {props.specificData.articleProblemTrial}회 시도
                             </div>
                             <div>
-                            {props.specificData.articleSolvingTime}
+                            {props.specificData.articleSolvingTime}초 걸렸습니다
                             </div>
-                            <div>
+                            </Card>
+                            <Card className="card_specific_note">
+                            <div className='card_note_title'>
+                            비고
+                            </div>
+                            <hr className="hr1"></hr>
+                            <div className='card_note_body'>
                             {props.specificData.articleNote}
                             </div>
+                            </Card>
             </div>
         </Card>
     )

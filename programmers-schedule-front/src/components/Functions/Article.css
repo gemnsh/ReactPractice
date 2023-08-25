@@ -21,14 +21,7 @@
 }
 
 
-.chartSpecific{
-    position: absolute;
-    left : 780px;
-    top : 20px;
-    height: 525px;
-    width: 480px;
-    background-color: #CFDAF4;
-}
+
 
 .chartControl{
     position: absolute;
@@ -54,7 +47,7 @@
     width: 250px;
     height: 525px;
 }
-.hexButton0{
+#hexButton0{
     position: absolute;
     top : 0px;
     left: 144px;
@@ -64,7 +57,7 @@
     align-items: center;
     justify-content: center;
 }
-.hexButton1{
+#hexButton1{
     position: absolute;
     top : 0px;
     left: 0px;
@@ -75,7 +68,7 @@
     justify-content: center;
 }
 
-.hexButton2{
+#hexButton2{
     position: absolute;
     top : 82px;
     left: 48px;
@@ -86,7 +79,7 @@
     justify-content: center;
 }
 
-.hexButton3{
+#hexButton3{
     position: absolute;
     top : 164px;
     left: 0px;
@@ -97,7 +90,7 @@
     justify-content: center;
 }
 
-.hexButton4{
+#hexButton4{
     position: absolute;
     top : 164px;
     left: 96px;
@@ -108,7 +101,7 @@
     justify-content: center;
 }
 
-.hexButton5{
+#hexButton5{
     position: absolute;
     top : 246px;
     left: 48px;
@@ -118,7 +111,7 @@
     align-items: center;
     justify-content: center;
 }
-.hexButton6{
+#hexButton6{
     position: absolute;
     top : 328px;
     left: 0px;
@@ -128,7 +121,7 @@
     align-items: center;
     justify-content: center;
 }
-.hexButton7{
+#hexButton7{
     position: absolute;
     top : 328px;
     left: 96px;
@@ -138,7 +131,7 @@
     align-items: center;
     justify-content: center;
 }
-.hexButton8{
+#hexButton8{
     position: absolute;
     top : 410px;
     left: 48px;
@@ -148,7 +141,7 @@
     align-items: center;
     justify-content: center;
 }
-.hexButton9{
+#hexButton9{
     position: absolute;
     top : 410px;
     left: 144px;

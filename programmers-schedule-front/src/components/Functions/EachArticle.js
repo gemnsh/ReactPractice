@@ -4,8 +4,16 @@ import moment from "moment/moment";
 import "./EachArticle.css";
 
 const EachArticle =(props) =>{
+
+    const eachArticleHandler=()=>{
+        if(props.index!==undefined){
+            props.onEachArticleClicked(props.index);
+        }
+    }
+
+
 return(
-    <div id={props.index%2==0?'eachArticle_1':'eachArticle_2'} >
+    <div id={props.index%2===0?'eachArticle_1':'eachArticle_2'} onClick={eachArticleHandler}>
         <div className="articleProblemNumber">
         {props.articleProblemNumber}
         </div>

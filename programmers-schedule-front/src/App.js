@@ -16,10 +16,13 @@ const App =() =>{
   const [accumulateTime,setAccumulateTime]=useState(0);
   const [buttonState,setButtonState]=useState(true);
   const [articleData,setArticleData]=useState([]);
+  const [specificArticleData,setSpecificArticleData]=useState([]);
+
   const startApp =()=>{
     axios.get("/api/list/?page=1")
-    .then((response) => {console.log(response.data)
-        setArticleData(response.data)}) 
+    .then((response) => {console.log(response.data);
+        setArticleData(response.data);
+    }) 
     .catch((Error) => {console.log(Error)
         setArticleData([])
         })
@@ -69,13 +72,24 @@ const App =() =>{
     setStartTimeData(startTimeDatas);
   };
 
+  const getArticleClickHandler =(index)=>{
+    console.log(index,articleData.results[index].id,'clicked');
+    axios.get("/api/article/"+articleData.results[index].id)
+    .then((response) => {console.log(response.data);
+        setSpecificArticleData(response.data);
+    }) 
+    .catch((Error) => {console.log(Error)
+        setSpecificArticleData([])
+        })
+  };
+
   return (
     <div className="App">
       <MainBar onMomentData={getMomentBooleanHandler} />
       <Graph />
       <TimeDisplay item={[stopWatchTimeData,accumulateTime]}/>
       <Schedule onStopWatchData ={getStopWatchHandler} onGetButtonStateData={getStopWatchButtonStateHandler} onGetStartTimeData={getStartTimeDataHandler} stopWatchTime={stopWatchTimeData} buttonStateData={buttonState}/>
-      <Article item={articleData}/>
+      <Article item={articleData} onArticleClick={getArticleClickHandler} specificData={specificArticleData}/>
       <MusicPlayer tracks={[
         {
             src: `${process.env.PUBLIC_URL}/0001.mp3`,
@@ -88,6 +102,10 @@ const App =() =>{
         {
             src: `${process.env.PUBLIC_URL}/0003.mp3`,
             name: 'Track 3'
+        },
+        {
+            src: `${process.env.PUBLIC_URL}/0004.mp3`,
+            name: 'Track 4'
         },
       ]}/>
     </div>

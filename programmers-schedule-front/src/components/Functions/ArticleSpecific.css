@@ -1,0 +1,9 @@
+
+.article_specific{
+    position: absolute;
+    left : 780px;
+    top : 20px;
+    height: 525px;
+    width: 480px;
+    background-color: #CFDAF4;
+}

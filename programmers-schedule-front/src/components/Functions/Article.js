@@ -16,7 +16,6 @@ const Article = (props) =>{
         let tmpHexArray=[...hArray];
         tmpHexArray[index] = !tmpHexArray[index];
         setIsHexButtonSelected(tmpHexArray);
-        console.log(index)
     };
 
     const getArticleClickedHandler=(prev)=>{

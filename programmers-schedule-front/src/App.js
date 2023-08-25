@@ -21,7 +21,7 @@ const App =() =>{
 
   const startApp =()=>{
     axios.get("/api/list/?page=1")
-    .then((response) => {console.log(response.data);
+    .then((response) => {
         setArticleData(response.data);
     }) 
     .catch((Error) => {console.log(Error)
@@ -34,7 +34,7 @@ const App =() =>{
   
   useEffect(()=>{
     axios.get("/api/list/?page="+page)
-    .then((response) => {console.log(response.data);
+    .then((response) => {
         setArticleData(response.data);
     }) 
     .catch((Error) => {console.log(Error)
@@ -57,12 +57,12 @@ const App =() =>{
                 prev=-tmp;
                 return prev
                 });
-            console.log(accumulateTime,startTimeData);
+
         }
         else{
             setAccumulateTime(0);
             }
-        console.log('worked')
+
         
     }
   };
@@ -72,11 +72,11 @@ const App =() =>{
     if (stopWatchButtonState[0] && stopWatchButtonState!==undefined){
         setAccumulateTime(prev => prev+stopWatchButtonState[1]);
         setButtonState(true);
-        console.log(true)
+
     }
     else{
         setButtonState(false);
-        console.log(false)
+
     }
   };
   
@@ -98,9 +98,8 @@ const App =() =>{
   }
 
   const getArticleClickHandler =(index)=>{
-    console.log(index,articleData.results[index].id,'clicked');
     axios.get("/api/article/"+articleData.results[index].id)
-    .then((response) => {console.log(response.data);
+    .then((response) => {
         setSpecificArticleData(response.data);
     }) 
     .catch((Error) => {console.log(Error)

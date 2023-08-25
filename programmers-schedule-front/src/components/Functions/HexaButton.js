@@ -6,7 +6,6 @@ const HexaButton = (props) =>{
     const fillName="url(#"+ props.gradientName+"_fill)";
    
     const abc =(index) =>{
-        console.log("clicked",index)
     };
 
     return(

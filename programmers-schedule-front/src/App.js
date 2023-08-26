@@ -21,7 +21,9 @@ const App =() =>{
   const [articleListClicked,setArticleListClicked]=useState(false);
   const hArray=Array(10).fill(false);
   const[isHexButtonSelected,setIsHexButtonSelected]=useState([...hArray]);
-  
+  const [searchUrl,setSearchUrl]=useState('/api/list/?')
+
+
   const startApp =()=>{
     axios.get("/api/list/?page=1")
     .then((response) => {
@@ -35,15 +37,52 @@ const App =() =>{
 
   useEffect(startApp,[])
   
+  const arrLanguage=['Python','C%2b%2b','C','Java']
+  const arrLevel=['1','2','3','4','5']
+
   useEffect(()=>{
-    axios.get("/api/list/?page="+page)
+    let tmp='/api/list/?'
+    const tmpLang='lang=';
+    const tmpLevel='level='
+    let check=0;  
+    for (let i=0;i<4;i++){
+        if(isHexButtonSelected[i])
+        {
+            tmp=tmp+tmpLang+arrLanguage[i]+'&';
+            check+=1;
+        }
+    }
+    for (let i=4;i<9;i++){
+        if(isHexButtonSelected[i])
+        {
+            tmp=tmp+tmpLevel+arrLevel[i-4]+'&';
+            check+=1;
+        }
+    }
+    if(check>0)
+    {
+        console.log(check,isHexButtonSelected)
+        setPage(1);
+        if(isHexButtonSelected[9]&&check<9)
+        {
+            let tmpHexArray=[...isHexButtonSelected];
+            tmpHexArray[9]=false;
+            setIsHexButtonSelected([...tmpHexArray]);
+        }
+    }
+    console.log(tmp)
+    setSearchUrl(tmp);
+  },[isHexButtonSelected])
+
+  useEffect(()=>{
+    axios.get(searchUrl+"page="+page)
     .then((response) => {
         setArticleData(response.data);
     }) 
     .catch((Error) => {console.log(Error)
         setArticleData([])
         })
-  },[page,isHexButtonSelected])
+  },[page,searchUrl])
 
 
 

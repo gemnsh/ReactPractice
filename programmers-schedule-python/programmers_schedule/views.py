@@ -4,7 +4,7 @@ from rest_framework import generics,serializers
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.pagination import PageNumberPagination
-from django.shortcuts import get_object_or_404
+from django.shortcuts import render,get_object_or_404
 from programmers_schedule.models import Article
 
 class ArticleListSerializer(serializers.ModelSerializer):
@@ -29,7 +29,21 @@ class ArticleListView(generics.ListAPIView):
     pagination_class = ArticlePagination
 
     def list(self,request):
-            queryset= self.get_queryset()
+            
+            lang=request.GET.getlist('lang',None)
+            level=request.GET.getlist('level',None)
+            print(lang)
+            if lang:
+                queryset=Article.objects.filter(articleProblemLanguage__in=lang).distinct()
+                if level:
+                    queryset=queryset.filter(articleProblemLevel__in=level).distinct()
+            
+            elif level:
+                queryset=Article.objects.filter(articleProblemLevel__in=level).distinct()
+            
+            if not(lang or level):
+                queryset=self.get_queryset()
+
             serializer_class = self.get_serializer_class()
             serializer = serializer_class(queryset,many=True)
 

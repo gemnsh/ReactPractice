@@ -12,7 +12,6 @@ const ArticleSpecific =(props) =>{
     useEffect(()=>{
         if(props.specificData)
         {
-        console.log('specific',props.specificData)
         setSpecificArticleData(props.specificData)}
         
     },[props.articleClickChecker])

@@ -22,7 +22,7 @@ const App =() =>{
   const hArray=Array(10).fill(false);
   const[isHexButtonSelected,setIsHexButtonSelected]=useState([...hArray]);
   const [searchUrl,setSearchUrl]=useState('/api/list/?')
-
+  const [graphData,setGraphData]=useState([])
 
   const startApp =()=>{
     axios.get("/api/list/?page=1")
@@ -32,7 +32,13 @@ const App =() =>{
     .catch((Error) => {console.log(Error)
         setArticleData([])
         })
-  
+    axios.get("/api/graph/2023")
+    .then((response) => {
+        setGraphData(response.data);
+    }) 
+    .catch((Error) => {console.log(Error)
+        setGraphData([])
+        })
   };
 
   useEffect(startApp,[])
@@ -164,7 +170,7 @@ const App =() =>{
   return (
     <div className="App">
       <MainBar onMomentData={getMomentBooleanHandler} />
-      <Graph />
+      <Graph graphDatas={graphData}/>
       <TimeDisplay item={[stopWatchTimeData,accumulateTime]}/>
       <Schedule onStopWatchData ={getStopWatchHandler} onGetButtonStateData={getStopWatchButtonStateHandler} onGetStartTimeData={getStartTimeDataHandler} stopWatchTime={stopWatchTimeData} buttonStateData={buttonState}/>
       <Article 

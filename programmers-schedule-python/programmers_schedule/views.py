@@ -4,7 +4,11 @@ from rest_framework import generics,serializers
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.pagination import PageNumberPagination
+
 from django.shortcuts import render,get_object_or_404
+from django.db.models import Count
+from django.db.models.functions import TruncDate
+
 from programmers_schedule.models import Article
 
 class ArticleListSerializer(serializers.ModelSerializer):
@@ -61,3 +65,10 @@ def getArticleDetail(request,pk):
     article = get_object_or_404(Article,pk=pk)
     serializer =ArticleDetailListSerializer(article)
     return Response(serializer.data)
+
+@api_view(['GET',])
+def getGraphData(request,pk):
+    graphDataList= Article.objects.filter(articleTime__year=pk)\
+    .annotate(day=TruncDate('articleTime')).values('day').annotate(value=Count('id')).values('day','value')
+    print(graphDataList)
+    return Response(graphDataList)

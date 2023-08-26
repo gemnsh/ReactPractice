@@ -70,7 +70,7 @@ const ArticleSpecific =(props) =>{
                                 <div className='card_note_body'>
                                 {specificData.articleNote}
                                 </div>
-                                <img id="kanata_1" draggable={false} src={process.env.PUBLIC_URL+"/image/kanata_01.png"}/>
+                                <img id="pekora_2" draggable={false} src={process.env.PUBLIC_URL+"/image/pekora_02.png"}/>
                                 </Card>
                                 
             </Card>

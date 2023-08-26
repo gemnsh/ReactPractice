@@ -1,5 +1,41 @@
 
- #text1 {
+#hex_button_0_text {
+    pointer-events: none;
+    user-select: none;
+ }
+ #hex_button_1_text {
+    pointer-events: none;
+    user-select: none;
+ }
+ #hex_button_2_text {
+    pointer-events: none;
+    user-select: none;
+ }
+ #hex_button_3_text {
+    pointer-events: none;
+    user-select: none;
+ }
+ #hex_button_4_text {
+    pointer-events: none;
+    user-select: none;
+ }
+ #hex_button_5_text {
+    pointer-events: none;
+    user-select: none;
+ }
+ #hex_button_6_text {
+    pointer-events: none;
+    user-select: none;
+ }
+ #hex_button_7_text {
+    pointer-events: none;
+    user-select: none;
+ }
+ #hex_button_8_text {
+    pointer-events: none;
+    user-select: none;
+ }
+ #hex_button_9_text {
     pointer-events: none;
     user-select: none;
  }

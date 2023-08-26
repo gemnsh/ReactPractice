@@ -19,7 +19,9 @@ const App =() =>{
   const [specificArticleData,setSpecificArticleData]=useState([]);
   const [page,setPage]=useState(1);
   const [articleListClicked,setArticleListClicked]=useState(false);
-
+  const hArray=Array(10).fill(false);
+  const[isHexButtonSelected,setIsHexButtonSelected]=useState([...hArray]);
+  
   const startApp =()=>{
     axios.get("/api/list/?page=1")
     .then((response) => {
@@ -41,7 +43,20 @@ const App =() =>{
     .catch((Error) => {console.log(Error)
         setArticleData([])
         })
-  },[page])
+  },[page,isHexButtonSelected])
+
+
+
+  const hexaButtonStateHandler= (index) =>{
+      let tmpHexArray=[...isHexButtonSelected];
+      tmpHexArray[index] = !tmpHexArray[index];
+      if (index===9){
+        for(var i=0;i<9;i++){
+            tmpHexArray[i]=tmpHexArray[9];
+        }
+      }
+    setIsHexButtonSelected([...tmpHexArray]);
+  };
 
   const getStopWatchHandler =(stopWatchData) => { 
     if (stopWatchData!==undefined)
@@ -123,6 +138,8 @@ const App =() =>{
       onPrevPageHandler={prevPageHandler}
       nowPage={page}
       articleClickState={articleListClicked}
+      onHexaButtonState={hexaButtonStateHandler}
+      hexButtonState={isHexButtonSelected}
       />
       <MusicPlayer tracks={[
         {

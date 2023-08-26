@@ -9,6 +9,7 @@
     color: white;
     font-weight: bold;
     background-color: rgb(110, 139, 243);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
     border: 0px ;
 }
 

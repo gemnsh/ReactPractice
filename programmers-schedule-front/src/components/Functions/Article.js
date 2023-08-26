@@ -9,51 +9,47 @@ import './Article.css';
 
 const Article = (props) =>{
 
-    let hArray=Array(9).fill(false);
-    const[isHexButtonSelected,setIsHexButtonSelected]=useState([...hArray]);
-
-    const hexaButtonStateHandler= (index) =>{
-        let tmpHexArray=[...hArray];
-        tmpHexArray[index] = !tmpHexArray[index];
-        setIsHexButtonSelected(tmpHexArray);
-    };
-
     const getArticleClickedHandler=(prev)=>{
         props.onArticleClick(prev);
     }
 
+
+    const getHexaButtonStateHandler=(index)=>{
+        props.onHexaButtonState(index)
+    };
+if(props.hexButtonState){
     return(
         <Card className='article' >
             <div className='buttonContainer'>
                     <div id="hexButton0">
-                    <HexaButton color={'#889ACE'} stroke='#CFDAF4' gradientName='hex_button_0' name='ALL' fontSize='26'/>
+                    <HexaButton color={'#889ACE'} stroke={props.hexButtonState[9]?'#FFFFFF':'#CFDAF4'} gradientName='hex_button_0' name='ALL' fontColor={props.hexButtonState[9]?'#FFFFFF':'#CFDAF4'} fontSize='26' onEachHexaButtonState={getHexaButtonStateHandler} num={9}/>
                     </div>
                     <div id="hexButton1">
-                    <HexaButton color={'#A6CEFA'} stroke='#CFDAF4' gradientName='hex_button_1' name='Python' fontSize='20'/>
+                    <HexaButton color={'#A6CEFA'} stroke={props.hexButtonState[0]?'#FFFFFF':'#CFDAF4'} gradientName='hex_button_1' name='Python' fontColor={props.hexButtonState[0]?'#FFFFFF':'#CFDAF4'} fontSize='20' onEachHexaButtonState={getHexaButtonStateHandler} num={0}/>
                     </div>
                     <div id="hexButton2" >
-                    <HexaButton color={'#A6CEFA'} stroke='#CFDAF4' gradientName='hex_button_2' name='C++' fontSize='26'/>
+                    <HexaButton color={'#A6CEFA'} stroke={props.hexButtonState[1]?'#FFFFFF':'#CFDAF4'} gradientName='hex_button_2' name='C++' fontColor={props.hexButtonState[1]?'#FFFFFF':'#CFDAF4'} fontSize='26' onEachHexaButtonState={getHexaButtonStateHandler} num={1}/>
                     </div>
                     <div id="hexButton3">
-                    <HexaButton color={'#A6CEFA'} stroke='#CFDAF4' gradientName='hex_button_3' name='C' fontSize='26'/>
+                    <HexaButton color={'#A6CEFA'} stroke={props.hexButtonState[2]?'#FFFFFF':'#CFDAF4'} gradientName='hex_button_3' name='C' fontColor={props.hexButtonState[2]?'#FFFFFF':'#CFDAF4'} fontSize='26' onEachHexaButtonState={getHexaButtonStateHandler} num={2}/>
                     </div>
                     <div id="hexButton4" >
-                    <HexaButton color={'#A6CEFA'} stroke='#CFDAF4' gradientName='hex_button_4' name='Java' fontSize='26'/>
+                    <HexaButton color={'#A6CEFA'} stroke={props.hexButtonState[3]?'#FFFFFF':'#CFDAF4'} gradientName='hex_button_4' name='Java' fontColor={props.hexButtonState[3]?'#FFFFFF':'#CFDAF4'} fontSize='26' onEachHexaButtonState={getHexaButtonStateHandler} num={3}/>
                     </div>
                     <div id="hexButton5" >
-                    <HexaButton color={'#B3C6F0'} stroke='#CFDAF4' gradientName='hex_button_5' name='1' fontSize='46'/>
+                    <HexaButton color={'#B3C6F0'} stroke={props.hexButtonState[4]?'#FFFFFF':'#CFDAF4'} gradientName='hex_button_5' name='1' fontColor={props.hexButtonState[4]?'#FFFFFF':'#CFDAF4'} fontSize='46' onEachHexaButtonState={getHexaButtonStateHandler} num={4}/>
                     </div>
                     <div id="hexButton6">
-                    <HexaButton color={'#B3C6F0'} stroke='#C8E2FE' gradientName='hex_button_6' name='2' fontSize='46'/>
+                    <HexaButton color={'#B3C6F0'} stroke={props.hexButtonState[5]?'#FFFFFF':'#CFDAF4'} gradientName='hex_button_6' name='2' fontColor={props.hexButtonState[5]?'#FFFFFF':'#CFDAF4'} fontSize='46' onEachHexaButtonState={getHexaButtonStateHandler} num={5}/>
                     </div>
                     <div id="hexButton7">
-                    <HexaButton color={'#B3C6F0'} stroke='#C8E2FE' gradientName='hex_button_7' name='3' fontSize='46'/>
+                    <HexaButton color={'#B3C6F0'} stroke={props.hexButtonState[6]?'#FFFFFF':'#CFDAF4'} gradientName='hex_button_7' name='3' fontColor={props.hexButtonState[6]?'#FFFFFF':'#CFDAF4'} fontSize='46' onEachHexaButtonState={getHexaButtonStateHandler} num={6}/>
                     </div>
                     <div id="hexButton8">
-                    <HexaButton color={'#B3C6F0'} stroke='#C8E2FE' gradientName='hex_button_8' name='4' fontSize='46'/>
+                    <HexaButton color={'#B3C6F0'} stroke={props.hexButtonState[7]?'#FFFFFF':'#CFDAF4'} gradientName='hex_button_8' name='4' fontColor={props.hexButtonState[7]?'#FFFFFF':'#CFDAF4'} fontSize='46' onEachHexaButtonState={getHexaButtonStateHandler} num={7}/>
                     </div>
                     <div id="hexButton9">
-                    <HexaButton color={'#B3C6F0'} stroke='#C8E2FE' gradientName='hex_button_9' name='5' fontSize='46'/>
+                    <HexaButton color={'#B3C6F0'} stroke={props.hexButtonState[8]?'#FFFFFF':'#CFDAF4'} gradientName='hex_button_9' name='5' fontColor={props.hexButtonState[8]?'#FFFFFF':'#CFDAF4'} fontSize='46' onEachHexaButtonState={getHexaButtonStateHandler} num={8}/>
                     </div>
                     <img id="nousagi_3" draggable={false} src={process.env.PUBLIC_URL+"/image/nousagi_02.png"}/>
             </div>
@@ -92,6 +88,8 @@ const Article = (props) =>{
 
         
     );
+}
+
 };
 
 export default Article;

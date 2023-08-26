@@ -32,7 +32,6 @@ class ArticleListView(generics.ListAPIView):
             
             lang=request.GET.getlist('lang',None)
             level=request.GET.getlist('level',None)
-            print(lang)
             if lang:
                 queryset=Article.objects.filter(articleProblemLanguage__in=lang).distinct()
                 if level:

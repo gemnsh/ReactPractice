@@ -61,7 +61,6 @@ const App =() =>{
     }
     if(check>0)
     {
-        console.log(check,isHexButtonSelected)
         setPage(1);
         if(isHexButtonSelected[9]&&check<9)
         {
@@ -70,7 +69,6 @@ const App =() =>{
             setIsHexButtonSelected([...tmpHexArray]);
         }
     }
-    console.log(tmp)
     setSearchUrl(tmp);
   },[isHexButtonSelected])
 

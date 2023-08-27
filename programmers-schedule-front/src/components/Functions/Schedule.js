@@ -20,6 +20,10 @@ const Schedule =(props) =>{
         props.onGetStartTimeData(startTime);
     };
 
+    const setPageHandler =(pageNumber)=>{
+        props.onSetPage(pageNumber)
+    }
+
     return(
         <Card className='schedule'>
             <div>
@@ -27,7 +31,7 @@ const Schedule =(props) =>{
                 <img id="nousagi_1" draggable={false} src={process.env.PUBLIC_URL+"/image/nousagi_01.png"}/>
                 <img id="nousagi_2" draggable={false} src={process.env.PUBLIC_URL+"/image/nousagi_02.png"}/>
             </div>
-            <NewData stopTime={props.stopWatchTime} buttonStateDatas={props.buttonStateData}/>
+            <NewData stopTime={props.stopWatchTime} buttonStateDatas={props.buttonStateData} onSetPageHandler={setPageHandler} />
         </Card>
     );
 };

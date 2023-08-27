@@ -11,6 +11,11 @@ import TimeDisplay from "./components/Functions/TimeDisplay";
 import Article from "./components/Functions/Article";
 
 const App =() =>{
+  
+  const hArray=Array(10).fill(false);
+  const arrLanguage=['Python','C%2b%2b','C','Java']
+  const arrLevel=['1','2','3','4','5']
+
   const [stopWatchTimeData,setStopWatchTimeData]=useState(0);
   const [startTimeData,setStartTimeData]=useState(0);
   const [accumulateTime,setAccumulateTime]=useState(0);
@@ -19,10 +24,9 @@ const App =() =>{
   const [specificArticleData,setSpecificArticleData]=useState([]);
   const [page,setPage]=useState(1);
   const [articleListClicked,setArticleListClicked]=useState(false);
-  const hArray=Array(10).fill(false);
   const[isHexButtonSelected,setIsHexButtonSelected]=useState([...hArray]);
-  const [searchUrl,setSearchUrl]=useState('/api/list/?')
-  const [graphData,setGraphData]=useState([])
+  const [searchUrl,setSearchUrl]=useState('/api/list/?');
+  const [graphData,setGraphData]=useState([]);
 
   const startApp =()=>{
     axios.get("/api/list/?page=1")
@@ -42,9 +46,6 @@ const App =() =>{
   };
 
   useEffect(startApp,[])
-  
-  const arrLanguage=['Python','C%2b%2b','C','Java']
-  const arrLevel=['1','2','3','4','5']
 
   useEffect(()=>{
     let tmp='/api/list/?'
@@ -67,7 +68,7 @@ const App =() =>{
     }
     if(check>0)
     {
-        setPage(1);
+        setPage(0);
         if(isHexButtonSelected[9]&&check<9)
         {
             let tmpHexArray=[...isHexButtonSelected];
@@ -79,16 +80,19 @@ const App =() =>{
   },[isHexButtonSelected])
 
   useEffect(()=>{
-    axios.get(searchUrl+"page="+page)
-    .then((response) => {
-        setArticleData(response.data);
-    }) 
-    .catch((Error) => {console.log(Error)
-        setArticleData([])
-        })
+    if(page<1){
+        setPage(1)
+    }
+    else{
+        axios.get(searchUrl+"page="+page)
+        .then((response) => {
+            setArticleData(response.data);
+        }) 
+        .catch((Error) => {console.log(Error)
+            setArticleData([])
+            })
+    }
   },[page,searchUrl])
-
-
 
   const hexaButtonStateHandler= (index) =>{
       let tmpHexArray=[...isHexButtonSelected];
@@ -172,7 +176,7 @@ const App =() =>{
       <MainBar onMomentData={getMomentBooleanHandler} />
       <Graph graphDatas={graphData}/>
       <TimeDisplay item={[stopWatchTimeData,accumulateTime]}/>
-      <Schedule onStopWatchData ={getStopWatchHandler} onGetButtonStateData={getStopWatchButtonStateHandler} onGetStartTimeData={getStartTimeDataHandler} stopWatchTime={stopWatchTimeData} buttonStateData={buttonState}/>
+      <Schedule onSetPage={setPage} onStopWatchData ={getStopWatchHandler} onGetButtonStateData={getStopWatchButtonStateHandler} onGetStartTimeData={getStartTimeDataHandler} stopWatchTime={stopWatchTimeData} buttonStateData={buttonState}/>
       <Article 
       item={articleData}
       onArticleClick={getArticleClickHandler}

@@ -70,5 +70,14 @@ def getArticleDetail(request,pk):
 def getGraphData(request,pk):
     graphDataList= Article.objects.filter(articleTime__year=pk)\
     .annotate(day=TruncDate('articleTime')).values('day').annotate(value=Count('id')).values('day','value')
-    print(graphDataList)
     return Response(graphDataList)
+
+@api_view(['POST',])
+def postArticle(request):
+    serializer = ArticleDetailListSerializer(data=request.data)
+    print(request.data)
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data)
+    print(serializer.errors)
+    return Response({'data':'실패'})

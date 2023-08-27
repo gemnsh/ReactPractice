@@ -17,7 +17,7 @@ const CalendarG = (props) => {
             from="2023-01-01"
             to="2023-12-31"
             emptyColor="#C2D4F2"
-            colors={['#F5F9BF', '#ECF67B', '#F7A549','#F9b544','#f6993b', '#E5694F','#Ec8463', '#ec5155', '#d1444e', '#D8555E', '#922e4b']}
+            colors={['#F5F9BF', '#ECF67B', '#F7A549','#F9b544','#f6993b', '#E5694F','#Ec8463', '#ec5155', '#d1444e', '#D8555E']}
             margin={{ top: 90, right: 0, bottom: 10, left: 30}}
             yearSpacing={40}
             monthBorderColor="#889ACE"

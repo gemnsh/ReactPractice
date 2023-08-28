@@ -28,3 +28,12 @@
     left : 140px;
     top: 0px;
 }
+
+.audio_control{
+    position: absolute;
+    top: 2px;
+    left : 20px;
+    width: 110px;
+    display: flex;
+    justify-content: space-between;
+}

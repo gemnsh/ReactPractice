@@ -21,8 +21,6 @@ const MainBar =(props) =>{
            </div>
            <div className="right-bar"> 
                 <button className="nav-button">1</button>
-                <button className="nav-button">2</button>
-                <button className="nav-button">3</button>
            </div>
 
         </Card>        

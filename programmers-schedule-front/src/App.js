@@ -149,8 +149,17 @@ const App =() =>{
 
   const getMomentBooleanHandler =(momentData)=>{
     if (momentData==='00:00:00'){
-        const d=new Date();
-    setNowDate(moment(d).format('YYYY-MM-DD'));
+        if(buttonState===false){
+            const tmpTime= 24*3600-startTimeData;
+            setAccumulateTime(prev => {
+                prev=-tmpTime;
+                return prev
+                });
+            }
+        else{
+            const d=new Date();
+            setNowDate(moment(d).format('YYYY-MM-DD'));
+        }
     }
   };
 
@@ -158,7 +167,8 @@ const App =() =>{
     
     if (stopWatchButtonState!==undefined){
         if(stopWatchButtonState)
-        {setButtonState(true);}
+        {
+            setButtonState(true);}
         else{
             setButtonState(false);
         }

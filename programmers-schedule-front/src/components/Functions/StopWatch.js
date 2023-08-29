@@ -20,6 +20,11 @@ const StopWatch =(props) =>{
 
     const startTimer =()=>{
         props.onGetButtonState(false);
+        const date = new Date();
+        const nowHours =String(date.getHours()).padStart(2,"0");
+        const nowMinutes =String(date.getMinutes()).padStart(2,"0");
+        const nowSeconds =String(date.getSeconds()).padStart(2,"0");
+        props.onGetStartTime(parseInt(nowHours)*3600+parseInt(nowMinutes)*60+parseInt(nowSeconds));
         increment.current = setInterval(() => {
             setTimer((timer) => timer + 1);
           }, 1000)
@@ -30,7 +35,6 @@ const StopWatch =(props) =>{
         const nowHours =String(date.getHours()).padStart(2,"0");
         const nowMinutes =String(date.getMinutes()).padStart(2,"0");
         const nowSeconds =String(date.getSeconds()).padStart(2,"0");
-        props.onGetStartTime(parseInt(nowHours)*3600+parseInt(nowMinutes)*60+parseInt(nowSeconds));
         props.onGetFormatTime(timer);
         setStartLocation((270+((nowHours*3600+nowMinutes*60+nowSeconds)/24000))%360);
     },[timer])

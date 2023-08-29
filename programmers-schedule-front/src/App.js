@@ -9,6 +9,7 @@ import Schedule from "./components/Functions/Schedule";
 import Graph from "./components/Functions/Graph";
 import TimeDisplay from "./components/Functions/TimeDisplay";
 import Article from "./components/Functions/Article";
+import moment from 'moment';
 
 const App =() =>{
   
@@ -27,6 +28,12 @@ const App =() =>{
   const[isHexButtonSelected,setIsHexButtonSelected]=useState([...hArray]);
   const [searchUrl,setSearchUrl]=useState('/api/list/?');
   const [graphData,setGraphData]=useState([]);
+  const[nowDate,setNowDate] =useState('');
+
+  const preventCloseWindow = (e: BeforeUnloadEvent) => {
+    e.preventDefault();
+    e.returnValue = ""; //Chrome에서 동작하도록; deprecated
+  };
 
   const startApp =()=>{
     axios.get("/api/list/?page=1")
@@ -43,9 +50,22 @@ const App =() =>{
     .catch((Error) => {console.log(Error)
         setGraphData([])
         })
+    const d=new Date();
+    setNowDate(moment(d).format('YYYY-MM-DD'));
   };
 
   useEffect(startApp,[])
+
+  useEffect( ()=>{
+        (() => {
+            window.addEventListener("beforeunload", preventCloseWindow);
+        })();
+            
+        return () => {
+        window.removeEventListener("beforeunload", preventCloseWindow);
+        };
+    }
+    ,[])
 
   useEffect(()=>{
     let tmp='/api/list/?'
@@ -92,7 +112,22 @@ const App =() =>{
             setArticleData([])
             })
     }
+    axios.get("/api/graph/2023")
+    .then((response) => {
+        setGraphData(response.data);
+    }) 
+    .catch((Error) => {console.log(Error)
+        setGraphData([])
+        })
   },[page,searchUrl])
+
+  useEffect(()=>{
+    axios.post("/api/returnTime/",{targetDate : nowDate})
+    .then((response)=>{
+        setAccumulateTime(response.data.sum)
+    }).catch(()=>{})
+  },[nowDate,page])
+
 
   const hexaButtonStateHandler= (index) =>{
       let tmpHexArray=[...isHexButtonSelected];
@@ -114,19 +149,8 @@ const App =() =>{
 
   const getMomentBooleanHandler =(momentData)=>{
     if (momentData==='00:00:00'){
-        if(buttonState===false){
-            let tmp= 24*3600-startTimeData;
-            setAccumulateTime(prev => {
-                prev=-tmp;
-                return prev
-                });
-
-        }
-        else{
-            setAccumulateTime(0);
-            }
-
-        
+        const d=new Date();
+        setNowDate(moment(d).format('YYYY-MM-DD'));
     }
   };
 
@@ -204,6 +228,10 @@ const App =() =>{
         {
             src: `${process.env.PUBLIC_URL}/music/0004.mp3`,
             name: 'Track 4'
+        },
+        {
+            src: `${process.env.PUBLIC_URL}/music/0005.mp3`,
+            name: 'Track 5'
         },
       ]}/>
     </div>

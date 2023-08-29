@@ -12,3 +12,7 @@ class Article(models.Model):
 
     def __str__(self):
         return str(self.articleProblemNumber)+'번 / '+self.articleNote
+    
+class AccumulateTime(models.Model):
+    keyDate=models.CharField(max_length=10)
+    dateSolvingTime=models.IntegerField()

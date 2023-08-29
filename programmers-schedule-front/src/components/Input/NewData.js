@@ -3,7 +3,7 @@ import React,{useState,useEffect} from "react";
 import axios from "axios";
 import Card from "../UI/Card";
 import MultiButton from "./MultiButton";
-
+import moment from 'moment';
 import './NewData.css';
 
 const levelArray=[1,2,3,4,5];
@@ -29,24 +29,29 @@ const NewData =(props) =>{
         event.preventDefault();
         event.target.reset()
         setA([`00:00:00`,0]);
-
+        const d=new Date()
         axios.post("/api/post/",{
             articleProblemNumber : responseBody.problemNumber,
             articleProblemLevel : responseBody.level,
             articleProblemLanguage : responseBody.language ,
             articleProblemTrial : responseBody.trial,
-            articleTime :  new Date() ,
+            articleTime :  d ,
             articleSolvingTime : a[1],
             articleNote : responseBody.problemDescription
         })
         .then((response) => {
-            console.log('성공',response.data)
             props.onSetPageHandler(0)
         }) 
-        .catch((Error) => {console.log('실패',Error)
+        .catch((Error) => {
             })
 
-
+        axios.post('/api/postDate/',{
+            startTimeData: moment(d).format('YYYY-MM-DD HH:mm:ss'),
+            problemSolvingTime: a[1],
+        }).then((response) => {
+        }) 
+        .catch((Error) => {
+            })
     };
 
     useEffect(() =>{

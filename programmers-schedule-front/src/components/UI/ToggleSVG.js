@@ -9,12 +9,10 @@ const ToggleSVG = (props) => {
         props.onIcon2Clicked()
     }
     const icon1ClickHandler = (e)=>{
-        console.log('1');
         b()
     };
 
     const icon2ClickHandler = (e)=>{
-        console.log('2');
         a()
     };
 

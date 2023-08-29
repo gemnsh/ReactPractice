@@ -6,10 +6,13 @@ from rest_framework.response import Response
 from rest_framework.pagination import PageNumberPagination
 
 from django.shortcuts import render,get_object_or_404
-from django.db.models import Count
+from django.db.models import Count,Sum
 from django.db.models.functions import TruncDate
 
-from programmers_schedule.models import Article
+from programmers_schedule.models import Article,AccumulateTime
+
+from datetime import datetime
+from datetime import timedelta
 
 class ArticleListSerializer(serializers.ModelSerializer):
 
@@ -26,6 +29,13 @@ class ArticleDetailListSerializer(serializers.ModelSerializer):
 class ArticlePagination(PageNumberPagination):
     page_size = 10
     page_size_query_param = 'page_size'
+
+class TimeSerializer(serializers.ModelSerializer):
+    
+    class Meta:
+        model=AccumulateTime
+        fields='__all__'
+
 
 class ArticleListView(generics.ListAPIView):
     queryset = Article.objects.all()
@@ -75,9 +85,61 @@ def getGraphData(request,pk):
 @api_view(['POST',])
 def postArticle(request):
     serializer = ArticleDetailListSerializer(data=request.data)
-    print(request.data)
     if serializer.is_valid():
         serializer.save()
         return Response(serializer.data)
-    print(serializer.errors)
     return Response({'data':'실패'})
+
+
+@api_view(['POST',])
+def getDateTime(request):
+
+    accTime = AccumulateTime.objects.filter(keyDate=request.data.get('targetDate'))\
+    .aggregate(sum=Sum('dateSolvingTime'))
+    return Response(accTime)
+
+
+@api_view(['POST',])
+def postTime(request):
+    time_started= request.data.get('startTimeData')
+    solveTime=int(request.data.get('problemSolvingTime'))
+
+    date_format1 = '%Y-%m-%d %H:%M:%S' #react에서 보내주는 서식에 따라 변경
+    date_format2 = '%Y-%m-%d'
+    date_started = datetime.strptime(time_started, date_format1)
+    intTime=date_started.hour*3600+date_started.minute*60+date_started.second
+    cnt=0
+    if intTime+solveTime>86400:
+        tmp_date= date_started + timedelta(days=1)
+        tmp_time= intTime+solveTime-86400
+        tmp_data={
+        'keyDate':datetime.strftime(tmp_date, date_format2),
+        'dateSolvingTime':tmp_time 
+        }
+        serializer = TimeSerializer(data=tmp_data)
+        if serializer.is_valid():
+            serializer.save()
+            cnt+=1
+        tmp_data={
+        'keyDate':datetime.strftime(date_started, date_format2),
+        'dateSolvingTime':solveTime-tmp_time 
+        }
+        serializer = TimeSerializer(data=tmp_data)
+        if serializer.is_valid():
+            serializer.save()
+            cnt+=1
+        if cnt==2:
+            return Response({'data':'성공'})
+        else:
+            return Response({'data':'실패'})
+    else:
+        tmp_data={
+        'keyDate':datetime.strftime(date_started, date_format2),
+        'dateSolvingTime':solveTime 
+        }
+        serializer = TimeSerializer(data=tmp_data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response({'data':'성공'})
+        else:
+            return Response({'data':'실패'}) 

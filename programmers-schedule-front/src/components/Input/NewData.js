@@ -55,7 +55,9 @@ const NewData =(props) =>{
     };
 
     useEffect(() =>{
-        !props.buttonStateDatas&&setA([formatTime(props.stopTime),props.stopTime])
+        if(props.stopTime>0){
+            setA([formatTime(props.stopTime),props.stopTime])
+        }
     },[props.stopTime,props.buttonStateDatas])
 
     useEffect(()=>{

@@ -19,24 +19,27 @@ const StopWatch =(props) =>{
     };
 
     const startTimer =()=>{
-        const date = new Date();
-        const nowHours =String(date.getHours()).padStart(2,"0");
-        const nowMinutes =String(date.getMinutes()).padStart(2,"0");
-        const nowSeconds =String(date.getSeconds()).padStart(2,"0");
-        props.onGetStartTime(parseInt(nowHours)*3600+parseInt(nowMinutes)*60+parseInt(nowSeconds));
-        props.onGetButtonState([false,0]);
-        setStartLocation((270+((nowHours*3600+nowMinutes*60+nowSeconds)/24000))%360);
+        props.onGetButtonState(false);
         increment.current = setInterval(() => {
             setTimer((timer) => timer + 1);
           }, 1000)
     };
 
+    useEffect(()=>{
+        const date = new Date();
+        const nowHours =String(date.getHours()).padStart(2,"0");
+        const nowMinutes =String(date.getMinutes()).padStart(2,"0");
+        const nowSeconds =String(date.getSeconds()).padStart(2,"0");
+        props.onGetStartTime(parseInt(nowHours)*3600+parseInt(nowMinutes)*60+parseInt(nowSeconds));
+        props.onGetFormatTime(timer);
+        setStartLocation((270+((nowHours*3600+nowMinutes*60+nowSeconds)/24000))%360);
+    },[timer])
 
     const resetHandler = () => {
         clearInterval(increment.current);
         setIsButtonClicked(true);
 
-        props.onGetButtonState([true,timer]);
+        props.onGetButtonState(true);
         setTimer(0);
     };
 
@@ -53,7 +56,6 @@ const StopWatch =(props) =>{
         const colorResult= [Math.round(newColor[0]).toString(16).padStart(2,'0'),Math.round(newColor[1]).toString(16).padStart(2,'0'),Math.round(newColor[2]).toString(16).padStart(2,'0'),]
         const colorOutput='#'+colorResult[0]+colorResult[1]+colorResult[2]
         
-        props.onGetFormatTime(timer);
         return [timeValue,colorOutput]
     }
 

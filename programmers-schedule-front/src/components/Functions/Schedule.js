@@ -13,7 +13,7 @@ const Schedule =(props) =>{
     };
 
     const getButtonStateHandler = (buttonState) =>{
-        props.onGetButtonStateData([...buttonState]);
+        props.onGetButtonStateData(buttonState);
     };
 
     const getStartTimeHandler =(startTime)=>{

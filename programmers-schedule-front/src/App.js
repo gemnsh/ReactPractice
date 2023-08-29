@@ -150,20 +150,18 @@ const App =() =>{
   const getMomentBooleanHandler =(momentData)=>{
     if (momentData==='00:00:00'){
         const d=new Date();
-        setNowDate(moment(d).format('YYYY-MM-DD'));
+    setNowDate(moment(d).format('YYYY-MM-DD'));
     }
   };
 
   const getStopWatchButtonStateHandler =(stopWatchButtonState)=>{
     
-    if (stopWatchButtonState[0] && stopWatchButtonState!==undefined){
-        setAccumulateTime(prev => prev+stopWatchButtonState[1]);
-        setButtonState(true);
-
-    }
-    else{
-        setButtonState(false);
-
+    if (stopWatchButtonState!==undefined){
+        if(stopWatchButtonState)
+        {setButtonState(true);}
+        else{
+            setButtonState(false);
+        }
     }
   };
   

@@ -24,7 +24,7 @@ const MultiButton =(props) =>{
                         key={index}
                         onClick={() => multiButtonHandler(index)}
                         className={isButtonSelected[index]?"multi-button__Selected":"multi-button__notSelected"}
-                        style={{width: props.widthButton}}
+                        style={isButtonSelected[index]?{backgroundColor:props.sendThemeArray.color_06,border:props.sendThemeArray.color_03,width: props.widthButton}:{backgroundColor:props.sendThemeArray.color_02,width: props.widthButton}}
                         >
                         {element}
                         </button>

@@ -16,19 +16,21 @@ const ToggleSVG = (props) => {
         a()
     };
 
-    if(props.state){
-        return(
-            <div>
-                <props.icon1 onClick={icon1ClickHandler}/>
-            </div>
-        )
-    }
-    else{
-        return(
-            <div>
-                <props.icon2 onClick={icon2ClickHandler}/>
-            </div>
-        )
+    if(props.sendThemeArray){
+        if(props.state){
+            return(
+                <div>
+                    <props.icon1 onClick={icon1ClickHandler} fill={props.sendThemeArray.color_02}/>
+                </div>
+            )
+        }
+        else{
+            return(
+                <div>
+                    <props.icon2 onClick={icon2ClickHandler} fill={props.sendThemeArray.color_02}/>
+                </div>
+            )
+        }
     }
 
 }

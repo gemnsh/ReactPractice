@@ -1,10 +1,9 @@
 /* Rectangle 4 */
 
-.main-bar {position: absolute;
+.main-bar {
 position: absolute;
 width: 1560px;
 height: 45px;
-background-color: #C3CFF1;
 display: flex;
 justify-content: space-between;
 flex-direction: row;
@@ -17,7 +16,9 @@ border-radius: 10px;
     left: 1505px;
     width: 45px;
     height: 45px;
-    justify-content: right;
+    display: flex;
+    justify-content: center;
+    top: 5%;
 
 }
 
@@ -37,7 +38,6 @@ border-radius: 10px;
 .title{
     font-size: 25px;
     margin: 0 ;
-    color : #5f6b8e;
     font-weight: bold;
 }
 
@@ -46,6 +46,5 @@ border-radius: 10px;
     left : 1400px;
     font-size: 25px;
     margin: 0 ;
-    color : #5f6b8e;
     font-weight: bold;
 }

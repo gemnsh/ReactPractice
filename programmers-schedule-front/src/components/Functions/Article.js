@@ -19,41 +19,41 @@ const Article = (props) =>{
     };
 if(props.hexButtonState){
     return(
-        <Card className='article' >
+        <Card className='article' bgColor={props.sendThemeArray.color_09}>
             <div className='buttonContainer'>
                     <div id="hexButton0">
-                    <HexaButton color={'#889ACE'} stroke={props.hexButtonState[9]?'#FFFFFF':'#CFDAF4'} gradientName='hex_button_0' name='ALL' fontColor={props.hexButtonState[9]?'#FFFFFF':'#CFDAF4'} fontSize='26' onEachHexaButtonState={getHexaButtonStateHandler} num={9}/>
+                    <HexaButton color={props.sendThemeArray.color_05} stroke={props.hexButtonState[9]?'#FFFFFF':props.sendThemeArray.color_01} gradientName='hex_button_0' name='ALL' fontColor={props.hexButtonState[9]?'#FFFFFF':props.sendThemeArray.color_01} fontSize='26' onEachHexaButtonState={getHexaButtonStateHandler} num={9}/>
                     </div>
                     <div id="hexButton1">
-                    <HexaButton color={'#A6CEFA'} stroke={props.hexButtonState[0]?'#FFFFFF':'#CFDAF4'} gradientName='hex_button_1' name='Python' fontColor={props.hexButtonState[0]?'#FFFFFF':'#CFDAF4'} fontSize='20' onEachHexaButtonState={getHexaButtonStateHandler} num={0}/>
+                    <HexaButton color={props.sendThemeArray.color_03} stroke={props.hexButtonState[0]?'#FFFFFF':props.sendThemeArray.color_01} gradientName='hex_button_1' name='Python' fontColor={props.hexButtonState[0]?'#FFFFFF':props.sendThemeArray.color_01} fontSize='20' onEachHexaButtonState={getHexaButtonStateHandler} num={0}/>
                     </div>
                     <div id="hexButton2" >
-                    <HexaButton color={'#A6CEFA'} stroke={props.hexButtonState[1]?'#FFFFFF':'#CFDAF4'} gradientName='hex_button_2' name='C++' fontColor={props.hexButtonState[1]?'#FFFFFF':'#CFDAF4'} fontSize='26' onEachHexaButtonState={getHexaButtonStateHandler} num={1}/>
+                    <HexaButton color={props.sendThemeArray.color_03} stroke={props.hexButtonState[1]?'#FFFFFF':props.sendThemeArray.color_01} gradientName='hex_button_2' name='C++' fontColor={props.hexButtonState[1]?'#FFFFFF':props.sendThemeArray.color_01} fontSize='26' onEachHexaButtonState={getHexaButtonStateHandler} num={1}/>
                     </div>
                     <div id="hexButton3">
-                    <HexaButton color={'#A6CEFA'} stroke={props.hexButtonState[2]?'#FFFFFF':'#CFDAF4'} gradientName='hex_button_3' name='C' fontColor={props.hexButtonState[2]?'#FFFFFF':'#CFDAF4'} fontSize='26' onEachHexaButtonState={getHexaButtonStateHandler} num={2}/>
+                    <HexaButton color={props.sendThemeArray.color_03} stroke={props.hexButtonState[2]?'#FFFFFF':props.sendThemeArray.color_01} gradientName='hex_button_3' name='C' fontColor={props.hexButtonState[2]?'#FFFFFF':props.sendThemeArray.color_01} fontSize='26' onEachHexaButtonState={getHexaButtonStateHandler} num={2}/>
                     </div>
                     <div id="hexButton4" >
-                    <HexaButton color={'#A6CEFA'} stroke={props.hexButtonState[3]?'#FFFFFF':'#CFDAF4'} gradientName='hex_button_4' name='Java' fontColor={props.hexButtonState[3]?'#FFFFFF':'#CFDAF4'} fontSize='26' onEachHexaButtonState={getHexaButtonStateHandler} num={3}/>
+                    <HexaButton color={props.sendThemeArray.color_03} stroke={props.hexButtonState[3]?'#FFFFFF':props.sendThemeArray.color_01} gradientName='hex_button_4' name='Java' fontColor={props.hexButtonState[3]?'#FFFFFF':props.sendThemeArray.color_01} fontSize='26' onEachHexaButtonState={getHexaButtonStateHandler} num={3}/>
                     </div>
                     <div id="hexButton5" >
-                    <HexaButton color={'#B3C6F0'} stroke={props.hexButtonState[4]?'#FFFFFF':'#CFDAF4'} gradientName='hex_button_5' name='1' fontColor={props.hexButtonState[4]?'#FFFFFF':'#CFDAF4'} fontSize='46' onEachHexaButtonState={getHexaButtonStateHandler} num={4}/>
+                    <HexaButton color={props.sendThemeArray.color_06} stroke={props.hexButtonState[4]?'#FFFFFF':props.sendThemeArray.color_01} gradientName='hex_button_5' name='1' fontColor={props.hexButtonState[4]?'#FFFFFF':props.sendThemeArray.color_01} fontSize='46' onEachHexaButtonState={getHexaButtonStateHandler} num={4}/>
                     </div>
                     <div id="hexButton6">
-                    <HexaButton color={'#B3C6F0'} stroke={props.hexButtonState[5]?'#FFFFFF':'#CFDAF4'} gradientName='hex_button_6' name='2' fontColor={props.hexButtonState[5]?'#FFFFFF':'#CFDAF4'} fontSize='46' onEachHexaButtonState={getHexaButtonStateHandler} num={5}/>
+                    <HexaButton color={props.sendThemeArray.color_06} stroke={props.hexButtonState[5]?'#FFFFFF':props.sendThemeArray.color_01} gradientName='hex_button_6' name='2' fontColor={props.hexButtonState[5]?'#FFFFFF':props.sendThemeArray.color_01} fontSize='46' onEachHexaButtonState={getHexaButtonStateHandler} num={5}/>
                     </div>
                     <div id="hexButton7">
-                    <HexaButton color={'#B3C6F0'} stroke={props.hexButtonState[6]?'#FFFFFF':'#CFDAF4'} gradientName='hex_button_7' name='3' fontColor={props.hexButtonState[6]?'#FFFFFF':'#CFDAF4'} fontSize='46' onEachHexaButtonState={getHexaButtonStateHandler} num={6}/>
+                    <HexaButton color={props.sendThemeArray.color_06} stroke={props.hexButtonState[6]?'#FFFFFF':props.sendThemeArray.color_01} gradientName='hex_button_7' name='3' fontColor={props.hexButtonState[6]?'#FFFFFF':props.sendThemeArray.color_01} fontSize='46' onEachHexaButtonState={getHexaButtonStateHandler} num={6}/>
                     </div>
                     <div id="hexButton8">
-                    <HexaButton color={'#B3C6F0'} stroke={props.hexButtonState[7]?'#FFFFFF':'#CFDAF4'} gradientName='hex_button_8' name='4' fontColor={props.hexButtonState[7]?'#FFFFFF':'#CFDAF4'} fontSize='46' onEachHexaButtonState={getHexaButtonStateHandler} num={7}/>
+                    <HexaButton color={props.sendThemeArray.color_06} stroke={props.hexButtonState[7]?'#FFFFFF':props.sendThemeArray.color_01} gradientName='hex_button_8' name='4' fontColor={props.hexButtonState[7]?'#FFFFFF':props.sendThemeArray.color_01} fontSize='46' onEachHexaButtonState={getHexaButtonStateHandler} num={7}/>
                     </div>
                     <div id="hexButton9">
-                    <HexaButton color={'#B3C6F0'} stroke={props.hexButtonState[8]?'#FFFFFF':'#CFDAF4'} gradientName='hex_button_9' name='5' fontColor={props.hexButtonState[8]?'#FFFFFF':'#CFDAF4'} fontSize='46' onEachHexaButtonState={getHexaButtonStateHandler} num={8}/>
+                    <HexaButton color={props.sendThemeArray.color_06} stroke={props.hexButtonState[8]?'#FFFFFF':props.sendThemeArray.color_01} gradientName='hex_button_9' name='5' fontColor={props.hexButtonState[8]?'#FFFFFF':props.sendThemeArray.color_01} fontSize='46' onEachHexaButtonState={getHexaButtonStateHandler} num={8}/>
                     </div>
-                    <img id="nousagi_3" draggable={false} src={process.env.PUBLIC_URL+"/image/nousagi_02.png"}/>
+                    <img id="nousagi_3" draggable={false} src={process.env.PUBLIC_URL+props.sendThemeArray.image_02}/>
             </div>
-            <Card className='chartTitle'>
+            <Card className='chartTitle' bgColor={props.sendThemeArray.color_08}>
                 <div className="articleProblemNumber">
                 문제번호
                 </div>
@@ -81,8 +81,8 @@ if(props.hexButtonState){
                     <path d="M15.795 11.272L7.795 16.272C6.79593 16.8964 5.5 16.1782 5.5 15L5.5 5.00002C5.5 3.82186 6.79593 3.1036 7.795 3.72802L15.795 8.72802C16.735 9.31552 16.735 10.6845 15.795 11.272Z" fill="#436EEA"/>
                 </svg>
             </div>
-            <ArticleList item={props.item.results} onArticleClicked={getArticleClickedHandler}/>
-            <ArticleSpecific  specificData={props?props.specificData:0} articleClickChecker={props.articleClickState}/>
+            <ArticleList item={props.item.results} onArticleClicked={getArticleClickedHandler} sendThemeArray={props.sendThemeArray}/>
+            <ArticleSpecific  specificData={props?props.specificData:0} articleClickChecker={props.articleClickState} sendThemeArray={props.sendThemeArray}/>
             
         </Card>
 

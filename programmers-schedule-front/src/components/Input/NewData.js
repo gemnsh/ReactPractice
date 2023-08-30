@@ -65,45 +65,45 @@ const NewData =(props) =>{
     },[buttonResponse1,buttonResponse2])
 
     return(
-        <Card className='new-data'>
+        <Card className='new-data' bgColor={props.sendThemeArray.color_01}>
             <form onSubmit={submitHandler}>
                 <div className='new-data__control'>
-                    <label>
+                    <label style={{color:props.sendThemeArray.color_02}}>
                         문제번호
                     </label>
-                    <input id ='pNumber' name="problemNumber" onChange ={(e) => setResponseBody({...responseBody, problemNumber: e.target.value})}/>
+                    <input id ='pNumber' name="problemNumber" style={{border:props.sendThemeArray.color_05}} onChange ={(e) => setResponseBody({...responseBody, problemNumber: e.target.value})}/>
                 </div>
                 <div className='new-data__control'>
-                    <label>
+                    <label style={{color:props.sendThemeArray.color_02}}>
                         레벨
                     </label>
-                    <MultiButton buttonArr={levelArray} onSetButtonResponse={setButtonResponse1}widthButton={62}/>
+                    <MultiButton buttonArr={levelArray} onSetButtonResponse={setButtonResponse1}widthButton={62} sendThemeArray={props.sendThemeArray}/>
                 </div>
                 <div className='new-data__control'>
-                    <label>
+                    <label style={{color:props.sendThemeArray.color_02}}>
                         언어
                     </label>
-                    <MultiButton buttonArr={langArray} onSetButtonResponse={setButtonResponse2}  widthButton={80}/>
+                    <MultiButton buttonArr={langArray} onSetButtonResponse={setButtonResponse2}  widthButton={80} sendThemeArray={props.sendThemeArray}/>
                 </div>
                 <div className='new-data__control'>
-                    <label>
+                    <label style={{color:props.sendThemeArray.color_02}}>
                         시도횟수
                     </label>
-                    <input id ='pTrial' name="trial" onChange ={(e) => setResponseBody({...responseBody, trial: e.target.value})}/>
+                    <input id ='pTrial' name="trial" style={{border:props.sendThemeArray.color_05}} onChange ={(e) => setResponseBody({...responseBody, trial: e.target.value})}/>
                 </div>
                 <div className='new-data__control'>
-                    <label>
+                    <label style={{color:props.sendThemeArray.color_02}}>
                         시간
                     </label>
-                    <div className='new-data__time'>
+                    <div className='new-data__time' style={{color:props.sendThemeArray.color_02}}>
                         {a[0]}
                     </div>
-                    <button id='submit_button' type='submit' disabled={!props.buttonStateDatas} >입력</button>
+                    <button id='submit_button' type='submit' disabled={!props.buttonStateDatas} style={props.buttonStateDatas?{border:props.sendThemeArray.color_05,backgroundColor:props.sendThemeArray.color_05}:{border:props.sendThemeArray.color_08,backgroundColor:props.sendThemeArray.color_08,color:props.sendThemeArray.color_08}}>입력</button>
                 </div>
 
                 <div className='new-data__control2'>
 
-                    <input id='pNote' name="problemDescription" placeholder="비고" onChange ={(e) => setResponseBody({...responseBody, problemDescription: e.target.value})}/>
+                    <input id='pNote' name="problemDescription" style={{border:props.sendThemeArray.color_05}} placeholder="비고" onChange ={(e) => setResponseBody({...responseBody, problemDescription: e.target.value})}/>
                 </div>
             </form>
         </Card>

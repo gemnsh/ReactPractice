@@ -16,13 +16,13 @@ const CalendarG = (props) => {
             data={[...props.data]}
             from="2023-01-01"
             to="2023-12-31"
-            emptyColor="#C2D4F2"
-            colors={['#F5F9BF', '#ECF67B', '#F7A549','#F9b544','#f6993b', '#E5694F','#Ec8463', '#ec5155', '#d1444e', '#D8555E']}
+            emptyColor={props.sendThemeArray.color_09}
+            colors={[props.sendThemeArray.calender_01,props.sendThemeArray.calender_02,props.sendThemeArray.calender_03,props.sendThemeArray.calender_04,props.sendThemeArray.calender_05,props.sendThemeArray.calender_06]}
             margin={{ top: 90, right: 0, bottom: 10, left: 30}}
             yearSpacing={40}
-            monthBorderColor="#889ACE"
+            monthBorderColor={props.sendThemeArray.color_05}
             dayBorderWidth={2}
-            dayBorderColor="#C2D4F2"
+            dayBorderColor={props.sendThemeArray.color_09}
             legends={[
                 {
                     anchor: 'bottom-right',

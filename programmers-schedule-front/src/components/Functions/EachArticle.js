@@ -13,7 +13,7 @@ const EachArticle =(props) =>{
 
 
 return(
-    <div id={props.index%2===0?'eachArticle_1':'eachArticle_2'} onClick={eachArticleHandler}>
+    <div id={props.index%2===0?'eachArticle_1':'eachArticle_2'} onClick={eachArticleHandler} style={props.index%2===0?{}:{backgroundColor:props.sendThemeArray.color_08}}>
         <div className="articleProblemNumber">
         {props.articleProblemNumber}
         </div>

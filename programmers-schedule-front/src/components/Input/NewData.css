@@ -5,7 +5,6 @@
     top :375px;
     width: 520px;
     height: 440px;
-    background-color:#CFDAF4;
 }
 
 .new-data__control label {
@@ -13,13 +12,12 @@
 
     display: block;
     font-size: 20px;
-    color:#5f6b8e;
+
   }
   
   .new-data__control input {
     font: inherit;
     border-radius: 6px;
-    border: 3px solid #889ACE;
     width: 340px;
     max-width: 100%;
   }
@@ -30,10 +28,9 @@
     font-size : 20px;
     color:white;
     border-radius: 6px;
-    border: 3px solid #889ACE;
+    border: 3px solid;
     width: 80px;
     max-width: 100%;
-    background-color: #889ACE;
     line-height: 0px;
   }
 
@@ -41,13 +38,11 @@
     font: inherit;
     font-weight: bold;
     font-size : 20px;
-    color:rgb(161, 178, 242);
     border-radius: 6px;
-    border: 3px solid rgb(110, 139, 243);
+    border: 3px solid;
     width: 80px;
     max-width: 100%;
     line-height: 0px;
-    background-color: rgb(110, 139, 243);
   }
   .new-data__control{
     display: flex;
@@ -59,7 +54,7 @@
   .new-data__control2 input {
     font: inherit;
     border-radius: 6px;
-    border: 3px solid #889ACE;
+    border: 3px solid ;
     
     height: 140px;
     width: 470px;
@@ -69,7 +64,6 @@
   }
 
   .new-data__time{
-    color:#5f6b8e;
     font-size: 20px;
     text-align: left;
     position: absolute;

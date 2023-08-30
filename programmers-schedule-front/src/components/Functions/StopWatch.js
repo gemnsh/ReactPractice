@@ -52,10 +52,10 @@ const StopWatch =(props) =>{
         while (timeValue>100){
             timeValue-=100
         }
-        const colorB='F7A549'
-        const colorA='E5694F'
-        const cA=[parseInt(colorA.slice(0,2),16),parseInt(colorA.slice(2,4),16),parseInt(colorA.slice(4),16)];
-        const cB=[parseInt(colorB.slice(0,2),16),parseInt(colorB.slice(2,4),16),parseInt(colorB.slice(4),16)];
+        const colorB=props.sendThemeArray.calender_01
+        const colorA=props.sendThemeArray.calender_06
+        const cA=[parseInt(colorA.slice(1,3),16),parseInt(colorA.slice(3,5),16),parseInt(colorA.slice(5),16)];
+        const cB=[parseInt(colorB.slice(1,3),16),parseInt(colorB.slice(3,5),16),parseInt(colorB.slice(5),16)];
         const newColor=[(cA[0]*timeValue+cB[0]*(100-timeValue))/100,(cA[1]*timeValue+cB[1]*(100-timeValue))/100,(cA[2]*timeValue+cB[2]*(100-timeValue))/100]
         const colorResult= [Math.round(newColor[0]).toString(16).padStart(2,'0'),Math.round(newColor[1]).toString(16).padStart(2,'0'),Math.round(newColor[2]).toString(16).padStart(2,'0'),]
         const colorOutput='#'+colorResult[0]+colorResult[1]+colorResult[2]
@@ -66,9 +66,9 @@ const StopWatch =(props) =>{
 
     return(
         <div>
-            <button onClick={buttonHandler} className="stop-watch__button"> {isButtonClicked?'START':'END'}</button>
+            <button onClick={buttonHandler} className="stop-watch__button" style={{backgroundColor:props.sendThemeArray.color_11}}> {isButtonClicked?'START':'END'}</button>
             <div className="stop-watch__circle">
-                <TimeChart start={startLocation} value={formatTime()[0]} color={formatTime()[1]}>
+                <TimeChart start={startLocation} value={formatTime()[0]} color={formatTime()[1]} sendThemeArray={props.sendThemeArray}>
                 </TimeChart>
             </div>
         </div>

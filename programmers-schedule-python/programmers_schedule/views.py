@@ -9,7 +9,7 @@ from django.shortcuts import render,get_object_or_404
 from django.db.models import Count,Sum
 from django.db.models.functions import TruncDate
 
-from programmers_schedule.models import Article,AccumulateTime
+from programmers_schedule.models import Article,AccumulateTime,ColorTheme
 
 from datetime import datetime
 from datetime import timedelta
@@ -36,6 +36,11 @@ class TimeSerializer(serializers.ModelSerializer):
         model=AccumulateTime
         fields='__all__'
 
+class ColorThemeSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model=ColorTheme
+        fields='__all__'
 
 class ArticleListView(generics.ListAPIView):
     queryset = Article.objects.all()
@@ -143,3 +148,9 @@ def postTime(request):
             return Response({'data':'성공'})
         else:
             return Response({'data':'실패'}) 
+        
+@api_view(['GET',])
+def getColorTheme(request,pk):
+    theme = get_object_or_404(ColorTheme,pk=pk)
+    serializer =ColorThemeSerializer(theme)
+    return Response(serializer.data)

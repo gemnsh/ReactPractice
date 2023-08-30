@@ -15,7 +15,7 @@ const ArticleList = (props) =>{
         articleData=[...props.item]
     }
     return(
-        <Card className='chartBody'>
+        <Card className='chartBody' bgColor={props.sendThemeArray.color_01}>
             {
                 articleData.map((element,index)=>{
                     return (
@@ -27,6 +27,7 @@ const ArticleList = (props) =>{
                         articleProblemTrial={element.articleProblemTrial}
                         articleTime={element.articleTime}
                         index={index}
+                        sendThemeArray={props.sendThemeArray}
                         />
                     )
                 })

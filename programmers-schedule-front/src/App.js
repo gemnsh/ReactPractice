@@ -1,5 +1,6 @@
 import React,{useState,useEffect} from "react";
 import axios from "axios";
+import moment from 'moment';
 
 import './App.css';
 
@@ -9,7 +10,7 @@ import Schedule from "./components/Functions/Schedule";
 import Graph from "./components/Functions/Graph";
 import TimeDisplay from "./components/Functions/TimeDisplay";
 import Article from "./components/Functions/Article";
-import moment from 'moment';
+
 
 const App =() =>{
   
@@ -29,6 +30,32 @@ const App =() =>{
   const [searchUrl,setSearchUrl]=useState('/api/list/?');
   const [graphData,setGraphData]=useState([]);
   const[nowDate,setNowDate] =useState('');
+  const[themeArray,setThemeArray]=useState({
+    "id": 1,
+    "color_01": "#CFDAF4",
+    "color_02": "#5f6b8e",
+    "color_03": "#436BE4",
+    "color_04": "#9BB6F6",
+    "color_05": "#889ACE",
+    "color_06": "#436EEA",
+    "color_07": "#F7A549",
+    "color_08": "#8491C9",
+    "color_09": "#C3CFF1",
+    "color_10": "#8491C9",
+    "color_11": "#6e8bf3",
+    "color_12": "#D5E9FC",
+    "calender_01": "#fde5c8",
+    "calender_02": "#faca8d",
+    "calender_03": "#f7a549",
+    "calender_04": "#f58c2a",
+    "calender_05": "#ef6711",
+    "calender_06": "#d3480c",
+    "image_01": "/image/nousagi_01.png",
+    "image_02": "/image/nousagi_02.png",
+    "image_03": "/image/pekora_02.png"
+});
+
+  const[themeButtonState,setThemeButtonState]=useState(true)
 
   const preventCloseWindow = (e: BeforeUnloadEvent) => {
     e.preventDefault();
@@ -36,25 +63,55 @@ const App =() =>{
   };
 
   const startApp =()=>{
+    axios.get("/api/color/1")
+    .then((response) => {
+        setThemeArray(response.data);
+        console.log(response.data)
+    }) 
+    .catch((Error) => {console.log(Error)
+        setArticleData({})
+        })
     axios.get("/api/list/?page=1")
     .then((response) => {
         setArticleData(response.data);
     }) 
     .catch((Error) => {console.log(Error)
-        setArticleData([])
+        setArticleData({})
         })
     axios.get("/api/graph/2023")
     .then((response) => {
         setGraphData(response.data);
     }) 
     .catch((Error) => {console.log(Error)
-        setGraphData([])
+        setGraphData({})
         })
     const d=new Date();
     setNowDate(moment(d).format('YYYY-MM-DD'));
   };
 
   useEffect(startApp,[])
+
+  useEffect(()=>{
+    if(themeButtonState){
+        axios.get("/api/color/1")
+    .then((response) => {
+        setThemeArray(response.data);
+        console.log(response.data)
+    }) 
+    .catch((Error) => {console.log(Error)
+        setArticleData({})
+        })
+    }
+    else{
+        axios.get("/api/color/2")
+        .then((response) => {
+            setThemeArray(response.data);
+        }) 
+        .catch((Error) => {console.log(Error)
+            setArticleData({})
+            })
+    }
+  },[ themeButtonState])
 
   useEffect( ()=>{
         (() => {
@@ -205,10 +262,18 @@ const App =() =>{
 
   return (
     <div className="App">
-      <MainBar onMomentData={getMomentBooleanHandler} />
-      <Graph graphDatas={graphData}/>
-      <TimeDisplay item={[stopWatchTimeData,accumulateTime]}/>
-      <Schedule onSetPage={setPage} onStopWatchData ={getStopWatchHandler} onGetButtonStateData={getStopWatchButtonStateHandler} onGetStartTimeData={getStartTimeDataHandler} stopWatchTime={stopWatchTimeData} buttonStateData={buttonState}/>
+      <MainBar onMomentData={getMomentBooleanHandler} sendThemeArray={themeArray} setThemeButtonStateData={setThemeButtonState} themeButtonStateData={themeButtonState}/>
+      <Graph graphDatas={graphData} sendThemeArray={themeArray}/>
+      <TimeDisplay item={[stopWatchTimeData,accumulateTime]} sendThemeArray={themeArray}/>
+      <Schedule 
+      onSetPage={setPage} 
+      onStopWatchData ={getStopWatchHandler} 
+      onGetButtonStateData={getStopWatchButtonStateHandler} 
+      onGetStartTimeData={getStartTimeDataHandler} 
+      stopWatchTime={stopWatchTimeData} 
+      buttonStateData={buttonState}
+      sendThemeArray={themeArray}
+      />
       <Article 
       item={articleData}
       onArticleClick={getArticleClickHandler}
@@ -219,6 +284,7 @@ const App =() =>{
       articleClickState={articleListClicked}
       onHexaButtonState={hexaButtonStateHandler}
       hexButtonState={isHexButtonSelected}
+      sendThemeArray={themeArray}
       />
       <MusicPlayer tracks={[
         {
@@ -241,7 +307,9 @@ const App =() =>{
             src: `${process.env.PUBLIC_URL}/music/0005.mp3`,
             name: 'Track 5'
         },
-      ]}/>
+      ]}
+      sendThemeArray={themeArray}
+      />
     </div>
   );
 }

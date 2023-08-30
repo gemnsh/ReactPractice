@@ -11,7 +11,7 @@ const TimeChart =(props) =>{
             ]}
             reveal={props.value}
             lineWidth={10}
-            background="#ddddfd"
+            background={props.sendThemeArray.color_03}
             animate
             rounded
             startAngle={props.start}

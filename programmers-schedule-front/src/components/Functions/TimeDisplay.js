@@ -12,12 +12,16 @@ const TimeDisplay = (props) =>{
     }
 
     return(
-        <Card className='time-display'>
-            <Card className='time-display__upper'>
+        <Card className='time-display' bgColor={props.sendThemeArray.color_09}>
+            <Card className='time-display__upper' bgColor={props.sendThemeArray.color_12} >
+                <div style={{color:props.sendThemeArray.color_08}}>
                 {formatTime(props.item[0])}
+                </div>
             </Card>
-            <Card className='time-display__lower'>
+            <Card className='time-display__lower' bgColor={props.sendThemeArray.color_12}>
+            <div style={{color:props.sendThemeArray.color_08}}>
                 {formatTime(props.item[0]+props.item[1])}
+                </div>
             </Card>
         </Card>
     );

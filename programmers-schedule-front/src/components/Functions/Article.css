@@ -4,7 +4,6 @@
     top: 335px;
     width: 1280px;
     height: 565px;
-    background-color: #ACC0F1;
 }
 
 .chartTitle{
@@ -13,7 +12,6 @@
     top : 20px;
     height: 45px;
     width: 470px;
-    background-color: #8491C9;
     color: white;
     display: flex;
     justify-content: center;

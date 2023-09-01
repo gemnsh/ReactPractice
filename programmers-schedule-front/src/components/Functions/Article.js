@@ -19,7 +19,7 @@ const Article = (props) =>{
     };
 if(props.hexButtonState){
     return(
-        <Card className='article' bgColor={props.sendThemeArray.color_09}>
+        <Card className='article' bgColor={props.sendThemeArray.color_11}>
             <div className='buttonContainer'>
                     <div id="hexButton0">
                     <HexaButton color={props.sendThemeArray.color_05} stroke={props.hexButtonState[9]?'#FFFFFF':props.sendThemeArray.color_01} gradientName='hex_button_0' name='ALL' fontColor={props.hexButtonState[9]?'#FFFFFF':props.sendThemeArray.color_01} fontSize='26' onEachHexaButtonState={getHexaButtonStateHandler} num={9}/>
@@ -72,13 +72,13 @@ if(props.hexButtonState){
             </Card>
             <div className='chartControl'>
                 <svg width="35px" height="35px" onClick={props.onPrevPageHandler} viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M4.205 8.72805L12.205 3.72805C13.2041 3.10363 14.5 3.82189 14.5 5.00004V15C14.5 16.1782 13.2041 16.8965 12.205 16.272L4.205 11.272C3.265 10.6845 3.265 9.31555 4.205 8.72805Z" fill="#436EEA"/>
+                    <path d="M4.205 8.72805L12.205 3.72805C13.2041 3.10363 14.5 3.82189 14.5 5.00004V15C14.5 16.1782 13.2041 16.8965 12.205 16.272L4.205 11.272C3.265 10.6845 3.265 9.31555 4.205 8.72805Z" fill='#ffffff'/>
                 </svg>
-                <div>
+                <div style={{color:'#ffffff'}}>
                     {props.nowPage}
                 </div>
                 <svg width="35px" height="35px" onClick={props.onNextPageHandler} viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M15.795 11.272L7.795 16.272C6.79593 16.8964 5.5 16.1782 5.5 15L5.5 5.00002C5.5 3.82186 6.79593 3.1036 7.795 3.72802L15.795 8.72802C16.735 9.31552 16.735 10.6845 15.795 11.272Z" fill="#436EEA"/>
+                    <path d="M15.795 11.272L7.795 16.272C6.79593 16.8964 5.5 16.1782 5.5 15L5.5 5.00002C5.5 3.82186 6.79593 3.1036 7.795 3.72802L15.795 8.72802C16.735 9.31552 16.735 10.6845 15.795 11.272Z" fill='#ffffff'/>
                 </svg>
             </div>
             <ArticleList item={props.item.results} onArticleClicked={getArticleClickedHandler} sendThemeArray={props.sendThemeArray}/>

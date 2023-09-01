@@ -18,7 +18,7 @@ const HexaButton = (props) =>{
                     <path d="M42.25 4.05181L8.94873 23.2783C6.62822 24.6181 5.19873 27.094 5.19873 29.7735V68.2265C5.19873 70.906 6.62822 73.3819 8.94873 74.7217L42.25 93.9482C44.5705 95.2879 47.4295 95.2879 49.75 93.9482L83.0513 74.7217C85.3718 73.3819 86.8013 70.906 86.8013 68.2265V29.7735C86.8013 27.094 85.3718 24.6181 83.0513 23.2783L49.75 4.05182C47.4295 2.71207 44.5705 2.71207 42.25 4.05181Z" stroke={props.stroke} strokeWidth="5"/>
                 </g>
                 <defs>
-                    <filter id={props.gradientName+'_fill'} x="0.69873" y="0.547005" width="94.6025" height="104.906" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                    <filter id={props.gradientName+'_fill'} x="0.69873" y="0.546997" width="94.6025" height="104.906" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
                         <feFlood floodOpacity="0" result="BackgroundImageFix"/>
                         <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
                         <feOffset dx="2" dy="4"/>

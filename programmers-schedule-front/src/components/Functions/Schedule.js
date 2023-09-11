@@ -17,13 +17,17 @@ const Schedule =(props) =>{
     };
 
     const getStartTimeHandler =(startTime)=>{
-        props.onGetStartTimeData(startTime);
+        props.onGetStartTimeData([...startTime]);
     };
 
     const setPageHandler =(pageNumber)=>{
         props.onSetPage(pageNumber)
     }
 
+    const setSubmitStateHandler = (t)=>{
+        props.onGetSubmitButtonState(t)
+    }
+    
     return(
         <Card className='schedule' bgColor={props.sendThemeArray.color_09}>
             
@@ -31,7 +35,7 @@ const Schedule =(props) =>{
                 <img id="nousagi_1" draggable={false} src={process.env.PUBLIC_URL+props.sendThemeArray.image_04}/>
                 <img id="nousagi_2" draggable={false} src={process.env.PUBLIC_URL+props.sendThemeArray.image_02}/>
             
-            <NewData stopTime={props.stopWatchTime} buttonStateDatas={props.buttonStateData} onSetPageHandler={setPageHandler} sendThemeArray={props.sendThemeArray}/>
+            <NewData stopTime={props.stopWatchTime} buttonStateDatas={props.buttonStateData}  onSubmitButtonStateHandler={setSubmitStateHandler} onSetPageHandler={setPageHandler} startTimeData={props.startTimeDatas} sendThemeArray={props.sendThemeArray}/>
         </Card>
     );
 };

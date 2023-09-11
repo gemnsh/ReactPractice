@@ -19,9 +19,10 @@ const App =() =>{
   const arrLevel=['1','2','3','4','5']
 
   const [stopWatchTimeData,setStopWatchTimeData]=useState(0);
-  const [startTimeData,setStartTimeData]=useState(0);
+  const [startTimeData,setStartTimeData]=useState([]);
   const [accumulateTime,setAccumulateTime]=useState(0);
   const [buttonState,setButtonState]=useState(true);
+  const [midnightState,setMidnightState]=useState(true);
   const [articleData,setArticleData]=useState([]);
   const [specificArticleData,setSpecificArticleData]=useState([]);
   const [page,setPage]=useState(1);
@@ -56,6 +57,7 @@ const App =() =>{
 });
 
   const[themeButtonState,setThemeButtonState]=useState(true)
+  const[submitButtonState,setSubmitButtionState]=useState(true)
 
   const preventCloseWindow = (e: BeforeUnloadEvent) => {
     e.preventDefault();
@@ -66,7 +68,6 @@ const App =() =>{
     axios.get("/api/color/1")
     .then((response) => {
         setThemeArray(response.data);
-        console.log(response.data)
     }) 
     .catch((Error) => {console.log(Error)
         setArticleData({})
@@ -96,7 +97,6 @@ const App =() =>{
         axios.get("/api/color/1")
     .then((response) => {
         setThemeArray(response.data);
-        console.log(response.data)
     }) 
     .catch((Error) => {console.log(Error)
         setArticleData({})
@@ -181,10 +181,24 @@ const App =() =>{
   useEffect(()=>{
     axios.post("/api/returnTime/",{targetDate : nowDate})
     .then((response)=>{
-        setAccumulateTime(response.data.sum)
+        if(response.data.sum){
+            setAccumulateTime(response.data.sum)
+        }
+        else{
+            setAccumulateTime(0)
+        }
     }).catch(()=>{})
-  },[nowDate,page])
+  },[nowDate,buttonState,submitButtonState])
 
+
+  useEffect(()=>{
+    const d=new Date();
+    setNowDate(moment(d).format('YYYY-MM-DD'));
+    if(buttonState===false){
+        const tmpTime= 24*3600-startTimeData[0];
+        setAccumulateTime(-tmpTime);
+    }
+  },[midnightState])
 
   const hexaButtonStateHandler= (index) =>{
       let tmpHexArray=[...isHexButtonSelected];
@@ -207,16 +221,8 @@ const App =() =>{
   const getMomentBooleanHandler =(momentData)=>{
     if (momentData==='00:00:00'){
         if(buttonState===false){
-            const tmpTime= 24*3600-startTimeData;
-            setAccumulateTime(prev => {
-                prev=-tmpTime;
-                return prev
-                });
+            setMidnightState(prev=>!prev)
             }
-        else{
-            const d=new Date();
-            setNowDate(moment(d).format('YYYY-MM-DD'));
-        }
     }
   };
 
@@ -233,7 +239,7 @@ const App =() =>{
   };
   
   const getStartTimeDataHandler =(startTimeDatas) =>{
-    setStartTimeData(startTimeDatas);
+    setStartTimeData([...startTimeDatas]);
   };
 
   const prevPageHandler= ()=>{
@@ -270,9 +276,12 @@ const App =() =>{
       onStopWatchData ={getStopWatchHandler} 
       onGetButtonStateData={getStopWatchButtonStateHandler} 
       onGetStartTimeData={getStartTimeDataHandler} 
+      onGetSubmitButtonState={setSubmitButtionState}
       stopWatchTime={stopWatchTimeData} 
       buttonStateData={buttonState}
       sendThemeArray={themeArray}
+      startTimeDatas={startTimeData}
+
       />
       <Article 
       item={articleData}

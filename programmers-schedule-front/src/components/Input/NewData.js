@@ -46,12 +46,14 @@ const NewData =(props) =>{
             })
 
         axios.post('/api/postDate/',{
-            startTimeData: moment(d).format('YYYY-MM-DD HH:mm:ss'),
+            startTimeData: moment(props.startTimeData[1]).format('YYYY-MM-DD HH:mm:ss'),
             problemSolvingTime: a[1],
         }).then((response) => {
+            props.onSubmitButtonStateHandler(prev => !prev)
         }) 
         .catch((Error) => {
             })
+        //console.log(props.startTimeData)
     };
 
     useEffect(() =>{

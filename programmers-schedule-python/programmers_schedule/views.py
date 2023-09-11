@@ -61,7 +61,7 @@ class ArticleListView(generics.ListAPIView):
             
             if not(lang or level):
                 queryset=self.get_queryset()
-
+            queryset=queryset.order_by('-id')
             serializer_class = self.get_serializer_class()
             serializer = serializer_class(queryset,many=True)
 
@@ -113,6 +113,8 @@ def postTime(request):
     date_format2 = '%Y-%m-%d'
     date_started = datetime.strptime(time_started, date_format1)
     intTime=date_started.hour*3600+date_started.minute*60+date_started.second
+    print(time_started)
+    print(date_started.hour,date_started.minute,date_started.second)
     cnt=0
     if intTime+solveTime>86400:
         tmp_date= date_started + timedelta(days=1)

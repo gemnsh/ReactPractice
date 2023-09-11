@@ -24,7 +24,7 @@ const StopWatch =(props) =>{
         const nowMinutes =String(date.getMinutes()).padStart(2,"0");
         const nowSeconds =String(date.getSeconds()).padStart(2,"0");
         setStartLocation((((nowHours*3600+nowMinutes*60+nowSeconds)/24000))%360);
-        props.onGetStartTime(parseInt(nowHours)*3600+parseInt(nowMinutes)*60+parseInt(nowSeconds));
+        props.onGetStartTime([parseInt(nowHours)*3600+parseInt(nowMinutes)*60+parseInt(nowSeconds),date]);
         increment.current = setInterval(() => {
             setTimer((timer) => timer + 1);
           }, 1000)

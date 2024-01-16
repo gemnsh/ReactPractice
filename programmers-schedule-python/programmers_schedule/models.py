@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 class Article(models.Model):
     articleProblemNumber=models.IntegerField()
-    articleProblemLevel=models.IntegerField()
+    articleProblemLevel=models.CharField(max_length=4)
     articleProblemLanguage=models.CharField(max_length=8)
     articleProblemTrial=models.IntegerField()
     articleTime=models.DateTimeField('date published')

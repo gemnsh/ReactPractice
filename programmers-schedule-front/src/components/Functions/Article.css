@@ -151,11 +151,13 @@
     align-items: center;
     justify-content: center;
 }
-
-#nousagi_3{
+#hexButton10{
     position: absolute;
-    left :160px;
-    top: 240px;
+    top : 246px;
+    left: 144px;
     width: 100px;
-    user-select: none;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

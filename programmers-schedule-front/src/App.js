@@ -14,9 +14,9 @@ import Article from "./components/Functions/Article";
 
 const App =() =>{
   
-  const hArray=Array(10).fill(false);
+  const hArray=Array(11).fill(false);
   const arrLanguage=['Python','C%2b%2b','C','Java']
-  const arrLevel=['1','2','3','4','5']
+  const arrLevel=['1','2','3','4','5','백준']
 
   const [stopWatchTimeData,setStopWatchTimeData]=useState(0);
   const [startTimeData,setStartTimeData]=useState([]);
@@ -139,7 +139,7 @@ const App =() =>{
             check+=1;
         }
     }
-    for (let i=4;i<9;i++){
+    for (let i=4;i<10;i++){
         if(isHexButtonSelected[i])
         {
             tmp=tmp+tmpLevel+arrLevel[i-4]+'&';
@@ -149,10 +149,10 @@ const App =() =>{
     if(check>0)
     {
         setPage(0);
-        if(isHexButtonSelected[9]&&check<9)
+        if(isHexButtonSelected[10]&&check<10)
         {
             let tmpHexArray=[...isHexButtonSelected];
-            tmpHexArray[9]=false;
+            tmpHexArray[10]=false;
             setIsHexButtonSelected([...tmpHexArray]);
         }
     }
@@ -212,9 +212,9 @@ const App =() =>{
   const hexaButtonStateHandler= (index) =>{
       let tmpHexArray=[...isHexButtonSelected];
       tmpHexArray[index] = !tmpHexArray[index];
-      if (index===9){
-        for(var i=0;i<9;i++){
-            tmpHexArray[i]=tmpHexArray[9];
+      if (index===10){
+        for(var i=0;i<10;i++){
+            tmpHexArray[i]=tmpHexArray[10];
         }
       }
     setIsHexButtonSelected([...tmpHexArray]);

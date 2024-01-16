@@ -22,7 +22,7 @@ if(props.hexButtonState){
         <Card className='article' bgColor={props.sendThemeArray.color_11}>
             <div className='buttonContainer'>
                     <div id="hexButton0">
-                    <HexaButton color={props.sendThemeArray.color_05} stroke={props.hexButtonState[9]?'#FFFFFF':props.sendThemeArray.color_01} gradientName='hex_button_0' name='ALL' fontColor={props.hexButtonState[9]?'#FFFFFF':props.sendThemeArray.color_01} fontSize='26' onEachHexaButtonState={getHexaButtonStateHandler} num={9}/>
+                    <HexaButton color={props.sendThemeArray.color_05} stroke={props.hexButtonState[10]?'#FFFFFF':props.sendThemeArray.color_01} gradientName='hex_button_0' name='ALL' fontColor={props.hexButtonState[10]?'#FFFFFF':props.sendThemeArray.color_01} fontSize='26' onEachHexaButtonState={getHexaButtonStateHandler} num={10}/>
                     </div>
                     <div id="hexButton1">
                     <HexaButton color={props.sendThemeArray.color_03} stroke={props.hexButtonState[0]?'#FFFFFF':props.sendThemeArray.color_01} gradientName='hex_button_1' name='Python' fontColor={props.hexButtonState[0]?'#FFFFFF':props.sendThemeArray.color_01} fontSize='20' onEachHexaButtonState={getHexaButtonStateHandler} num={0}/>
@@ -51,7 +51,9 @@ if(props.hexButtonState){
                     <div id="hexButton9">
                     <HexaButton color={props.sendThemeArray.color_06} stroke={props.hexButtonState[8]?'#FFFFFF':props.sendThemeArray.color_01} gradientName='hex_button_9' name='5' fontColor={props.hexButtonState[8]?'#FFFFFF':props.sendThemeArray.color_01} fontSize='46' onEachHexaButtonState={getHexaButtonStateHandler} num={8}/>
                     </div>
-                    <img id="nousagi_3" draggable={false} src={process.env.PUBLIC_URL+props.sendThemeArray.image_02}/>
+                    <div id="hexButton10">
+                    <HexaButton color={props.sendThemeArray.color_06} stroke={props.hexButtonState[9]?'#FFFFFF':props.sendThemeArray.color_01} gradientName='hex_button_10' name='백준' fontColor={props.hexButtonState[9]?'#FFFFFF':props.sendThemeArray.color_01} fontSize='30' onEachHexaButtonState={getHexaButtonStateHandler} num={9}/>
+                    </div>
             </div>
             <Card className='chartTitle' bgColor={props.sendThemeArray.color_08}>
                 <div className="articleProblemNumber">

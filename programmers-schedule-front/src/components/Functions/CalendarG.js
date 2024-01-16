@@ -10,7 +10,6 @@ const CalendarG = (props) => {
     const theme = {
         labels: { text: { fontSize: 15, fill: "#ffffff" } }
         }
-        console.log([...props.data])
     return (
             <ResponsiveCalendar
             data={[...props.data]}

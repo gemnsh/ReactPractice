@@ -6,7 +6,7 @@ import MultiButton from "./MultiButton";
 import moment from 'moment';
 import './NewData.css';
 
-const levelArray=[1,2,3,4,5];
+const levelArray=[1,2,3,4,5,'백준'];
 const langArray=['C','C++','Python','Java'];
 
 const NewData =(props) =>{
@@ -79,7 +79,7 @@ const NewData =(props) =>{
                     <label style={{color:props.sendThemeArray.color_02}}>
                         레벨
                     </label>
-                    <MultiButton buttonArr={levelArray} onSetButtonResponse={setButtonResponse1}widthButton={62} sendThemeArray={props.sendThemeArray}/>
+                    <MultiButton buttonArr={levelArray} onSetButtonResponse={setButtonResponse1}widthButton={50} sendThemeArray={props.sendThemeArray}/>
                 </div>
                 <div className='new-data__control'>
                     <label style={{color:props.sendThemeArray.color_02}}>

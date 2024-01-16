@@ -83,8 +83,7 @@ def getArticleDetail(request,pk):
 
 @api_view(['GET',])
 def getGraphData(request,pk):
-    graphDataList= Article.objects.filter(articleTime__year=pk)\
-    .annotate(day=TruncDate('articleTime')).values('day').annotate(value=Count('id')).values('day','value')
+    graphDataList= Article.objects.filter(articleTime__year=pk).annotate(day=TruncDate('articleTime')).values('day').annotate(value=Count('id')).values('day','value')
     return Response(graphDataList)
 
 @api_view(['POST',])
@@ -113,12 +112,11 @@ def postTime(request):
     date_format2 = '%Y-%m-%d'
     date_started = datetime.strptime(time_started, date_format1)
     intTime=date_started.hour*3600+date_started.minute*60+date_started.second
-    print(time_started)
-    print(date_started.hour,date_started.minute,date_started.second)
     cnt=0
     if intTime+solveTime>86400:
         tmp_date= date_started + timedelta(days=1)
         tmp_time= intTime+solveTime-86400
+        print('첫번째 시간',tmp_time)
         tmp_data={
         'keyDate':datetime.strftime(tmp_date, date_format2),
         'dateSolvingTime':tmp_time 

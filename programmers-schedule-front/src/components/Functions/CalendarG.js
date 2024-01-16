@@ -10,12 +10,12 @@ const CalendarG = (props) => {
     const theme = {
         labels: { text: { fontSize: 15, fill: "#ffffff" } }
         }
-
+        console.log([...props.data])
     return (
             <ResponsiveCalendar
             data={[...props.data]}
-            from="2023-01-01"
-            to="2023-12-31"
+            from="2024-01-01"
+            to="2024-12-31"
             emptyColor={props.sendThemeArray.color_09}
             colors={[props.sendThemeArray.calender_01,props.sendThemeArray.calender_02,props.sendThemeArray.calender_03,props.sendThemeArray.calender_04,props.sendThemeArray.calender_05,props.sendThemeArray.calender_06]}
             margin={{ top: 90, right: 0, bottom: 10, left: 30}}

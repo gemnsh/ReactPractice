@@ -57,7 +57,7 @@ const App =() =>{
 });
 
   const[themeButtonState,setThemeButtonState]=useState(true)
-  const[submitButtonState,setSubmitButtionState]=useState(true)
+  const[submitButtonState,setSubmitButtonState]=useState(true)
 
   const preventCloseWindow = (e: BeforeUnloadEvent) => {
     e.preventDefault();
@@ -79,7 +79,10 @@ const App =() =>{
     .catch((Error) => {console.log(Error)
         setArticleData({})
         })
-    axios.get("/api/graph/2023")
+    const graph_addr="/api/graph/";
+    let now_year=moment();
+    let graph_address= graph_addr.concat( now_year.format('YYYY'))
+    axios.get(graph_address)
     .then((response) => {
         setGraphData(response.data);
     }) 
@@ -169,7 +172,11 @@ const App =() =>{
             setArticleData([])
             })
     }
-    axios.get("/api/graph/2023")
+
+    const graph_addr="/api/graph/";
+    let now_year=moment();
+    let graph_address= graph_addr.concat( now_year.format('YYYY'))
+    axios.get(graph_address)
     .then((response) => {
         setGraphData(response.data);
     }) 
@@ -185,7 +192,11 @@ const App =() =>{
             setAccumulateTime(response.data.sum)
         }
         else{
-            setAccumulateTime(0)
+            console.log(accumulateTime)
+            if(accumulateTime>=0 || buttonState===true)
+            {
+                setAccumulateTime(0)
+            }
         }
     }).catch(()=>{})
   },[nowDate,buttonState,submitButtonState])
@@ -194,10 +205,8 @@ const App =() =>{
   useEffect(()=>{
     const d=new Date();
     setNowDate(moment(d).format('YYYY-MM-DD'));
-    if(buttonState===false){
-        const tmpTime= 24*3600-startTimeData[0];
-        setAccumulateTime(-tmpTime);
-    }
+    const tmpTime= 24*3600-startTimeData[0];
+    setAccumulateTime(-tmpTime);
   },[midnightState])
 
   const hexaButtonStateHandler= (index) =>{
@@ -223,6 +232,9 @@ const App =() =>{
         if(buttonState===false){
             setMidnightState(prev=>!prev)
             }
+        else{
+            setAccumulateTime(0)
+        }
     }
   };
 
@@ -276,7 +288,7 @@ const App =() =>{
       onStopWatchData ={getStopWatchHandler} 
       onGetButtonStateData={getStopWatchButtonStateHandler} 
       onGetStartTimeData={getStartTimeDataHandler} 
-      onGetSubmitButtonState={setSubmitButtionState}
+      onGetSubmitButtonState={setSubmitButtonState}
       stopWatchTime={stopWatchTimeData} 
       buttonStateData={buttonState}
       sendThemeArray={themeArray}

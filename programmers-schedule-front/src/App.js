@@ -189,12 +189,15 @@ const App =() =>{
     axios.post("/api/returnTime/",{targetDate : nowDate})
     .then((response)=>{
         if(response.data.sum){
+            console.log('오늘 푼 문제 있음')
             setAccumulateTime(response.data.sum)
         }
         else{
-            console.log(accumulateTime)
+            console.log('오늘 푼 문제 없음')
             if(accumulateTime>=0 || buttonState===true)
             {
+                console.log('푼 문제가 없거나 버튼이 안눌려있으면 초기화')
+                console.log(accumulateTime)
                 setAccumulateTime(0)
             }
         }
@@ -208,6 +211,22 @@ const App =() =>{
     const tmpTime= 24*3600-startTimeData[0];
     setAccumulateTime(-tmpTime);
   },[midnightState])
+
+  const getMomentBooleanHandler =(momentData)=>{
+    if (momentData==='00:00:00'){
+        console.log('날짜변경')
+        if(buttonState===false){
+            console.log('버튼 눌려있음')
+            setMidnightState(prev=>!prev)
+            }
+        else{
+            console.log('버튼 안눌려있음')
+            const d=new Date();
+            console.log(moment(d).format('YYYY-MM-DD'))
+            setNowDate(moment(d).format('YYYY-MM-DD'));
+        }
+    }
+  };
 
   const hexaButtonStateHandler= (index) =>{
       let tmpHexArray=[...isHexButtonSelected];
@@ -226,17 +245,6 @@ const App =() =>{
         setStopWatchTimeData(stopWatchData);
     }
   } ;
-
-  const getMomentBooleanHandler =(momentData)=>{
-    if (momentData==='00:00:00'){
-        if(buttonState===false){
-            setMidnightState(prev=>!prev)
-            }
-        else{
-            setAccumulateTime(0)
-        }
-    }
-  };
 
   const getStopWatchButtonStateHandler =(stopWatchButtonState)=>{
     

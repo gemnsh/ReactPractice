@@ -10,25 +10,25 @@ import "./Dice.css";
 const Dice =(props)=>{
     
     switch (props.index) {
-        case 1:
+        case '1':
             return (
                 <Dice1 className="dice" fill={props.sendThemeArray.color_06}/>
             )
             
-        case 2:
+        case '2':
             return (
                 <Dice2 className="dice" fill={props.sendThemeArray.color_06}/>
             )
-        case 3:
+        case '3':
             return (
                 <Dice3 className="dice" fill={props.sendThemeArray.color_06}/>
             )
             
-        case 4:
+        case '4':
             return (
                 <Dice4 className="dice" fill={props.sendThemeArray.color_06}/>
             )  
-        case 5:
+        case '5':
             return (
                 <Dice5 className="dice" fill={props.sendThemeArray.color_06}/>
             )    

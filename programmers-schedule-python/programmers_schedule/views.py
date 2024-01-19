@@ -61,7 +61,6 @@ class ArticleListView(generics.ListAPIView):
             
             if not(lang or level):
                 queryset=self.get_queryset()
-                print(queryset)
             queryset=queryset.order_by('-id')
             serializer_class = self.get_serializer_class()
             serializer = serializer_class(queryset,many=True)

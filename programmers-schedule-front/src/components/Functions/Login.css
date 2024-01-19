@@ -1,0 +1,33 @@
+.login{
+    position: absolute;
+    width: 400px;
+    height: 640px;
+    text-align: center;
+    background-color: rgb(143, 165, 241);
+    z-index: 100;
+    top: 50%;
+    left: 50%;
+    margin-top: -320px;
+    margin-left: -200px;
+    color: #fff;
+    box-shadow: none;
+    font-size: 20px;
+}
+
+.login_blank{
+    height: 150px;
+}
+
+.login h1{
+    font-size: 39px;
+}
+
+.dimmer{
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom: 0;
+    background: #00000080;
+    z-index: 90;
+}

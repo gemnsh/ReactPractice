@@ -10,7 +10,7 @@ import Schedule from "./components/Functions/Schedule";
 import Graph from "./components/Functions/Graph";
 import TimeDisplay from "./components/Functions/TimeDisplay";
 import Article from "./components/Functions/Article";
-
+import Login from"./components/Functions/Login";
 
 const App =() =>{
   
@@ -27,11 +27,11 @@ const App =() =>{
   const [specificArticleData,setSpecificArticleData]=useState([]);
   const [page,setPage]=useState(1);
   const [articleListClicked,setArticleListClicked]=useState(false);
-  const[isHexButtonSelected,setIsHexButtonSelected]=useState([...hArray]);
+  const [isHexButtonSelected,setIsHexButtonSelected]=useState([...hArray]);
   const [searchUrl,setSearchUrl]=useState('/api/list/?');
   const [graphData,setGraphData]=useState([]);
-  const[nowDate,setNowDate] =useState('');
-  const[themeArray,setThemeArray]=useState({
+  const [nowDate,setNowDate] =useState('');
+  const [themeArray,setThemeArray]=useState({
     "id": 1,
     "color_01": "#CFDAF4",
     "color_02": "#5f6b8e",
@@ -55,9 +55,9 @@ const App =() =>{
     "image_02": "/image/nousagi_02.png",
     "image_03": "/image/pekora_02.png"
 });
-
-  const[themeButtonState,setThemeButtonState]=useState(true)
-  const[submitButtonState,setSubmitButtonState]=useState(true)
+  const [loginModal,setLoginModal]=useState(false);
+  const [themeButtonState,setThemeButtonState]=useState(true);
+  const [submitButtonState,setSubmitButtonState]=useState(true);
 
   const preventCloseWindow = (e: BeforeUnloadEvent) => {
     e.preventDefault();
@@ -91,6 +91,7 @@ const App =() =>{
         })
     const d=new Date();
     setNowDate(moment(d).format('YYYY-MM-DD'));
+    setLoginModal(true);
   };
 
   useEffect(startApp,[])
@@ -126,6 +127,10 @@ const App =() =>{
         };
     }
     ,[])
+
+//  useEffect(()=>{
+//    
+//  },[loginModal])
 
   useEffect(()=>{
     let tmp='/api/list/?'
@@ -189,14 +194,14 @@ const App =() =>{
     axios.post("/api/returnTime/",{targetDate : nowDate})
     .then((response)=>{
         if(response.data.sum){
-            console.log('오늘 푼 문제 있음')
+            //console.log('오늘 푼 문제 있음')
             setAccumulateTime(response.data.sum)
         }
         else{
-            console.log('오늘 푼 문제 없음')
+            //console.log('오늘 푼 문제 없음')
             if(accumulateTime>=0 || buttonState===true)
             {
-                console.log('푼 문제가 없거나 버튼이 안눌려있으면 초기화')
+                //console.log('푼 문제가 없거나 버튼이 안눌려있으면 초기화')
                 console.log(accumulateTime)
                 setAccumulateTime(0)
             }
@@ -214,15 +219,15 @@ const App =() =>{
 
   const getMomentBooleanHandler =(momentData)=>{
     if (momentData==='00:00:00'){
-        console.log('날짜변경')
+        //console.log('날짜변경')
         if(buttonState===false){
-            console.log('버튼 눌려있음')
+            //console.log('버튼 눌려있음')
             setMidnightState(prev=>!prev)
             }
         else{
-            console.log('버튼 안눌려있음')
+            //console.log('버튼 안눌려있음')
             const d=new Date();
-            console.log(moment(d).format('YYYY-MM-DD'))
+            //console.log(moment(d).format('YYYY-MM-DD'))
             setNowDate(moment(d).format('YYYY-MM-DD'));
         }
     }
@@ -288,6 +293,9 @@ const App =() =>{
 
   return (
     <div className="App">
+        {
+            loginModal&&(<Login setLoginModalData={setLoginModal}/>)
+        }
       <MainBar onMomentData={getMomentBooleanHandler} sendThemeArray={themeArray} setThemeButtonStateData={setThemeButtonState} themeButtonStateData={themeButtonState}/>
       <Graph graphDatas={graphData} sendThemeArray={themeArray}/>
       <TimeDisplay item={[stopWatchTimeData,accumulateTime]} sendThemeArray={themeArray}/>

@@ -88,7 +88,9 @@ def getGraphData(request,pk):
 @api_view(['POST',])
 def postArticle(request):
     serializer = ArticleDetailListSerializer(data=request.data)
+    
     if serializer.is_valid():
+        
         serializer.save()
         return Response(serializer.data)
     return Response({'data':'실패'})

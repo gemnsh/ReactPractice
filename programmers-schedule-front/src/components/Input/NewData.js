@@ -24,7 +24,6 @@ const NewData =(props) =>{
         const getHours = `0${Math.floor(tmp / 3600)}`.slice(-2);
         return(`${getHours}:${getMinutes}:${getSeconds}`);
     }
-
     const submitHandler =(event: React.FormEvent<HTMLFormElement>)=>{
         event.preventDefault();
         event.target.reset()
@@ -105,7 +104,13 @@ const NewData =(props) =>{
 
                 <div className='new-data__control2'>
 
-                    <input id='pNote' name="problemDescription" style={{border:props.sendThemeArray.color_05}} placeholder="비고" onChange ={(e) => setResponseBody({...responseBody, problemDescription: e.target.value})}/>
+                    <textarea 
+                    id='pNote' 
+                    name="problemDescription" 
+                    style={{border:props.sendThemeArray.color_05}} 
+                    placeholder="비고"
+                    rows={5}
+                    onChange ={(e) => setResponseBody({...responseBody, problemDescription: e.target.value})} />
                 </div>
             </form>
         </Card>

@@ -33,7 +33,6 @@ const ArticleSpecific =(props) =>{
 
     const articleDate=new Date(specificData.articleTime);
     const dateParsed=[articleDate.getFullYear(),String(articleDate.getMonth()+1).padStart(2, "0"),String(articleDate.getDate()).padStart(2, "0"),String(articleDate.getHours()).padStart(2, "0"),String(articleDate.getMinutes()).padStart(2, "0"),String(articleDate.getSeconds()).padStart(2, "0")]
-    
     if(specificData.id){
         return(
             <Card className='article_specific' bgColor={props.sendThemeArray.color_01}>

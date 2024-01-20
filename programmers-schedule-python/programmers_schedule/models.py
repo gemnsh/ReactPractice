@@ -8,7 +8,7 @@ class Article(models.Model):
     articleProblemTrial=models.IntegerField()
     articleTime=models.DateTimeField('date published')
     articleSolvingTime=models.IntegerField()
-    articleNote=models.CharField(max_length=500)
+    articleNote=models.TextField(max_length=500)
 
     def __str__(self):
         return str(self.articleProblemNumber)+'번 / '+self.articleNote

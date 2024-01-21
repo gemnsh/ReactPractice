@@ -1,5 +1,4 @@
 from django.urls import path
-from django.contrib.auth import views as authViews
 
 from .views import ArticleListView,getArticleDetail,getGraphData,postArticle,postTime,getDateTime,getColorTheme
 
@@ -11,6 +10,4 @@ urlpatterns = [
     path('postDate/',postTime,name='postTime'),
     path('returnTime/',getDateTime,name='returnTime'),
     path('color/<int:pk>',getColorTheme,name='theme'),
-    path('login/',authViews.LoginView.as_view(),name='login')
-    
 ]

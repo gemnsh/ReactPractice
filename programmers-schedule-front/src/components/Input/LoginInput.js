@@ -2,8 +2,11 @@ import React,{useState,useRef,useEffect} from "react";
 import Card from "../UI/Card";
 import './LoginInput.css'
 
-const LoginInput=()=>{
-    //props.setLoginModalTrue
+const LoginInput=(props)=>{
+
+    const loginHandler=()=>{
+        props.setLoginModalTrue(false)
+    }
 return(
         <div>
             <div className='id_login'>
@@ -12,7 +15,7 @@ return(
             <div className='pw_login'>
                 <input placeholder='PASSWORD'/>
             </div>
-            <button className='login_button'>
+            <button className='login_button' onClick={loginHandler}> 
                 SIGN IN
             </button>
         </div>

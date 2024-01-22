@@ -70,6 +70,7 @@ const App =() =>{
     setPage(1)
     const d=new Date();
     setNowDate(moment(d).format('YYYY-MM-DD'));
+    
   };
 
   useEffect(startApp,[])

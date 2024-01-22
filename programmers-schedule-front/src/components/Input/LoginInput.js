@@ -1,24 +1,49 @@
 import React,{useState,useRef,useEffect} from "react";
-import Card from "../UI/Card";
+import axios from "axios";
+
 import './LoginInput.css'
 
 const LoginInput=(props)=>{
 
-    const loginHandler=()=>{
-        props.setLoginModalTrue(false)
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+
+    const loginHandler= e =>{
+        e.preventDefault();
+        axios.post('/user/login/',{
+            email:username,
+            password:password
+        }).then((response) => {
+            props.setLoginModalTrue(false)
+        }) 
+        .catch((Error) => {
+            console.log(Error)
+            })
     }
+
+
+
 return(
-        <div>
-            <div className='id_login'>
-                <input placeholder='USERNAME'/>
-            </div>
-            <div className='pw_login'>
-                <input placeholder='PASSWORD'/>
-            </div>
-            <button className='login_button' onClick={loginHandler}> 
-                SIGN IN
-            </button>
-        </div>
+        <form onSubmit={loginHandler}>
+                <div className='id_login'>
+                    <input
+                        placeholder='USERNAME'
+                        type='email'
+                        required
+                        value={username}
+                        onChange={e => setUsername(e.target.value)}
+                        />
+                </div>
+                <div className='pw_login'>
+                    <input 
+                        placeholder='PASSWORD'
+                        type='password'
+                        required
+                        value={password}
+                        onChange={e => setPassword(e.target.value)}/>
+                </div>
+            <input type='submit' className='login_button' value='SIGN IN'/> 
+        </form>
 )
 };
 

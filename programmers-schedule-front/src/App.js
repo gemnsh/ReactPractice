@@ -26,7 +26,7 @@ const App =() =>{
   const [articleData,setArticleData]=useState([]);
   const [specificArticleData,setSpecificArticleData]=useState([]);
   const [page,setPage]=useState(1);
-  const [articleListClicked,setArticleListClicked]=useState(false);
+  const [articleListClicked,setArticleListClicked]=useState(true);
   const [isHexButtonSelected,setIsHexButtonSelected]=useState([...hArray]);
   const [searchUrl,setSearchUrl]=useState('/api/list/?');
   const [graphData,setGraphData]=useState([]);
@@ -56,7 +56,7 @@ const App =() =>{
     "image_03": "/image/pekora_02.png"
 });
   const [loginModal,setLoginModal]=useState(false);
-  const [themeButtonState,setThemeButtonState]=useState(true);
+  const [themeButtonState,setThemeButtonState]=useState(false);
   const [submitButtonState,setSubmitButtonState]=useState(true);
 
   const preventCloseWindow = (e: BeforeUnloadEvent) => {
@@ -65,33 +65,11 @@ const App =() =>{
   };
 
   const startApp =()=>{
-    axios.get("/api/color/1")
-    .then((response) => {
-        setThemeArray(response.data);
-    }) 
-    .catch((Error) => {console.log(Error)
-        setArticleData({})
-        })
-    axios.get("/api/list/?page=1")
-    .then((response) => {
-        setArticleData(response.data);
-    }) 
-    .catch((Error) => {console.log(Error)
-        setArticleData({})
-        })
-    const graph_addr="/api/graph/";
-    let now_year=moment();
-    let graph_address= graph_addr.concat( now_year.format('YYYY'))
-    axios.get(graph_address)
-    .then((response) => {
-        setGraphData(response.data);
-    }) 
-    .catch((Error) => {console.log(Error)
-        setGraphData({})
-        })
+    setLoginModal(true);
+    setThemeButtonState(true);
+    setPage(1)
     const d=new Date();
     setNowDate(moment(d).format('YYYY-MM-DD'));
-    setLoginModal(true);
   };
 
   useEffect(startApp,[])
@@ -116,21 +94,6 @@ const App =() =>{
             })
     }
   },[ themeButtonState])
-
-  useEffect( ()=>{
-        (() => {
-            window.addEventListener("beforeunload", preventCloseWindow);
-        })();
-            
-        return () => {
-        window.removeEventListener("beforeunload", preventCloseWindow);
-        };
-    }
-    ,[])
-
-//  useEffect(()=>{
-//    
-//  },[loginModal])
 
   useEffect(()=>{
     let tmp='/api/list/?'
@@ -202,11 +165,11 @@ const App =() =>{
             if(accumulateTime>=0 || buttonState===true)
             {
                 //console.log('푼 문제가 없거나 버튼이 안눌려있으면 초기화')
-                console.log(accumulateTime)
+                //console.log(accumulateTime)
                 setAccumulateTime(0)
             }
         }
-    }).catch(()=>{})
+    }).catch((Error)=>{console.log(Error)})
   },[nowDate,buttonState,submitButtonState])
 
 

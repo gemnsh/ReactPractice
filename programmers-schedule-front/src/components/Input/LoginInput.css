@@ -15,6 +15,7 @@
     border: none;
     text-indent: 15px;
     outline: none;
+    color: rgb(31, 24, 68);
   }
 
   .id_login input::-webkit-input-placeholder{
@@ -38,6 +39,7 @@
     border: none;
     text-indent: 15px;
     outline: none;
+    color: rgb(31, 24, 68);
   }
 
   .pw_login input::-webkit-input-placeholder{
@@ -60,4 +62,15 @@
     align-items : center;
     color: white;
     font-size: 23px;
+  }
+  .message_alert{
+    width: 300px;
+    color: white;
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    left: 50%;
+    margin-top: 5px;
+    margin-left: -150px;
   }

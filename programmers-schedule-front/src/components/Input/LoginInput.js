@@ -1,4 +1,4 @@
-import React,{useState,useRef,useEffect} from "react";
+import React,{useState} from "react";
 import axios from "axios";
 
 import './LoginInput.css'
@@ -7,6 +7,7 @@ const LoginInput=(props)=>{
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [message, setMessage] = useState('');
 
     const loginHandler= e =>{
         e.preventDefault();
@@ -17,7 +18,7 @@ const LoginInput=(props)=>{
             props.setLoginModalTrue(false)
         }) 
         .catch((Error) => {
-            console.log(Error)
+            setMessage(Error.response.data.message)
             })
     }
 
@@ -25,8 +26,8 @@ const LoginInput=(props)=>{
 
 return(
         <form onSubmit={loginHandler}>
-                <div className='id_login'>
-                    <input
+            <div className='id_login'>
+                <input
                         placeholder='USERNAME'
                         type='email'
                         required
@@ -34,15 +35,18 @@ return(
                         onChange={e => setUsername(e.target.value)}
                         />
                 </div>
-                <div className='pw_login'>
-                    <input 
+            <div className='pw_login'>
+                <input 
                         placeholder='PASSWORD'
                         type='password'
                         required
                         value={password}
                         onChange={e => setPassword(e.target.value)}/>
-                </div>
-            <input type='submit' className='login_button' value='SIGN IN'/> 
+            </div>
+            <input type='submit' className='login_button' value='SIGN IN'/>
+            <div className="message_alert">
+                {message}
+            </div>
         </form>
 )
 };

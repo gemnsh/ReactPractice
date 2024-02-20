@@ -15,11 +15,10 @@ const CalendarG = (props) => {
             data={[...props.data]}
             from="2024-01-01"
             to="2024-12-31"
-            emptyColor={props.sendThemeArray.color_09}
+            emptyColor={props.sendThemeArray.color_01}
             colors={[props.sendThemeArray.calender_01,props.sendThemeArray.calender_02,props.sendThemeArray.calender_03,props.sendThemeArray.calender_04,props.sendThemeArray.calender_05,props.sendThemeArray.calender_06]}
-            margin={{ top: 90, right: 0, bottom: 10, left: 30}}
-            yearSpacing={40}
-            monthBorderColor={props.sendThemeArray.color_05}
+            margin={{ top: 90, right: 10, bottom: 10, left: 30}}
+            monthBorderColor={props.sendThemeArray.color_09}
             dayBorderWidth={2}
             dayBorderColor={props.sendThemeArray.color_09}
             legends={[

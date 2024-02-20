@@ -14,12 +14,9 @@
     font-size: 20px;
 }
 
-.login_blank{
-    height: 150px;
-}
 
 .login h1{
-    font-size: 39px;
+    font-size: 32px;
 }
 
 .dimmer{
@@ -30,4 +27,39 @@
     bottom: 0;
     background: #00000080;
     z-index: 90;
+}
+
+.login_blank{
+    height: 150px;
+}
+
+
+
+.circle_1{
+    position: absolute;
+    left: 240px;
+    top:250px;
+}
+
+.circle_2{
+    position: absolute;
+    left: 140px;
+    top:120px;
+}
+
+.line_1{
+    position: absolute;
+    left:155px;
+    top:138px;
+    width: 245px;
+    height: 4px;
+    background-color: #435585;
+}
+.line_2{
+    position: absolute;
+    left: 258px;
+    top:268px;
+    height: 372px;
+    width: 4px;
+    background-color: #435585;
 }

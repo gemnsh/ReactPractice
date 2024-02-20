@@ -308,6 +308,10 @@ const App =() =>{
             src: `${process.env.PUBLIC_URL}/music/0005.mp3`,
             name: 'Track 5'
         },
+        {
+            src: `${process.env.PUBLIC_URL}/music/0006.mp3`,
+            name: 'Track 6'
+        }
       ]}
       sendThemeArray={themeArray}
       />

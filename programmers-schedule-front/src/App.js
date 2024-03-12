@@ -23,6 +23,7 @@ const App =() =>{
   const [accumulateTime,setAccumulateTime]=useState(0);
   const [buttonState,setButtonState]=useState(true);
   const [midnightState,setMidnightState]=useState(true);
+  const [solvedacState,setSolvedacState]=useState(true);
   const [articleData,setArticleData]=useState([]);
   const [specificArticleData,setSpecificArticleData]=useState([]);
   const [page,setPage]=useState(1);
@@ -55,8 +56,10 @@ const App =() =>{
     "image_02": "/image/nousagi_02.png",
     "image_03": "/image/pekora_02.png"
 });
+  const [totalCount,setTotalCount]=useState(0);
+  const [after6,setAfter6]=useState(0);
   const [loginModal,setLoginModal]=useState(false);
-  const [themeButtonState,setThemeButtonState]=useState(false);
+  const [themeButtonState,setThemeButtonState]=useState(true);
   const [submitButtonState,setSubmitButtonState]=useState(true);
 
   const preventCloseWindow = (e: BeforeUnloadEvent) => {
@@ -126,6 +129,17 @@ const App =() =>{
         }
     }
     setSearchUrl(tmp);
+
+    axios.get("/api/stats/")
+        .then((response) => {
+            setTotalCount(response.data.countTotal);
+            setAfter6(response.data.countAfter6);
+        }) 
+        .catch((Error) => {console.log(Error)
+            setTotalCount(0);
+            setAfter6(0);
+            })
+
   },[isHexButtonSelected])
 
   useEffect(()=>{
@@ -171,7 +185,18 @@ const App =() =>{
             }
         }
     }).catch((Error)=>{console.log(Error)})
-  },[nowDate,buttonState,submitButtonState])
+
+    axios.get("/api/stats/")
+    .then((response) => {
+        setTotalCount(response.data.countTotal);
+        setAfter6(response.data.countAfter6);
+    }) 
+    .catch((Error) => {console.log(Error)
+        setTotalCount(0);
+        setAfter6(0);
+        })
+
+  },[nowDate,buttonState,submitButtonState,solvedacState])
 
 
   useEffect(()=>{
@@ -183,17 +208,16 @@ const App =() =>{
 
   const getMomentBooleanHandler =(momentData)=>{
     if (momentData==='00:00:00'){
-        //console.log('날짜변경')
         if(buttonState===false){
-            //console.log('버튼 눌려있음')
             setMidnightState(prev=>!prev)
             }
         else{
-            //console.log('버튼 안눌려있음')
             const d=new Date();
-            //console.log(moment(d).format('YYYY-MM-DD'))
             setNowDate(moment(d).format('YYYY-MM-DD'));
         }
+    }
+    if (momentData==='06:00:00'){
+        setSolvedacState(prev=>!prev)
     }
   };
 
@@ -286,6 +310,8 @@ const App =() =>{
       onHexaButtonState={hexaButtonStateHandler}
       hexButtonState={isHexButtonSelected}
       sendThemeArray={themeArray}
+      totalCount={totalCount}
+      after6={after6}
       />
       <MusicPlayer tracks={[
         {

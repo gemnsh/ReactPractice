@@ -17,6 +17,11 @@ const Article = (props) =>{
     const getHexaButtonStateHandler=(index)=>{
         props.onHexaButtonState(index)
     };
+
+    const exampleData={
+        "totalProblem":props.totalCount,
+        "todayAfter6":props.after6,
+    };
 if(props.hexButtonState){
     return(
         <Card className='article' bgColor={props.sendThemeArray.color_11}>
@@ -84,7 +89,7 @@ if(props.hexButtonState){
                 </svg>
             </div>
             <ArticleList item={props.item.results} onArticleClicked={getArticleClickedHandler} sendThemeArray={props.sendThemeArray}/>
-            <ArticleSpecific  specificData={props?props.specificData:0} articleClickChecker={props.articleClickState} sendThemeArray={props.sendThemeArray}/>
+            <ArticleSpecific  specificData={props?props.specificData:0} articleClickChecker={props.articleClickState} sendThemeArray={props.sendThemeArray} exData={exampleData}/>
             
         </Card>
 

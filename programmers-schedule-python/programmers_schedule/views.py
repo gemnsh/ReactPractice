@@ -13,6 +13,7 @@ from programmers_schedule.models import Article,AccumulateTime,ColorTheme
 
 from datetime import datetime
 from datetime import timedelta
+from datetime import date
 
 class ArticleListSerializer(serializers.ModelSerializer):
 
@@ -155,3 +156,22 @@ def getColorTheme(request,pk):
     theme = get_object_or_404(ColorTheme,pk=pk)
     serializer =ColorThemeSerializer(theme)
     return Response(serializer.data)
+
+@api_view(['GET',])
+def getArticleStatistic(request):
+    queryset1 = Article.objects.all()
+    count1 = queryset1.count()
+    t=date.today().strftime('%Y-%m-%d')
+    d=t+' 06:00:00'
+    print(d)
+    date_format1 = '%Y-%m-%d %H:%M:%S'
+    date_6 = datetime.strptime(d, date_format1)
+
+    queryset2 = Article.objects.filter(articleTime__range=[date_6,datetime.now()])
+    count2=queryset2.count()
+    r={
+        'countTotal':count1,
+        'countAfter6':count2
+    }
+    print(r)
+    return(Response(r))

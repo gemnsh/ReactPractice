@@ -1,6 +1,6 @@
 from django.urls import path
 
-from .views import ArticleListView,getArticleDetail,getGraphData,postArticle,postTime,getDateTime,getColorTheme
+from .views import ArticleListView,getArticleStatistic,getArticleDetail,getGraphData,postArticle,postTime,getDateTime,getColorTheme
 
 urlpatterns = [
     path('list/',ArticleListView.as_view(), name='index'),
@@ -10,4 +10,5 @@ urlpatterns = [
     path('postDate/',postTime,name='postTime'),
     path('returnTime/',getDateTime,name='returnTime'),
     path('color/<int:pk>',getColorTheme,name='theme'),
+    path('stats/',getArticleStatistic,name='stats')
 ]

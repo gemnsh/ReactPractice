@@ -77,6 +77,25 @@ const ArticleSpecific =(props) =>{
     else{
         return(
             <Card className='article_specific' bgColor={props.sendThemeArray.color_01}>
+                <div className='article_statistics'>
+                    <Card className='total'>
+                        <div className='upperText'>
+                            지금까지 푼 문제 수
+                        </div>
+                        <div className ='innerNumber'>
+                        {props.exData.totalProblem}
+                        </div>
+                    </Card>
+                    <Card className='after6'>
+                        <div className='upperText'>
+                            6시 이후 푼 문제 수
+                        </div>
+                        <div className ='innerNumber'>
+                        {props.exData.todayAfter6}
+                        </div>
+                    </Card>
+
+                </div>
             </Card>
         )
     }

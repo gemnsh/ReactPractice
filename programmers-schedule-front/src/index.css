@@ -11,3 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+    font-family: "Big-Apple-3PM";
+    font-weight: normal;
+    src: url("./fonts/Big-Apple-3PM.ttf") format("truetype");
+  }

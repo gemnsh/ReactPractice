@@ -118,7 +118,6 @@ def postTime(request):
     if intTime+solveTime>86400:
         tmp_date= date_started + timedelta(days=1)
         tmp_time= intTime+solveTime-86400
-        print('첫번째 시간',tmp_time)
         tmp_data={
         'keyDate':datetime.strftime(tmp_date, date_format2),
         'dateSolvingTime':tmp_time 
@@ -163,7 +162,6 @@ def getArticleStatistic(request):
     count1 = queryset1.count()
     t=date.today().strftime('%Y-%m-%d')
     d=t+' 06:00:00'
-    print(d)
     date_format1 = '%Y-%m-%d %H:%M:%S'
     date_6 = datetime.strptime(d, date_format1)
 
@@ -173,5 +171,4 @@ def getArticleStatistic(request):
         'countTotal':count1,
         'countAfter6':count2
     }
-    print(r)
     return(Response(r))

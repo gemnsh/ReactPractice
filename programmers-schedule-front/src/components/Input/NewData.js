@@ -29,7 +29,7 @@ const NewData =(props) =>{
         event.target.reset()
         setA([`00:00:00`,0]);
         const d=new Date()
-        axios.post("/api/post/",{
+        axios.post("https://schedule-nu-roan.vercel.app"+"/api/post/",{
             articleProblemNumber : responseBody.problemNumber,
             articleProblemLevel : responseBody.level,
             articleProblemLanguage : responseBody.language ,

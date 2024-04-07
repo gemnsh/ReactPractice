@@ -11,7 +11,7 @@ const LoginInput=(props)=>{
 
     const loginHandler= e =>{
         e.preventDefault();
-        axios.post('/user/login/',{
+        axios.post("https://schedule-nu-roan.vercel.app"+'/user/login/',{
             email:username,
             password:password
         }).then((response) => {

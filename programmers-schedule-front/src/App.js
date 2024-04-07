@@ -169,7 +169,7 @@ const App =() =>{
   },[page,searchUrl])
 
   useEffect(()=>{
-    axios.post("/api/returnTime/",{targetDate : nowDate})
+    axios.post("https://schedule-nu-roan.vercel.app"+"/api/returnTime/",{targetDate : nowDate})
     .then((response)=>{
         if(response.data.sum){
             //console.log('오늘 푼 문제 있음')

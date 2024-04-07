@@ -2,7 +2,7 @@
   "name": "programmers-schedule",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://shyeon5895.pythonanywhere.com/",
+  "proxy": "https://shyeon5895.pythonanywhere.com",
   "dependencies": {
     "@nivo/calendar": "^0.83.0",
     "@testing-library/jest-dom": "^5.16.5",

@@ -1,12 +1,20 @@
 {
     "rewrites": [
-      {
-        "source": "/api/:path*",
-        "destination": "https://http://shyeon5895.pythonanywhere.com/:path*"
-      },
-      {
-        "source": "/api/:path*/",
-        "destination": "https://http://shyeon5895.pythonanywhere.com/:path*/"
-      }
+        {
+            "source": "/api/:path*",
+            "destination": "https://http://shyeon5895.pythonanywhere.com/:path*"
+          },
+          {
+            "source": "/api/:path*/",
+            "destination": "https://http://shyeon5895.pythonanywhere.com/:path*/"
+          },
+          {
+            "source": "/user/:path*",
+            "destination": "https://http://shyeon5895.pythonanywhere.com/user/:path*"
+          },
+          {
+            "source": "/user/:path*/",
+            "destination": "https://http://shyeon5895.pythonanywhere.com/user/:path*/"
+          }
     ]
   }

@@ -4,9 +4,17 @@
             "source": "/api/:path*",
             "destination": "https://shyeon5895.pythonanywhere.com/api/:path*"
           },
+          {
+            "source": "/api/:path*/",
+            "destination": "https://shyeon5895.pythonanywhere.com/api/:path*/"
+          },
         {
             "source": "/user/:path*",
             "destination": "https://shyeon5895.pythonanywhere.com/user/:path*"
+          },
+        {
+            "source": "/user/:path*/",
+            "destination": "https://shyeon5895.pythonanywhere.com/user/:path*/"
           }
     ]
   }

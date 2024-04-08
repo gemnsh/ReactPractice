@@ -169,7 +169,7 @@ const App =() =>{
   },[page,searchUrl])
 
   useEffect(()=>{
-    axios.post("/api/returnTime/",{targetDate : nowDate})
+    axios.post("https://shyeon5895.pythonanywhere.com/api/returnTime/",{targetDate : nowDate})
     .then((response)=>{
         if(response.data.sum){
             //console.log('오늘 푼 문제 있음')

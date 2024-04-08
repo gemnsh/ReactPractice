@@ -13,7 +13,7 @@ import Article from "./components/Functions/Article";
 import Login from"./components/Functions/Login";
 
 const App =() =>{
-  
+  const d1=new Date();
   const hArray=Array(11).fill(false);
   const arrLanguage=['Python','C%2b%2b','C','Java']
   const arrLevel=['1','2','3','4','5','백준']
@@ -31,7 +31,7 @@ const App =() =>{
   const [isHexButtonSelected,setIsHexButtonSelected]=useState([...hArray]);
   const [searchUrl,setSearchUrl]=useState('/api/list/?');
   const [graphData,setGraphData]=useState([]);
-  const [nowDate,setNowDate] =useState('');
+  const [nowDate,setNowDate] =useState(moment(d1).format('YYYY-MM-DD'));
   const [themeArray,setThemeArray]=useState({
     "id": 1,
     "color_01": "#CFDAF4",

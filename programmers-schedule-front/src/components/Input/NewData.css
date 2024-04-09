@@ -74,3 +74,12 @@
   #submit_button{
     height: 40px;
   }
+
+  .new-data_mobile{
+
+    position: absolute;
+    left :5%;
+    top :3%;
+    width: 90%;
+    height: 70%;
+}

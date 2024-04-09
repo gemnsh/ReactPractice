@@ -36,22 +36,22 @@
     left: 5%;
     top: 2%;
     width: 35%;
-    height: 10%;
+    height: 20%;
 }
 
 .time-display__upper_mobile{
     position: absolute;
-    top:5%;
+    top:10%;
     left:5%;
     width: 90%;
-    height:42.5%;
+    height:35%;
 }
 
 .time-display__lower_mobile{
     position: absolute;
-    top:52.5%;
+    top:55%;
     width: 90%;
-    height:42.5%;
+    height:35%;
     left:5%;
 }
 

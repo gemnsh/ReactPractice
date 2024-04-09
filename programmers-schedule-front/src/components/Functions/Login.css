@@ -14,6 +14,21 @@
     font-size: 20px;
 }
 
+.login_mobile{
+    position: absolute;
+    width: 100%;
+    height: 100%px;
+    text-align: center;
+    background-color: rgb(143, 165, 241);
+    z-index: 100;
+    top: 0;
+    left: 0;
+    margin-top: -50%;
+    margin-left: -50%;
+    color: #fff;
+    box-shadow: none;
+    font-size: 20px;
+}
 
 .login h1{
     font-size: 32px;

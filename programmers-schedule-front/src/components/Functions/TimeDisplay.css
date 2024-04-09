@@ -42,17 +42,17 @@
 .time-display__upper_mobile{
     position: absolute;
     top:10%;
-    left:5%;
-    width: 90%;
+    left:10%;
+    width: 80%;
     height:35%;
 }
 
 .time-display__lower_mobile{
     position: absolute;
     top:55%;
-    width: 90%;
+    width: 80%;
     height:35%;
-    left:5%;
+    left:10%;
 }
 
 .time-text_mobile{
@@ -60,4 +60,5 @@
     font-size: 30px;
     margin: 0 auto;
     font-weight: bold;
+    line-height: 100%;
 }

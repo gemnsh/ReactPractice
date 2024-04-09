@@ -43,14 +43,13 @@ const Schedule =(props) =>{
             </BrowserView>
             <MobileView>
                 <Card className='schedule_mobile' bgColor={props.sendThemeArray.color_09}>
-                
-                <StopWatch
-                onGetFormatTime={getFormatTimeHandler}
-                onGetButtonState={getButtonStateHandler}
-                onGetStartTime={getStartTimeHandler}
-                item={props.item}
-                sendThemeArray={props.sendThemeArray}/>
-                <NewData stopTime={props.stopWatchTime} buttonStateDatas={props.buttonStateData}  onSubmitButtonStateHandler={setSubmitStateHandler} onSetPageHandler={setPageHandler} startTimeData={props.startTimeDatas} sendThemeArray={props.sendThemeArray}/>
+                    <StopWatch
+                    onGetFormatTime={getFormatTimeHandler}
+                    onGetButtonState={getButtonStateHandler}
+                    onGetStartTime={getStartTimeHandler}
+                    item={props.item}
+                    sendThemeArray={props.sendThemeArray}/>
+                    <NewData stopTime={props.stopWatchTime} buttonStateDatas={props.buttonStateData}  onSubmitButtonStateHandler={setSubmitStateHandler} onSetPageHandler={setPageHandler} startTimeData={props.startTimeDatas} sendThemeArray={props.sendThemeArray}/>
                 </Card>
             </MobileView>
         </div>

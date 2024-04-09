@@ -280,6 +280,7 @@ const App =() =>{
   };
 
   return (
+            <div>
     <MobileView>
     <div>
     {
@@ -300,69 +301,70 @@ const App =() =>{
     </div>
     </MobileView>
     <BrowserView>
-    <div className="App">
-        {
-            loginModal&&(<Login setLoginModalData={setLoginModal}/>)
-        }
-      <MainBar onMomentData={getMomentBooleanHandler} sendThemeArray={themeArray} setThemeButtonStateData={setThemeButtonState} themeButtonStateData={themeButtonState}/>
-      <Graph graphDatas={graphData} sendThemeArray={themeArray}/>
-      <TimeDisplay item={[stopWatchTimeData,accumulateTime]} sendThemeArray={themeArray}/>
-      <Schedule 
-      onSetPage={setPage} 
-      onStopWatchData ={getStopWatchHandler} 
-      onGetButtonStateData={getStopWatchButtonStateHandler} 
-      onGetStartTimeData={getStartTimeDataHandler} 
-      onGetSubmitButtonState={setSubmitButtonState}
-      stopWatchTime={stopWatchTimeData} 
-      buttonStateData={buttonState}
-      sendThemeArray={themeArray}
-      startTimeDatas={startTimeData}
+        <div className="App">
+            {
+                loginModal&&(<Login setLoginModalData={setLoginModal}/>)
+            }
+        <MainBar onMomentData={getMomentBooleanHandler} sendThemeArray={themeArray} setThemeButtonStateData={setThemeButtonState} themeButtonStateData={themeButtonState}/>
+        <Graph graphDatas={graphData} sendThemeArray={themeArray}/>
+        <TimeDisplay item={[stopWatchTimeData,accumulateTime]} sendThemeArray={themeArray}/>
+        <Schedule 
+        onSetPage={setPage} 
+        onStopWatchData ={getStopWatchHandler} 
+        onGetButtonStateData={getStopWatchButtonStateHandler} 
+        onGetStartTimeData={getStartTimeDataHandler} 
+        onGetSubmitButtonState={setSubmitButtonState}
+        stopWatchTime={stopWatchTimeData} 
+        buttonStateData={buttonState}
+        sendThemeArray={themeArray}
+        startTimeDatas={startTimeData}
 
-      />
-      <Article 
-      item={articleData}
-      onArticleClick={getArticleClickHandler}
-      specificData={specificArticleData}
-      onNextPageHandler={nextPageHandler}
-      onPrevPageHandler={prevPageHandler}
-      nowPage={page}
-      articleClickState={articleListClicked}
-      onHexaButtonState={hexaButtonStateHandler}
-      hexButtonState={isHexButtonSelected}
-      sendThemeArray={themeArray}
-      totalCount={totalCount}
-      after6={after6}
-      />
-      <MusicPlayer tracks={[
-        {
-            src: `${process.env.PUBLIC_URL}/music/0001.mp3`,
-            name: 'Track 1'
-        },
-        {
-            src: `${process.env.PUBLIC_URL}/music/0002.mp3`,
-            name: 'Track 2'
-        },
-        {
-            src: `${process.env.PUBLIC_URL}/music/0003.mp3`,
-            name: 'Track 3'
-        },
-        {
-            src: `${process.env.PUBLIC_URL}/music/0004.mp3`,
-            name: 'Track 4'
-        },
-        {
-            src: `${process.env.PUBLIC_URL}/music/0005.mp3`,
-            name: 'Track 5'
-        },
-        {
-            src: `${process.env.PUBLIC_URL}/music/0006.mp3`,
-            name: 'Track 6'
-        }
-      ]}
-      sendThemeArray={themeArray}
-      />
-    </div>
+        />
+        <Article 
+        item={articleData}
+        onArticleClick={getArticleClickHandler}
+        specificData={specificArticleData}
+        onNextPageHandler={nextPageHandler}
+        onPrevPageHandler={prevPageHandler}
+        nowPage={page}
+        articleClickState={articleListClicked}
+        onHexaButtonState={hexaButtonStateHandler}
+        hexButtonState={isHexButtonSelected}
+        sendThemeArray={themeArray}
+        totalCount={totalCount}
+        after6={after6}
+        />
+        <MusicPlayer tracks={[
+            {
+                src: `${process.env.PUBLIC_URL}/music/0001.mp3`,
+                name: 'Track 1'
+            },
+            {
+                src: `${process.env.PUBLIC_URL}/music/0002.mp3`,
+                name: 'Track 2'
+            },
+            {
+                src: `${process.env.PUBLIC_URL}/music/0003.mp3`,
+                name: 'Track 3'
+            },
+            {
+                src: `${process.env.PUBLIC_URL}/music/0004.mp3`,
+                name: 'Track 4'
+            },
+            {
+                src: `${process.env.PUBLIC_URL}/music/0005.mp3`,
+                name: 'Track 5'
+            },
+            {
+                src: `${process.env.PUBLIC_URL}/music/0006.mp3`,
+                name: 'Track 6'
+            }
+        ]}
+        sendThemeArray={themeArray}
+        />
+        </div>
     </BrowserView>
+    </div>
   );
 }
 

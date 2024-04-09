@@ -30,3 +30,30 @@
     margin: 0 auto;
     font-weight: bold;
 }
+
+.time-display_mobile{
+    left: 5%;
+    top: 5%;
+    width: 70%;
+    height: 30%;
+}
+
+.time-display__upper_mobile{
+    top:5%;
+    left:5%;
+    width: 90%;
+    height:42.5%;
+}
+
+.time-display__lower_mobile{
+    top:52.5%;
+    width: 90%;
+    height:42.5%;
+    left:5%;
+}
+
+.time-text_mobile{
+    font-size: 30px;
+    margin: 0 auto;
+    font-weight: bold;
+}

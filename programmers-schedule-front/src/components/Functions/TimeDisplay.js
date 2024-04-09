@@ -1,4 +1,6 @@
 import React from "react";
+import { BrowserView, MobileView } from 'react-device-detect';
+
 import './TimeDisplay.css';
 import Card from "../UI/Card";
 
@@ -12,18 +14,36 @@ const TimeDisplay = (props) =>{
     }
 
     return(
-        <Card className='time-display' bgColor={props.sendThemeArray.color_09}>
-            <Card className='time-display__upper' bgColor={props.sendThemeArray.color_12} >
+    <div>
+        <BrowserView>
+            <Card className='time-display' bgColor={props.sendThemeArray.color_09}>
+                <Card className='time-display__upper' bgColor={props.sendThemeArray.color_12} >
+                    <div className='time-text' style={{color:props.sendThemeArray.color_08}}>
+                    {formatTime(props.item[0])}
+                    </div>
+                </Card>
+                <Card className='time-display__lower' bgColor={props.sendThemeArray.color_12}>
                 <div className='time-text' style={{color:props.sendThemeArray.color_08}}>
-                {formatTime(props.item[0])}
-                </div>
+                    {formatTime(props.item[0]+props.item[1])}
+                    </div>
+                </Card>
             </Card>
-            <Card className='time-display__lower' bgColor={props.sendThemeArray.color_12}>
-            <div className='time-text' style={{color:props.sendThemeArray.color_08}}>
-                {formatTime(props.item[0]+props.item[1])}
-                </div>
+        </BrowserView>
+        <MobileView>
+            <Card className='time-display_mobile' bgColor={props.sendThemeArray.color_09}>
+                <Card className='time-display__upper_mobile' bgColor={props.sendThemeArray.color_12} >
+                    <div className='time-text_mobile' style={{color:props.sendThemeArray.color_08}}>
+                    {formatTime(props.item[0])}
+                    </div>
+                </Card>
+                <Card className='time-display__lower_mobile' bgColor={props.sendThemeArray.color_12}>
+                <div className='time-text_mobile' style={{color:props.sendThemeArray.color_08}}>
+                    {formatTime(props.item[0]+props.item[1])}
+                    </div>
+                </Card>
             </Card>
-        </Card>
+        </MobileView>
+    </div>
     );
 };
 

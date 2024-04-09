@@ -4,7 +4,7 @@ import { BrowserView, MobileView } from 'react-device-detect';
 import './StopWatch.css';
 
 import TimeChart from "./TimeChart";
-
+import TimeDisplay from "./TimeDisplay";
 const StopWatch =(props) =>{
 
     const [isButtonClicked,setIsButtonClicked]=useState(true);
@@ -68,6 +68,7 @@ const StopWatch =(props) =>{
                 </TimeChart>
             </BrowserView>
             <MobileView>
+                <TimeDisplay item={props.item} sendThemeArray={props.sendThemeArray}/>
                 <button onClick={buttonHandler} className="stop-watch__button" style={{backgroundColor:props.sendThemeArray.color_11}}> {isButtonClicked?'START':'END'}</button>
             </MobileView>
         </div>

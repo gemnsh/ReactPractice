@@ -296,7 +296,7 @@ const App =() =>{
       buttonStateData={buttonState}
       sendThemeArray={themeArray}
       startTimeDatas={startTimeData}
-
+      item={[stopWatchTimeData,accumulateTime]}
     />
     </div>
     </MobileView>
@@ -318,7 +318,8 @@ const App =() =>{
         buttonStateData={buttonState}
         sendThemeArray={themeArray}
         startTimeDatas={startTimeData}
-
+        item={[stopWatchTimeData,accumulateTime]}
+        sendThemeArray={themeArray}
         />
         <Article 
         item={articleData}

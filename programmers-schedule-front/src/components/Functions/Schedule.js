@@ -44,7 +44,12 @@ const Schedule =(props) =>{
             <MobileView>
                 <Card className='schedule_mobile' bgColor={props.sendThemeArray.color_09}>
                 
-                <StopWatch onGetFormatTime={getFormatTimeHandler} onGetButtonState={getButtonStateHandler} onGetStartTime={getStartTimeHandler} sendThemeArray={props.sendThemeArray}/>
+                <StopWatch
+                onGetFormatTime={getFormatTimeHandler}
+                onGetButtonState={getButtonStateHandler}
+                onGetStartTime={getStartTimeHandler}
+                item={props.item}
+                sendThemeArray={props.sendThemeArray}/>
                 <img id="nousagi_1_mobile" draggable={false} src={process.env.PUBLIC_URL+props.sendThemeArray.image_01}/>
                 <img id="nousagi_2_mobile" draggable={false} src={process.env.PUBLIC_URL+props.sendThemeArray.image_02}/>
             

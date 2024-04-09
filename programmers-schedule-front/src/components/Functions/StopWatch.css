@@ -24,8 +24,7 @@
 
 .stop-watch__button_mobile{
     border-radius: 10px;
-    width:50%;
-    height: 3%;
+    width:40%;
     left: 5%;
     top: 20%;
     position: absolute;
@@ -38,4 +37,5 @@
 
 .mobile_flex{
     display: flex;
+    justify-content: space-between;
 }

@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from "react";
 import axios from "axios";
 import moment from 'moment';
+import { BrowserView, MobileView } from 'react-device-detect';
 
 import './App.css';
 
@@ -279,6 +280,26 @@ const App =() =>{
   };
 
   return (
+    <MobileView>
+    <div>
+    {
+            loginModal&&(<Login setLoginModalData={setLoginModal}/>)
+    }
+    <Schedule 
+      onSetPage={setPage} 
+      onStopWatchData ={getStopWatchHandler} 
+      onGetButtonStateData={getStopWatchButtonStateHandler} 
+      onGetStartTimeData={getStartTimeDataHandler} 
+      onGetSubmitButtonState={setSubmitButtonState}
+      stopWatchTime={stopWatchTimeData} 
+      buttonStateData={buttonState}
+      sendThemeArray={themeArray}
+      startTimeDatas={startTimeData}
+
+    />
+    </div>
+    </MobileView>
+    <BrowserView>
     <div className="App">
         {
             loginModal&&(<Login setLoginModalData={setLoginModal}/>)
@@ -341,6 +362,7 @@ const App =() =>{
       sendThemeArray={themeArray}
       />
     </div>
+    </BrowserView>
   );
 }
 

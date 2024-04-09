@@ -4,7 +4,6 @@ import { BrowserView, MobileView } from 'react-device-detect';
 import Card from "../UI/Card";
 import LoginInput from "../Input/LoginInput";
 import './Login.css';
-import { ReactComponent as Circle } from "../Image/circle.svg";
 
 const Login=(props)=>{
     return(
@@ -12,8 +11,6 @@ const Login=(props)=>{
     <BrowserView>
         <div className='dimmer'>
             <Card className='login'>
-                <Circle className='circle_1'/>
-                <Circle className='circle_2'/>
                 <div className='line_1'/>
                 <div className='line_2'/>
                 <div className='login_blank'/>
@@ -24,8 +21,6 @@ const Login=(props)=>{
     </BrowserView>
     <MobileView>
         <Card className='login_mobile'>
-            <Circle className='circle_1'/>
-            <Circle className='circle_2'/>
             <div className='line_1'/>
             <div className='line_2'/>
             <div className='login_blank'/>

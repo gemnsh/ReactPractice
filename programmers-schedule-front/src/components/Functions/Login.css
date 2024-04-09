@@ -50,29 +50,29 @@
 
 .circle_1{
     position: absolute;
-    left: 240px;
-    top:250px;
+    left: 60%;
+    top:39%;
 }
 
 .circle_2{
     position: absolute;
-    left: 140px;
-    top:120px;
+    left: 35%;
+    top:18.75%;
 }
 
 .line_1{
     position: absolute;
-    left:155px;
-    top:138px;
-    width: 245px;
+    left:38.75%;
+    top:21.5625%;
+    width: 61.25%;
     height: 4px;
     background-color: #435585;
 }
 .line_2{
     position: absolute;
-    left: 258px;
-    top:268px;
-    height: 372px;
+    left: 64.5%;
+    top:41.775%;
+    height: 58.125%;
     width: 4px;
     background-color: #435585;
 }

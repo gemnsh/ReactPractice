@@ -69,7 +69,7 @@ const StopWatch =(props) =>{
             </BrowserView>
             <MobileView>
                 <TimeDisplay item={props.item} sendThemeArray={props.sendThemeArray}/>
-                <button onClick={buttonHandler} className="stop-watch__button" style={{backgroundColor:props.sendThemeArray.color_11}}> {isButtonClicked?'START':'END'}</button>
+                <button onClick={buttonHandler} className="stop-watch__button_mobile" style={{backgroundColor:props.sendThemeArray.color_11}}> {isButtonClicked?'START':'END'}</button>
             </MobileView>
         </div>
     );

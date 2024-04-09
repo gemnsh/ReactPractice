@@ -50,9 +50,6 @@ const Schedule =(props) =>{
                 onGetStartTime={getStartTimeHandler}
                 item={props.item}
                 sendThemeArray={props.sendThemeArray}/>
-                <img id="nousagi_1_mobile" draggable={false} src={process.env.PUBLIC_URL+props.sendThemeArray.image_01}/>
-                <img id="nousagi_2_mobile" draggable={false} src={process.env.PUBLIC_URL+props.sendThemeArray.image_02}/>
-            
                 <NewData stopTime={props.stopWatchTime} buttonStateDatas={props.buttonStateData}  onSubmitButtonStateHandler={setSubmitStateHandler} onSetPageHandler={setPageHandler} startTimeData={props.startTimeDatas} sendThemeArray={props.sendThemeArray}/>
                 </Card>
             </MobileView>

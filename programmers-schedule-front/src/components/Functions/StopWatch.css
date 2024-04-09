@@ -21,3 +21,17 @@
     position: absolute;
 
 }
+
+.stop-watch__button_mobile{
+    border-radius: 10px;
+    width:50%;
+    height: 3%;
+    left: 5%;
+    top: 20%;
+    position: absolute;
+    font-size: 50px;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+    border: 0px ;
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserView, MobileView } from 'react-device-detect';
 
 import './Schedule.css';
 
@@ -29,14 +30,28 @@ const Schedule =(props) =>{
     }
     
     return(
-        <Card className='schedule' bgColor={props.sendThemeArray.color_09}>
-            
+        <div>
+            <BrowserView>
+                <Card className='schedule' bgColor={props.sendThemeArray.color_09}>
+                
                 <StopWatch onGetFormatTime={getFormatTimeHandler} onGetButtonState={getButtonStateHandler} onGetStartTime={getStartTimeHandler} sendThemeArray={props.sendThemeArray}/>
                 <img id="nousagi_1" draggable={false} src={process.env.PUBLIC_URL+props.sendThemeArray.image_01}/>
                 <img id="nousagi_2" draggable={false} src={process.env.PUBLIC_URL+props.sendThemeArray.image_02}/>
             
-            <NewData stopTime={props.stopWatchTime} buttonStateDatas={props.buttonStateData}  onSubmitButtonStateHandler={setSubmitStateHandler} onSetPageHandler={setPageHandler} startTimeData={props.startTimeDatas} sendThemeArray={props.sendThemeArray}/>
-        </Card>
+                <NewData stopTime={props.stopWatchTime} buttonStateDatas={props.buttonStateData}  onSubmitButtonStateHandler={setSubmitStateHandler} onSetPageHandler={setPageHandler} startTimeData={props.startTimeDatas} sendThemeArray={props.sendThemeArray}/>
+                </Card>
+            </BrowserView>
+            <MobileView>
+                <Card className='schedule_mobile' bgColor={props.sendThemeArray.color_09}>
+                
+                <StopWatch onGetFormatTime={getFormatTimeHandler} onGetButtonState={getButtonStateHandler} onGetStartTime={getStartTimeHandler} sendThemeArray={props.sendThemeArray}/>
+                <img id="nousagi_1_mobile" draggable={false} src={process.env.PUBLIC_URL+props.sendThemeArray.image_01}/>
+                <img id="nousagi_2_mobile" draggable={false} src={process.env.PUBLIC_URL+props.sendThemeArray.image_02}/>
+            
+                <NewData stopTime={props.stopWatchTime} buttonStateDatas={props.buttonStateData}  onSubmitButtonStateHandler={setSubmitStateHandler} onSetPageHandler={setPageHandler} startTimeData={props.startTimeDatas} sendThemeArray={props.sendThemeArray}/>
+                </Card>
+            </MobileView>
+        </div>
     );
 };
 

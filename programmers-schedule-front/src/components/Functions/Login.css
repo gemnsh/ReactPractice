@@ -57,13 +57,13 @@
 .circle_2{
     position: absolute;
     left: 35%;
-    top:19%;
+    top:18.75%;
 }
 
 .line_1{
     position: absolute;
     left:38.75%;
-    top:21.5625%;
+    top:21.7%;
     width: 61.25%;
     height: 0.625%;
     background-color: #435585;

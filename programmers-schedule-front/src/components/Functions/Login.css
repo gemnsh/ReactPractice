@@ -43,7 +43,7 @@
 }
 
 .login_blank{
-    height: 150px;
+    height: 23.4%;
 }
 
 
@@ -65,7 +65,7 @@
     left:38.75%;
     top:21.5625%;
     width: 61.25%;
-    height: 4px;
+    height: 0.625%;
     background-color: #435585;
 }
 .line_2{
@@ -73,6 +73,6 @@
     left: 64.5%;
     top:41.775%;
     height: 58.125%;
-    width: 4px;
+    width: 1%;
     background-color: #435585;
 }

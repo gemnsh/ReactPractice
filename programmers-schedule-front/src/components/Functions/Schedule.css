@@ -5,14 +5,14 @@
     width: 560px;
     height: 835px;
 }
-.schedule-mobile{
+.schedule_mobile{
     position: absolute;
     left: 0;
     top: 0;
     background-color: rgb(143, 165, 241);
     width: 100%;
     height: 100%;
-    margin: 5px;
+
 }
 
 #nousagi_1{

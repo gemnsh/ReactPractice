@@ -1,4 +1,5 @@
 import React,{useState,useRef,useEffect} from "react";
+import { BrowserView, MobileView } from 'react-device-detect';
 
 import './StopWatch.css';
 
@@ -61,9 +62,14 @@ const StopWatch =(props) =>{
 
     return(
         <div>
-            <button onClick={buttonHandler} className="stop-watch__button" style={{backgroundColor:props.sendThemeArray.color_11}}> {isButtonClicked?'START':'END'}</button>
+           <BrowserView>
+                <button onClick={buttonHandler} className="stop-watch__button" style={{backgroundColor:props.sendThemeArray.color_11}}> {isButtonClicked?'START':'END'}</button>
                 <TimeChart start={startLocation} value={formatTime()[0]} color={formatTime()[1]} sendThemeArray={props.sendThemeArray} buttonState={isButtonClicked}>
                 </TimeChart>
+            </BrowserView>
+            <MobileView>
+                <button onClick={buttonHandler} className="stop-watch__button" style={{backgroundColor:props.sendThemeArray.color_11}}> {isButtonClicked?'START':'END'}</button>
+            </MobileView>
         </div>
     );
 };

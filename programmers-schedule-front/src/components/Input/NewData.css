@@ -106,6 +106,7 @@
     width: 35%;
     max-width: 100%;
     line-height: 0px;
+    left: 65%;
   }
 
   .new-data__control_mobile button:disabled {
@@ -117,6 +118,7 @@
     width: 35%;
     max-width: 100%;
     line-height: 0px;
+    left: 65%;
   }
 
   .new-data__control_mobile{

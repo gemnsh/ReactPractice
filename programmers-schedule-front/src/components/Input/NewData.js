@@ -87,8 +87,8 @@ const NewData =(props) =>{
                         onSetButtonResponse={setButtonResponse1}
                         widthButton={50}
                         sendThemeArray={props.sendThemeArray}
-                        totalWidth={"350"}
-                        totalHeight={"29"}
+                        totalWidth={"350px"}
+                        totalHeight={"29px"}
                         />
                     </div>
                     <div className='new-data__control'>
@@ -100,8 +100,8 @@ const NewData =(props) =>{
                         onSetButtonResponse={setButtonResponse2}
                         widthButton={80}
                         sendThemeArray={props.sendThemeArray}
-                        totalWidth={"350"}
-                        totalHeight={"29"}
+                        totalWidth={"350px"}
+                        totalHeight={"29px"}
                         />
                     </div>
                     <div className='new-data__control'>
@@ -180,9 +180,7 @@ const NewData =(props) =>{
                             <div className='new-data__time_mobile' style={{color:props.sendThemeArray.color_02}}>
                                 {a[0]}
                             </div>
-                            <button id='submit_button' type='submit' disabled={!props.buttonStateDatas} style={props.buttonStateDatas?{border:props.sendThemeArray.color_05,backgroundColor:props.sendThemeArray.color_05}:{border:props.sendThemeArray.color_08,backgroundColor:props.sendThemeArray.color_08,color:props.sendThemeArray.color_08}}>입력</button>
                         </div>
-
                         <div className='new-data__control2_mobile'>
 
                             <textarea 
@@ -193,6 +191,7 @@ const NewData =(props) =>{
                             rows={5}
                             onChange ={(e) => setResponseBody({...responseBody, problemDescription: e.target.value})} />
                         </div>
+                        <button id='submit_button' type='submit' disabled={!props.buttonStateDatas} style={props.buttonStateDatas?{border:props.sendThemeArray.color_05,backgroundColor:props.sendThemeArray.color_05}:{border:props.sendThemeArray.color_08,backgroundColor:props.sendThemeArray.color_08,color:props.sendThemeArray.color_08}}>입력</button>
                     </form>
                 </Card>
             </MobileView>

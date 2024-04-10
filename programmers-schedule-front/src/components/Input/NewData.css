@@ -131,10 +131,9 @@
     border-radius: 6px;
     border: 3px solid ;
     
-    height: 140px;
-    width: 90%;
+    height: 60%;
+    width: 100%;
     display: flex;
-    margin: 5%;
   }
   .new-data__time_mobile{
     font-size: 10px;

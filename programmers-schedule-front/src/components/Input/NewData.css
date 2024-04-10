@@ -15,14 +15,14 @@
 
   }
   
-  .new-data__control input {
+.new-data__control input {
     font: inherit;
     border-radius: 6px;
     width: 346px;
     max-width: 100%;
   }
 
-  .new-data__control button {
+.new-data__control button {
     font: inherit;
     font-weight: bold;
     font-size : 20px;
@@ -83,3 +83,57 @@
     width: 90%;
     height: 70%;
 }
+.new-data__control_mobile label {
+    font-weight: bold;
+
+    display: block;
+    font-size: 10px;
+
+  }
+.new-data__control_mobile input {
+    font: inherit;
+    border-radius: 6px;
+    width: 346px;
+    max-width: 100%;
+  }
+.new-data__control_mobile button {
+    font: inherit;
+    font-weight: bold;
+    font-size : 10px;
+    color:white;
+    border-radius: 6px;
+    border: 3px solid;
+    width: 40px;
+    max-width: 100%;
+    line-height: 0px;
+  }
+
+  .new-data__control_mobile button:disabled {
+    font: inherit;
+    font-weight: bold;
+    font-size : 10px;
+    border-radius: 6px;
+    border: 3px solid;
+    width: 40px;
+    max-width: 100%;
+    line-height: 0px;
+  }
+
+  .new-data__control_mobile{
+    display: flex;
+    position: relative;
+    margin: 5px;
+    justify-content: space-between;
+  }
+
+  .new-data__control2 textarea {
+    font: inherit;
+    border-radius: 6px;
+    border: 3px solid ;
+    
+    height: 140px;
+    width: 80%;
+    max-width: 100%;
+    display: flex;
+    margin: 5px;
+  }

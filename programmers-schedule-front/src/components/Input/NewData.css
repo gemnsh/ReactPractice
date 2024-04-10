@@ -87,13 +87,13 @@
     font-weight: bold;
     width : 15%;
     display: block;
-    font-size: 15px;
+    font-size: 10px;
 
   }
 .new-data__control_mobile input {
     font: inherit;
     border-radius: 6px;
-    width: 85%;
+    width: 90%;
     
   }
 .new-data__control_mobile button {
@@ -137,7 +137,7 @@
     margin: 5%;
   }
   .new-data__time_mobile{
-    font-size: 18px;
+    font-size: 10px;
     text-align: left;
     position: absolute;
     font-weight: bold;

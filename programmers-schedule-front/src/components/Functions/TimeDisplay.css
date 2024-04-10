@@ -36,6 +36,7 @@
     top: 7%;
     width: 35%;
     height: 20%;
+    position: absolute;
 }
 
 .time-display__upper_mobile{
@@ -57,7 +58,7 @@
 }
 
 .time-text_mobile{
-    position: absolute;
+    position: relative;
     font-size: 25px;
     font-weight: bold;
     text-align: center;

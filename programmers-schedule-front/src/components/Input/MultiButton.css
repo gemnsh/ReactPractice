@@ -1,7 +1,6 @@
 .multi-button{
     display: flex;
     justify-content: space-between;
-    position: absolute;
 }
 
 

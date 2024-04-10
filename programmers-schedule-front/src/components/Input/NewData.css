@@ -85,7 +85,7 @@
 }
 .new-data__control_mobile label {
     font-weight: bold;
-
+    width : 20%;
     display: block;
     font-size: 15px;
 

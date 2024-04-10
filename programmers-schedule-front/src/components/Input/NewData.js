@@ -132,7 +132,7 @@ const NewData =(props) =>{
                             <label style={{color:props.sendThemeArray.color_02}}>
                                 레벨
                             </label>
-                            <MultiButton buttonArr={levelArray} onSetButtonResponse={setButtonResponse1}widthButton={"16%"} sendThemeArray={props.sendThemeArray}/>
+                            <MultiButton buttonArr={levelArray} onSetButtonResponse={setButtonResponse1}widthButton={"13%"} sendThemeArray={props.sendThemeArray}/>
                         </div>
                         <div className='new-data__control_mobile'>
                             <label style={{color:props.sendThemeArray.color_02}}>

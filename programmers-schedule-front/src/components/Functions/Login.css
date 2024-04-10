@@ -17,11 +17,11 @@
 .login_mobile{
     position: absolute;
     width: 95%;
-    height: 95%;
+    height: 97%;
     text-align: center;
     background-color: rgb(143, 165, 241);
     z-index: 100;
-    top: 2.5%;
+    top: 1.5%;
     left: 2.5%;
     color: #fff;
     box-shadow: none;

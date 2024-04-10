@@ -87,14 +87,14 @@
     font-weight: bold;
 
     display: block;
-    font-size: 10px;
+    font-size: 15px;
 
   }
 .new-data__control_mobile input {
     font: inherit;
     border-radius: 6px;
-    width: 346px;
-    max-width: 100%;
+    width: 75%;
+ 
   }
 .new-data__control_mobile button {
     font: inherit;

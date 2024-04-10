@@ -93,13 +93,13 @@
 .new-data__control_mobile input {
     font: inherit;
     border-radius: 6px;
-    width: 75%;
+    width: 80%;
     
   }
 .new-data__control_mobile button {
     font: inherit;
     font-weight: bold;
-    font-size : 10px;
+    font-size : 18px;
     color:white;
     border-radius: 6px;
     border: 3px solid;
@@ -111,7 +111,7 @@
   .new-data__control_mobile button:disabled {
     font: inherit;
     font-weight: bold;
-    font-size : 10px;
+    font-size : 18px;
     border-radius: 6px;
     border: 3px solid;
     width: 40px;
@@ -135,4 +135,10 @@
     width: 90%;
     display: flex;
     margin: 5%;
+  }
+  .new-data__time_mobile{
+    font-size: 18px;
+    text-align: left;
+    position: absolute;
+    font-weight: bold;
   }

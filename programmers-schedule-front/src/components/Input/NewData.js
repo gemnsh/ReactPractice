@@ -150,7 +150,7 @@ const NewData =(props) =>{
                             <label style={{color:props.sendThemeArray.color_02}}>
                                 시간
                             </label>
-                            <div className='new-data__time' style={{color:props.sendThemeArray.color_02}}>
+                            <div className='new-data__time_mobile' style={{color:props.sendThemeArray.color_02}}>
                                 {a[0]}
                             </div>
                             <button id='submit_button' type='submit' disabled={!props.buttonStateDatas} style={props.buttonStateDatas?{border:props.sendThemeArray.color_05,backgroundColor:props.sendThemeArray.color_05}:{border:props.sendThemeArray.color_08,backgroundColor:props.sendThemeArray.color_08,color:props.sendThemeArray.color_08}}>입력</button>

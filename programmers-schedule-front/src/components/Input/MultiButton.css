@@ -1,6 +1,4 @@
 .multi-button{
-    width:350px;
-    height: 29px;
     display: flex;
     justify-content: space-between;
 }

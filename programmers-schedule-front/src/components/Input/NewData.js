@@ -82,13 +82,27 @@ const NewData =(props) =>{
                         <label style={{color:props.sendThemeArray.color_02}}>
                             레벨
                         </label>
-                        <MultiButton buttonArr={levelArray} onSetButtonResponse={setButtonResponse1}widthButton={50} sendThemeArray={props.sendThemeArray}/>
+                        <MultiButton
+                        buttonArr={levelArray}
+                        onSetButtonResponse={setButtonResponse1}
+                        widthButton={50}
+                        sendThemeArray={props.sendThemeArray}
+                        totalWidth={"350"}
+                        totalHeight={"29"}
+                        />
                     </div>
                     <div className='new-data__control'>
                         <label style={{color:props.sendThemeArray.color_02}}>
                             언어
                         </label>
-                        <MultiButton buttonArr={langArray} onSetButtonResponse={setButtonResponse2}  widthButton={80} sendThemeArray={props.sendThemeArray}/>
+                        <MultiButton
+                        buttonArr={langArray}
+                        onSetButtonResponse={setButtonResponse2}
+                        widthButton={80}
+                        sendThemeArray={props.sendThemeArray}
+                        totalWidth={"350"}
+                        totalHeight={"29"}
+                        />
                     </div>
                     <div className='new-data__control'>
                         <label style={{color:props.sendThemeArray.color_02}}>
@@ -132,13 +146,26 @@ const NewData =(props) =>{
                             <label style={{color:props.sendThemeArray.color_02}}>
                                 레벨
                             </label>
-                            <MultiButton buttonArr={levelArray} onSetButtonResponse={setButtonResponse1}widthButton={"15%"} sendThemeArray={props.sendThemeArray}/>
+                            <MultiButton
+                                buttonArr={levelArray}
+                                onSetButtonResponse={setButtonResponse1}
+                                widthButton={"15%"}
+                                totalWidth={"85%"}
+                                totalHeight={"3%"}
+                                sendThemeArray={props.sendThemeArray}/>
                         </div>
                         <div className='new-data__control_mobile'>
                             <label style={{color:props.sendThemeArray.color_02}}>
                                 언어
                             </label>
-                            <MultiButton buttonArr={langArray} onSetButtonResponse={setButtonResponse2}  widthButton={"24%"} sendThemeArray={props.sendThemeArray}/>
+                            <MultiButton
+                                buttonArr={langArray}
+                                onSetButtonResponse={setButtonResponse2} 
+                                widthButton={"24%"}
+                                sendThemeArray={props.sendThemeArray}
+                                totalWidth={"85%"}
+                                totalHeight={"3%"}/>
+
                         </div>
                         <div className='new-data__control_mobile'>
                             <label style={{color:props.sendThemeArray.color_02}}>

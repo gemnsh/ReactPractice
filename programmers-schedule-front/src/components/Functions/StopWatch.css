@@ -24,12 +24,12 @@
 
 .stop-watch__button_mobile{
     border-radius: 10px;
-    top:7%;
+    top:2%;
     left : 45%;
     width:50%;
-    height: 10%;
+    height: 20%;
     position: absolute;
-    font-size: 40px;
+    font-size: 50px;
     color: white;
     font-weight: bold;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);

@@ -45,6 +45,7 @@
     left:10%;
     width: 80%;
     height:35%;
+    align-items: center;
 }
 
 .time-display__lower_mobile{
@@ -53,12 +54,13 @@
     width: 80%;
     height:35%;
     left:10%;
+    align-items: center;
 }
 
 .time-text_mobile{
     position: absolute;
     font-size: 25px;
-    margin: 0 auto;
     font-weight: bold;
-    line-height: 100%;
+    text-align: center;
+
 }

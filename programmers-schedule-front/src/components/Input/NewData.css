@@ -94,7 +94,7 @@
     font: inherit;
     border-radius: 6px;
     width: 75%;
- 
+    
   }
 .new-data__control_mobile button {
     font: inherit;
@@ -103,7 +103,7 @@
     color:white;
     border-radius: 6px;
     border: 3px solid;
-    width: 40px;
+    width: 40%;
     max-width: 100%;
     line-height: 0px;
   }
@@ -126,14 +126,13 @@
     justify-content: space-between;
   }
 
-  .new-data__control2 textarea {
+  .new-data__control2_mobile textarea {
     font: inherit;
     border-radius: 6px;
     border: 3px solid ;
     
     height: 140px;
     width: 90%;
-    max-width: 100%;
     display: flex;
     margin: 5%;
   }

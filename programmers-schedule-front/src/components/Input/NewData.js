@@ -193,7 +193,7 @@ const NewData =(props) =>{
                             rows={5}
                             onChange ={(e) => setResponseBody({...responseBody, problemDescription: e.target.value})} />
                         </div>
-                        <div className='new-data__control_mobile'>
+                        <div className='new-data__control_mobile3'>
                         <button id='submit_button' type='submit' disabled={!props.buttonStateDatas} style={props.buttonStateDatas?{border:props.sendThemeArray.color_05,backgroundColor:props.sendThemeArray.color_05}:{border:props.sendThemeArray.color_08,backgroundColor:props.sendThemeArray.color_08,color:props.sendThemeArray.color_08}}>입력</button>
                         </div>
                     </form>

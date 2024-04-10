@@ -94,7 +94,7 @@
     border-radius: 6px;
     width: 85%;
   }
-.new-data__control_mobile button {
+.new-data__control_mobile3 button {
     font: inherit;
     font-weight: bold;
     font-size : 18px;
@@ -108,7 +108,7 @@
     left: 65%;
   }
 
-  .new-data__control_mobile button:disabled {
+  .new-data__control_mobile3 button:disabled {
     font: inherit;
     font-weight: bold;
     font-size : 18px;
@@ -122,6 +122,13 @@
   }
 
   .new-data__control_mobile{
+    display: flex;
+    position: relative;
+    margin: 5px;
+    justify-content: space-between;
+    height: 8%;
+  }
+  .new-data__control_mobile3{
     display: flex;
     position: relative;
     margin: 5px;

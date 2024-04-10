@@ -140,7 +140,8 @@
     display: flex;
   }
   .new-data__control2_mobile{
-    height:50%;
+    height: 36vh;
+    position: relative;
   }
   .new-data__time_mobile{
     font-size: 12px;

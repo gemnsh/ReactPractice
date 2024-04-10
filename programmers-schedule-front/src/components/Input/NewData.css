@@ -81,6 +81,7 @@
     left :5%;
     top :29%;
     width: 90%;
+    height: 60%;
 }
 .new-data__control_mobile label {
     font-weight: bold;
@@ -137,6 +138,9 @@
     width: 96%;
     margin: 5px;
     display: flex;
+  }
+  .new-data__control2_mobile{
+    height:50%;
   }
   .new-data__time_mobile{
     font-size: 12px;

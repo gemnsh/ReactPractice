@@ -151,7 +151,7 @@ const NewData =(props) =>{
                                 onSetButtonResponse={setButtonResponse1}
                                 widthButton={"15%"}
                                 totalWidth={"85%"}
-                                totalHeight={"8%"}
+                                totalHeight={"100%"}
                                 sendThemeArray={props.sendThemeArray}/>
                         </div>
                         <div className='new-data__control_mobile'>
@@ -164,7 +164,7 @@ const NewData =(props) =>{
                                 widthButton={"24%"}
                                 sendThemeArray={props.sendThemeArray}
                                 totalWidth={"85%"}
-                                totalHeight={"8%"}/>
+                                totalHeight={"100%"}/>
 
                         </div>
                         <div className='new-data__control_mobile'>

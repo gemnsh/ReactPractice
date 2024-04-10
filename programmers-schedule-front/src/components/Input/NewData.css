@@ -81,7 +81,7 @@
     left :5%;
     top :24%;
     width: 90%;
-    height: 70%;
+    height: 65%;
 }
 .new-data__control_mobile label {
     font-weight: bold;
@@ -132,7 +132,7 @@
     border: 3px solid ;
     
     height: 300px;
-    width: 97.5%;
+    width: 96%;
     margin: 5px;
     display: flex;
   }

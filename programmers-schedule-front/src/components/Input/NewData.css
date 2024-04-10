@@ -85,16 +85,13 @@
 .new-data__control_mobile label {
     font-weight: bold;
     width : 15%;
-    height: 8%;
     display: block;
     font-size: 12px;
-
   }
 .new-data__control_mobile input {
     font: inherit;
     border-radius: 6px;
     width: 85%;
-    height: 8%;
   }
 .new-data__control_mobile button {
     font: inherit;
@@ -128,6 +125,7 @@
     position: relative;
     margin: 5px;
     justify-content: space-between;
+    height: 8%;
   }
 
   .new-data__control2_mobile textarea {
@@ -135,7 +133,7 @@
     border-radius: 6px;
     border: 3px solid ;
     
-    height: 300px;
+    height: 100%;
     width: 96%;
     margin: 5px;
     display: flex;
@@ -146,4 +144,5 @@
     position: absolute;
     font-weight: bold;
     left: 15%;
+    height: 45%;
   }

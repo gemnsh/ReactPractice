@@ -15,7 +15,7 @@ const MultiButton =(props) =>{
         props.onSetButtonResponse(index);
     };
     return(
-        <div className="multi-button" style={{width: props.totalWidth, height: totalHeight}}>
+        <div className="multi-button" style={{width: props.totalWidth, height: props.totalHeight}}>
             {
                 buttonArray.map((element,index)=>{
                     return(

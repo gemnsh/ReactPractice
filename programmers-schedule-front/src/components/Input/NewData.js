@@ -150,7 +150,7 @@ const NewData =(props) =>{
                                 buttonArr={levelArray}
                                 onSetButtonResponse={setButtonResponse1}
                                 widthButton={"15%"}
-                                totalWidth={"80%"}
+                                totalWidth={"85%"}
                                 totalHeight={"8%"}
                                 sendThemeArray={props.sendThemeArray}/>
                         </div>
@@ -163,7 +163,7 @@ const NewData =(props) =>{
                                 onSetButtonResponse={setButtonResponse2} 
                                 widthButton={"24%"}
                                 sendThemeArray={props.sendThemeArray}
-                                totalWidth={"80%"}
+                                totalWidth={"85%"}
                                 totalHeight={"8%"}/>
 
                         </div>

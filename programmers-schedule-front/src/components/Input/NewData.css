@@ -126,14 +126,14 @@
     position: relative;
     margin: 5px;
     justify-content: space-between;
-    height: 8%;
+    height: 3vh;
   }
   .new-data__control_mobile3{
     display: flex;
     position: relative;
     margin: 5px;
     justify-content: space-between;
-    height: 8%;
+    height: 40px;
   }
 
   .new-data__control2_mobile textarea {

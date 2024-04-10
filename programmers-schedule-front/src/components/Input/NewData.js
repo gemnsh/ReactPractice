@@ -151,7 +151,7 @@ const NewData =(props) =>{
                                 onSetButtonResponse={setButtonResponse1}
                                 widthButton={"15%"}
                                 totalWidth={"85%"}
-                                totalHeight={"3%"}
+                                totalHeight={"5%"}
                                 sendThemeArray={props.sendThemeArray}/>
                         </div>
                         <div className='new-data__control_mobile'>
@@ -164,7 +164,7 @@ const NewData =(props) =>{
                                 widthButton={"24%"}
                                 sendThemeArray={props.sendThemeArray}
                                 totalWidth={"85%"}
-                                totalHeight={"3%"}/>
+                                totalHeight={"5%"}/>
 
                         </div>
                         <div className='new-data__control_mobile'>
@@ -191,7 +191,9 @@ const NewData =(props) =>{
                             rows={5}
                             onChange ={(e) => setResponseBody({...responseBody, problemDescription: e.target.value})} />
                         </div>
+                        <div className='new-data__control_mobile'>
                         <button id='submit_button' type='submit' disabled={!props.buttonStateDatas} style={props.buttonStateDatas?{border:props.sendThemeArray.color_05,backgroundColor:props.sendThemeArray.color_05}:{border:props.sendThemeArray.color_08,backgroundColor:props.sendThemeArray.color_08,color:props.sendThemeArray.color_08}}>입력</button>
+                        </div>
                     </form>
                 </Card>
             </MobileView>

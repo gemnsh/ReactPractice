@@ -12,6 +12,7 @@ import Graph from "./components/Functions/Graph";
 import TimeDisplay from "./components/Functions/TimeDisplay";
 import Article from "./components/Functions/Article";
 import Login from"./components/Functions/Login";
+import Screensaver from "./components/Functions/Screensaver";
 
 const App =() =>{
   const hArray=Array(11).fill(false);
@@ -61,11 +62,13 @@ const App =() =>{
   const [loginModal,setLoginModal]=useState(false);
   const [themeButtonState,setThemeButtonState]=useState(true);
   const [submitButtonState,setSubmitButtonState]=useState(true);
-
+  const [lastTouch, setLastTouch]=useState(0)
   const preventCloseWindow = (e: BeforeUnloadEvent) => {
     e.preventDefault();
     e.returnValue = ""; //Chrome에서 동작하도록; deprecated
   };
+
+  const [screensaverState,setScreensaverState]=useState(false)
 
   const startApp =()=>{
     setLoginModal(true);
@@ -279,12 +282,25 @@ const App =() =>{
         })
   };
 
+
+  const onTouchEnd=()=>{
+    setLastTouch(stopWatchTimeData);
+    setScreensaverState(False)
+  }
+
+  useEffect(()=>{
+    if (stopWatchData-lastTouch>60){
+        setScreensaverState(True)
+    }
+  },[stopWatchTimeData])
+
   return (
             <div>
-    <MobileView>
-    <div>
+    <MobileView onTouchEnd={onTouchEnd}>
+    <div >
     {
             loginModal&&(<Login setLoginModalData={setLoginModal}/>)
+            screensaverState&&(<Screensaver stopWatchTime={stopWatchTimeData}/>)
     }
     <Schedule 
       onSetPage={setPage} 

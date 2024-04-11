@@ -1,5 +1,6 @@
 import React,{useState,useRef,useEffect} from "react";
 import { BrowserView, MobileView } from 'react-device-detect';
+import NoSleep from 'nosleep.js';
 
 import './StopWatch.css';
 
@@ -14,8 +15,9 @@ const StopWatch =(props) =>{
     
     const buttonHandler = () =>{
         setIsButtonClicked(!isButtonClicked);
+        const noSleep = new NoSleep();
         isButtonClicked ?startTimer() : resetHandler()
-    
+        isButtonClicked? noSleep.enable(): noSleep.disable()
     };
 
     const startTimer =()=>{

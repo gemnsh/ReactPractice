@@ -12,6 +12,7 @@
 .screen_svg{
     justify-content: center;
     display: flex;
+    margin: 10vh;
 }
 .screen_text{
     text-align: center;

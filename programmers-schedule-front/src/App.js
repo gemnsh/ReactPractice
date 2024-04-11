@@ -285,12 +285,12 @@ const App =() =>{
 
   const onTouchEnd=()=>{
     setLastTouch(stopWatchTimeData);
-    setScreensaverState(False)
+    setScreensaverState(false)
   }
 
   useEffect(()=>{
-    if (stopWatchData-lastTouch>60){
-        setScreensaverState(True)
+    if (stopWatchTimeData-lastTouch>60){
+        setScreensaverState(true)
     }
   },[stopWatchTimeData])
 
@@ -300,6 +300,8 @@ const App =() =>{
     <div >
     {
             loginModal&&(<Login setLoginModalData={setLoginModal}/>)
+    }
+    {
             screensaverState&&(<Screensaver stopWatchTime={stopWatchTimeData}/>)
     }
     <Schedule 

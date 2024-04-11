@@ -1,10 +1,13 @@
 .screen_mobile{
     background-color: #000;
     color: #FFF;
+    position: relative;
     width: 100vw;
     height: calc(var(--vh, 1vh) * 100);
     z-index: 100;
-    align-content: center;
+}
+.screen_svg{
+    justify-content: center;
 }
 .screen_text{
     text-align: center;

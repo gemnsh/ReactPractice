@@ -10,7 +10,9 @@ const Screensaver = (props) =>{
 
     return(
         <div className='screen_mobile'>
+            <div className='screen_svg'>
             <Eclipse />
+            </div>
             <div className='screen_text'>
                 {props.stopWatchTime}
             </div>

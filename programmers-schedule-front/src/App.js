@@ -303,7 +303,7 @@ const App =() =>{
             loginModal&&(<Login setLoginModalData={setLoginModal}/>)
     }
     {
-            screensaverState&&(<Screensaver stopWatchTime={stopWatchTimeData} onTouchEnd={onTouchEnd}/>)
+            screensaverState&&(<Screensaver stopWatchTime={stopWatchTimeData} onTouch={onTouchEnd}/>)
     }
     <Schedule 
       onSetPage={setPage} 

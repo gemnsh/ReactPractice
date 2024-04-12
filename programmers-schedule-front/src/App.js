@@ -286,7 +286,7 @@ const App =() =>{
   const onTouch=(e)=>{
     setLastTouch(stopWatchTimeData);
     setScreensaverState(false);
-    e.stopPropagation();
+    e.stopImmediatePropagation();
   }
 
   useEffect(()=>{

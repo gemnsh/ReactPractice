@@ -283,11 +283,10 @@ const App =() =>{
   };
 
 
-  const onTouchEnd=(e)=>{
+  const onTouch=(e)=>{
     setLastTouch(stopWatchTimeData);
     setScreensaverState(false)
     e.stopPropagation();
-    e.nativeEvent.preventDefault();
   }
 
   useEffect(()=>{
@@ -298,7 +297,7 @@ const App =() =>{
 
   return (
             <div>
-    <MobileView onTouchEnd={onTouchEnd}>
+    <MobileView onTouch={onTouch}>
     <div >
     {
             loginModal&&(<Login setLoginModalData={setLoginModal}/>)

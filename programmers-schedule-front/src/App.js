@@ -283,7 +283,7 @@ const App =() =>{
   };
 
 
-  const onTouchEnd=(e)=>{
+  const onTouch=(e)=>{
     setLastTouch(stopWatchTimeData);
     setScreensaverState(false);
     return false;
@@ -302,7 +302,7 @@ const App =() =>{
     {
             loginModal&&(<Login setLoginModalData={setLoginModal}/>)
     }
-    <div onTouchEnd={onTouchEnd}>
+    <div onTouch={onTouch}>
     {
             screensaverState&&(<Screensaver stopWatchTime={stopWatchTimeData}/>)
     }
